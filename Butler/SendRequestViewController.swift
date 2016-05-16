@@ -35,7 +35,7 @@ class SendRequestViewController: UITableViewController {
         urlTextField.translatesAutoresizingMaskIntoConstraints = false
         urlTextField.textAlignment = NSTextAlignment.Center
         
-        let slider = MultipleButtonSlider(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50), items: ["GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS", "SHIT BRICKS"], callback: nil)
+        let slider = MultipleButtonSlider(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50), items: ["GET", "POST", "PUT", "DELETE"], callback: nil)
         slider.backgroundColor = UIColor.greenColor()
         slider.translatesAutoresizingMaskIntoConstraints = false
         tableView.tableHeaderView = slider

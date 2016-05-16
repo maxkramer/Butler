@@ -15,12 +15,16 @@ class MultipleButtonSlider: UIView {
     let items: [String]
     let callback: ButtonTapped?
     
+    let interItemSpacing: CGFloat = 20
+    
     var sliderColor: UIColor = UIColor.blueColor()
+    var selectedIndex = 0
     
     private var itemButtons = [UIButton]()
     private var sliderView: UIView!
     
-    var selectedIndex = 0
+    private var sliderLeadingConstraint: NSLayoutConstraint!
+    private var sliderTrailingConstraint: NSLayoutConstraint!
     
     init(frame: CGRect, items: [String], callback: ButtonTapped?) {
         self.items = items
@@ -34,13 +38,11 @@ class MultipleButtonSlider: UIView {
         createSliderLayoutConstraints(itemButtons[selectedIndex])
         
         performSelector(#selector(MultipleButtonSlider.moveSlider(_:)), withObject: 0, afterDelay: 0.1)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     func createSlider() {
         sliderView = UIView()
@@ -77,9 +79,6 @@ class MultipleButtonSlider: UIView {
         }
     }
     
-    var sliderLeadingConstraint: NSLayoutConstraint!
-    var sliderTrailingConstraint: NSLayoutConstraint!
-    
     func moveSlider(toIndex: Int) {
         updateConstraints()
         UIView.animateWithDuration(0.15) {
@@ -95,12 +94,6 @@ class MultipleButtonSlider: UIView {
         sliderTrailingConstraint.constant = button.frame.width
     }
     
-    var addedConstraints = false
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-    
     func createSliderLayoutConstraints(button: UIButton) {
         sliderLeadingConstraint = sliderView.leadingAnchor.constraintEqualToAnchor(leadingAnchor)
         sliderTrailingConstraint = sliderView.widthAnchor.constraintEqualToConstant(0)
@@ -114,8 +107,6 @@ class MultipleButtonSlider: UIView {
     }
     
     func createButtonLayoutConstraints() {
-        let interItemSpacing: CGFloat = 10
-        
         for (idx, button) in itemButtons.enumerate() {
             var constraints = [NSLayoutConstraint]()
             if idx == 0 {
