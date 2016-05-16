@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.makeKeyAndVisible()
         
+        configureDefaultRealm()
+        
         return true
     }
     
+    func configureDefaultRealm() {
+        let config = Realm.Configuration(encryptionKey: KeychainHelper.shared.realmEncryptionKey())
+        Realm.Configuration.defaultConfiguration = config
+    }
 }
