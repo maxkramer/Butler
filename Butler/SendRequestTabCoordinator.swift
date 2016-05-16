@@ -10,7 +10,7 @@ import UIKit
 
 class SendRequestTabCoordinator: TabCoordinator {
     lazy var rootViewController: UIViewController = {
-        let rvc = SendRequestViewController()
+        let rvc = SendRequestViewController(nibName: "SendRequestViewController", bundle: NSBundle.mainBundle())
         rvc.tabBarItem = self.tabBarItem
         rvc.navigationItem.title = R.string.localizable.sendrequestTitle()
         return rvc
