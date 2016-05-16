@@ -1,0 +1,9 @@
+excluded:
+  - Pods
+  - Butler/Resources/Generated Resource File/R.generated.swift
+line_length: 200
+disabled_rules:
+  - operator_whitespace
+  - variable_name
+  - trailing_whitespace
+  - force_cast
