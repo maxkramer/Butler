@@ -1,0 +1,6 @@
+- Volledig vernieuwde interface-
+- IPad ondersteuning (nu een universele app)
+- Liggend ondersteuning
+- Syntax highlighting
+- Verzend het verzoek aan de kraan van een knop
+- Probleem fixes

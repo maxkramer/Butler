@@ -1,0 +1,6 @@
+- Komplett überarbeitete Schnittstelle
+- IPad Unterstützung (jetzt ein universelles app)
+- Querformat-Unterstützung
+- Syntax-Hervorhebung
+- Senden Sie die Anforderung an der Zapfstelle auf eine Schaltfläche
+- Fehlerbehebung

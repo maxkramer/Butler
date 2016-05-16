@@ -1,0 +1,6 @@
+- Completely revamped interface
+- iPad support (now a universal app)
+- Landscape orientation support
+- Syntax highlighting
+- Resend the request at the tap of a button
+- Bug fixes

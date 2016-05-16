@@ -1,0 +1,12 @@
+Requester ist eine einfache Möglichkeit, um HTTP-Anfragen auf Ihre Website, API oder Server zu testen.
+
+Requester erfordert nur Sie die URL, die Sie möchten, um die Anfrage zu senden geben, und sendet die Anfrage mit dem einfachen Druck auf eine Schaltfläche.
+
+Eigenschaften:
+- Syntax-Hervorhebung
+- IPhone und iPad Unterstützung sowohl in Hoch- und Querformat
+- Requester kann GET zu senden, POST, PUT, DELETE, PATCH, HEAD, OPTIONS Anfragen
+- Benutzerdefinierte Kopfzeilen und Parameter
+- Schnell / Neusendeanforderungen senden
+- Sehen Sie sich die Antwort-Header und Körper
+- In Deutsch, Spanisch, Niederländisch und Tschechisch Lokalisierte

@@ -1,0 +1,12 @@
+Requester is een gemakkelijke manier om HTTP-verzoeken naar uw website, API of server uit te voeren.
+
+Requester vereist alleen u naar de URL die je zou willen om het verzoek te verzenden in te voeren, en stuurt het verzoek met de simpele tik van een knop.
+
+kenmerken:
+- Syntax highlighting
+- IPhone en iPad ondersteuning, zowel in landschap en portret
+- Requester kan GET sturen, POST, PUT, DELETE, PATCH, HEAD, OPTIES aanvragen
+- Custom headers en parameters
+- Snel / opnieuw verzenden verzoeken sturen
+- Toon de response headers en body
+- Gelokaliseerde in het Duits, Spaans, Nederlands en Tsjechisch

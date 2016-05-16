@@ -1,0 +1,6 @@
+- Interfaz completamente renovada
+- Soporte de iPad (ahora una aplicación universal)
+- Soporte de orientación horizontal
+- Resaltado de sintaxis
+- Vuelva a enviar la solicitud en el toque de un botón
+- Corrección de errores

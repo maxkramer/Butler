@@ -1,0 +1,12 @@
+Requester is an easy way to test HTTP requests to your website, API or server, on your iPhone or iPad.
+
+Upon entering a URL that you would like to send the request to, Requester will simply return the headers and response in a clear and concise manner.
+
+Features:
+- Syntax highlighting
+- Universal iPhone and iPad support in both landscape and portrait
+- Send GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS requests
+- Custom headers and parameters
+- Quick to perform requests again
+- View the response headers and body
+- Localised in German, Spanish, Dutch and Czech
