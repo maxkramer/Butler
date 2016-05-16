@@ -12,11 +12,12 @@ import UIKit
 class SendRequestTabCoordinator: TabCoordinator {
     lazy var rootViewController: UIViewController = {
         let rvc = SendRequestViewController()
+        rvc.tabBarItem = self.tabBarItem
         return rvc
     }()
     
     lazy var tabBarItem: UITabBarItem = {
-        let tabBarItem = UITabBarItem(title: nil, image: nil, selectedImage: nil)
+        let tabBarItem = UITabBarItem(title: nil, image: R.image.sendRequestTbi(), selectedImage: R.image.sendRequestTbiSelected())
         return tabBarItem
     }()
     

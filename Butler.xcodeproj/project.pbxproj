@@ -17,7 +17,7 @@
 		5011E15C1CE9CED100891FB1 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E15B1CE9CED100891FB1 /* TabCoordinator.swift */; };
 		5011E15E1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */; };
 		5011E1601CE9D06C00891FB1 /* SendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E15F1CE9D06C00891FB1 /* SendRequestViewController.swift */; };
-		5011E1631CE9D47800891FB1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E1621CE9D47800891FB1 /* R.generated.swift */; };
+		5011E1691CE9D61F00891FB1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E1681CE9D61F00891FB1 /* R.generated.swift */; };
 		56DC1E82B9949B67EC2C6B93 /* Pods_Butler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6DDE6AB44454F4D21058C0 /* Pods_Butler.framework */; };
 		72A5F27C198D3C5318DD352B /* Pods_ButlerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D0569FC5CB9F8B3BC226B3 /* Pods_ButlerUITests.framework */; };
 		7F20D47C67578EF6B51E9C85 /* Pods_ButlerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5561FAA381F42CD93F0CCF /* Pods_ButlerTests.framework */; };
@@ -59,7 +59,7 @@
 		5011E15B1CE9CED100891FB1 /* TabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRequestTabCoordinator.swift; sourceTree = "<group>"; };
 		5011E15F1CE9D06C00891FB1 /* SendRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRequestViewController.swift; sourceTree = "<group>"; };
-		5011E1621CE9D47800891FB1 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		5011E1681CE9D61F00891FB1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		57A638AAD9F7B3C8D1745572 /* Pods-Butler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Butler/Pods-Butler.release.xcconfig"; sourceTree = "<group>"; };
 		5A106D5FFEDF758B00ADBDAA /* Pods-Butler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Butler/Pods-Butler.debug.xcconfig"; sourceTree = "<group>"; };
 		74A00021EE8D4C5BA369F159 /* Pods-ButlerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ButlerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ButlerTests/Pods-ButlerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,13 +100,12 @@
 		5011E11D1CE9CD2500891FB1 = {
 			isa = PBXGroup;
 			children = (
-				5011E1621CE9D47800891FB1 /* R.generated.swift */,
 				5011E1281CE9CD2600891FB1 /* Butler */,
 				5011E13F1CE9CD2600891FB1 /* ButlerTests */,
 				5011E14A1CE9CD2600891FB1 /* ButlerUITests */,
-				5011E1271CE9CD2500891FB1 /* Products */,
-				E3D683F9457F27CEADC2E3A1 /* Pods */,
 				FB6DC7F69FB3CE15CFA65014 /* Frameworks */,
+				E3D683F9457F27CEADC2E3A1 /* Pods */,
+				5011E1271CE9CD2500891FB1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,15 +122,16 @@
 		5011E1281CE9CD2600891FB1 /* Butler */ = {
 			isa = PBXGroup;
 			children = (
+				5011E16A1CE9D69A00891FB1 /* Generated Resource File */,
 				5011E1291CE9CD2600891FB1 /* AppDelegate.swift */,
 				5011E1591CE9CD3D00891FB1 /* ApplicationCoordinator.swift */,
-				5011E15B1CE9CED100891FB1 /* TabCoordinator.swift */,
+				5011E1321CE9CD2600891FB1 /* Assets.xcassets */,
+				5011E1371CE9CD2600891FB1 /* Info.plist */,
+				5011E1341CE9CD2600891FB1 /* LaunchScreen.storyboard */,
+				5011E12F1CE9CD2600891FB1 /* Main.storyboard */,
 				5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */,
 				5011E15F1CE9D06C00891FB1 /* SendRequestViewController.swift */,
-				5011E12F1CE9CD2600891FB1 /* Main.storyboard */,
-				5011E1321CE9CD2600891FB1 /* Assets.xcassets */,
-				5011E1341CE9CD2600891FB1 /* LaunchScreen.storyboard */,
-				5011E1371CE9CD2600891FB1 /* Info.plist */,
+				5011E15B1CE9CED100891FB1 /* TabCoordinator.swift */,
 			);
 			path = Butler;
 			sourceTree = "<group>";
@@ -152,6 +152,14 @@
 				5011E14D1CE9CD2600891FB1 /* Info.plist */,
 			);
 			path = ButlerUITests;
+			sourceTree = "<group>";
+		};
+		5011E16A1CE9D69A00891FB1 /* Generated Resource File */ = {
+			isa = PBXGroup;
+			children = (
+				5011E1681CE9D61F00891FB1 /* R.generated.swift */,
+			);
+			path = "Generated Resource File";
 			sourceTree = "<group>";
 		};
 		E3D683F9457F27CEADC2E3A1 /* Pods */ = {
@@ -254,6 +262,7 @@
 				TargetAttributes = {
 					5011E1251CE9CD2500891FB1 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = DLYV32K844;
 					};
 					5011E13B1CE9CD2600891FB1 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -370,7 +379,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT/Butler/Generated Resource File/\"";
 		};
 		7AF6E37B2091A60867658A40 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -455,11 +464,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5011E15E1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift in Sources */,
-				5011E1631CE9D47800891FB1 /* R.generated.swift in Sources */,
 				5011E12A1CE9CD2600891FB1 /* AppDelegate.swift in Sources */,
 				5011E1601CE9D06C00891FB1 /* SendRequestViewController.swift in Sources */,
 				5011E15C1CE9CED100891FB1 /* TabCoordinator.swift in Sources */,
 				5011E15A1CE9CD3D00891FB1 /* ApplicationCoordinator.swift in Sources */,
+				5011E1691CE9D61F00891FB1 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +510,7 @@
 				5011E1301CE9CD2600891FB1 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		5011E1341CE9CD2600891FB1 /* LaunchScreen.storyboard */ = {
@@ -509,6 +519,7 @@
 				5011E1351CE9CD2600891FB1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -602,9 +613,11 @@
 			baseConfigurationReference = 5A106D5FFEDF758B00ADBDAA /* Pods-Butler.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Butler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.reactivefusion.Butler;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxkramer.apirequester;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -614,9 +627,11 @@
 			baseConfigurationReference = 57A638AAD9F7B3C8D1745572 /* Pods-Butler.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				INFOPLIST_FILE = Butler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.reactivefusion.Butler;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxkramer.apirequester;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
