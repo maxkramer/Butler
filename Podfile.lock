@@ -1,0 +1,26 @@
+PODS:
+  - R.swift (2.2.2):
+    - R.swift.Library (~> 2.1.0)
+  - R.swift.Library (2.1.0)
+  - Realm (0.102.0):
+    - Realm/Headers (= 0.102.0)
+  - Realm/Headers (0.102.0)
+  - RealmSwift (0.102.0):
+    - Realm (= 0.102.0)
+  - SVProgressHUD (2.0.3)
+
+DEPENDENCIES:
+  - R.swift
+  - RealmSwift
+  - SVProgressHUD
+
+SPEC CHECKSUMS:
+  R.swift: ed40b24d65ad70c6cf48a2f249a26a3e5a4a7bc0
+  R.swift.Library: e5e077ed04f6867a95676af491650091b23518e9
+  Realm: 5d219f9037e3ec2019c599b8227bfc95433cb10e
+  RealmSwift: e6f436f9fea1c57b9ad6d1c46d57562c845f3c4c
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+
+PODFILE CHECKSUM: 93a6fe1c20224c955b0fa95cf238d05d0889a2e6
+
+COCOAPODS: 1.0.0

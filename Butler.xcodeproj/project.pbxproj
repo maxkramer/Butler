@@ -8,13 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		5011E12A1CE9CD2600891FB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E1291CE9CD2600891FB1 /* AppDelegate.swift */; };
-		5011E12C1CE9CD2600891FB1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E12B1CE9CD2600891FB1 /* FirstViewController.swift */; };
-		5011E12E1CE9CD2600891FB1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E12D1CE9CD2600891FB1 /* SecondViewController.swift */; };
 		5011E1311CE9CD2600891FB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5011E12F1CE9CD2600891FB1 /* Main.storyboard */; };
 		5011E1331CE9CD2600891FB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5011E1321CE9CD2600891FB1 /* Assets.xcassets */; };
 		5011E1361CE9CD2600891FB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5011E1341CE9CD2600891FB1 /* LaunchScreen.storyboard */; };
 		5011E1411CE9CD2600891FB1 /* ButlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E1401CE9CD2600891FB1 /* ButlerTests.swift */; };
 		5011E14C1CE9CD2600891FB1 /* ButlerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E14B1CE9CD2600891FB1 /* ButlerUITests.swift */; };
+		5011E15A1CE9CD3D00891FB1 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E1591CE9CD3D00891FB1 /* ApplicationCoordinator.swift */; };
+		5011E15C1CE9CED100891FB1 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E15B1CE9CED100891FB1 /* TabCoordinator.swift */; };
+		5011E15E1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */; };
+		5011E1601CE9D06C00891FB1 /* SendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E15F1CE9D06C00891FB1 /* SendRequestViewController.swift */; };
+		5011E1631CE9D47800891FB1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E1621CE9D47800891FB1 /* R.generated.swift */; };
+		56DC1E82B9949B67EC2C6B93 /* Pods_Butler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6DDE6AB44454F4D21058C0 /* Pods_Butler.framework */; };
+		72A5F27C198D3C5318DD352B /* Pods_ButlerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D0569FC5CB9F8B3BC226B3 /* Pods_ButlerUITests.framework */; };
+		7F20D47C67578EF6B51E9C85 /* Pods_ButlerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5561FAA381F42CD93F0CCF /* Pods_ButlerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01C2307ACED2781FCBEA6E41 /* Pods-ButlerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ButlerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ButlerTests/Pods-ButlerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0C6DDE6AB44454F4D21058C0 /* Pods_Butler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5011E1261CE9CD2500891FB1 /* Butler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Butler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5011E1291CE9CD2600891FB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5011E12B1CE9CD2600891FB1 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		5011E12D1CE9CD2600891FB1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		5011E1301CE9CD2600891FB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5011E1321CE9CD2600891FB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5011E1351CE9CD2600891FB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +55,18 @@
 		5011E1471CE9CD2600891FB1 /* ButlerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButlerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5011E14B1CE9CD2600891FB1 /* ButlerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButlerUITests.swift; sourceTree = "<group>"; };
 		5011E14D1CE9CD2600891FB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5011E1591CE9CD3D00891FB1 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		5011E15B1CE9CED100891FB1 /* TabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
+		5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRequestTabCoordinator.swift; sourceTree = "<group>"; };
+		5011E15F1CE9D06C00891FB1 /* SendRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRequestViewController.swift; sourceTree = "<group>"; };
+		5011E1621CE9D47800891FB1 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		57A638AAD9F7B3C8D1745572 /* Pods-Butler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Butler/Pods-Butler.release.xcconfig"; sourceTree = "<group>"; };
+		5A106D5FFEDF758B00ADBDAA /* Pods-Butler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Butler/Pods-Butler.debug.xcconfig"; sourceTree = "<group>"; };
+		74A00021EE8D4C5BA369F159 /* Pods-ButlerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ButlerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ButlerTests/Pods-ButlerTests.release.xcconfig"; sourceTree = "<group>"; };
+		7963B12F71B6AD41C2D150AC /* Pods-ButlerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ButlerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ButlerUITests/Pods-ButlerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		88D0569FC5CB9F8B3BC226B3 /* Pods_ButlerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ButlerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E5561FAA381F42CD93F0CCF /* Pods_ButlerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ButlerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC144010C6D72C5F372732CA /* Pods-ButlerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ButlerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ButlerUITests/Pods-ButlerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56DC1E82B9949B67EC2C6B93 /* Pods_Butler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F20D47C67578EF6B51E9C85 /* Pods_ButlerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72A5F27C198D3C5318DD352B /* Pods_ButlerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +100,13 @@
 		5011E11D1CE9CD2500891FB1 = {
 			isa = PBXGroup;
 			children = (
+				5011E1621CE9D47800891FB1 /* R.generated.swift */,
 				5011E1281CE9CD2600891FB1 /* Butler */,
 				5011E13F1CE9CD2600891FB1 /* ButlerTests */,
 				5011E14A1CE9CD2600891FB1 /* ButlerUITests */,
 				5011E1271CE9CD2500891FB1 /* Products */,
+				E3D683F9457F27CEADC2E3A1 /* Pods */,
+				FB6DC7F69FB3CE15CFA65014 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,8 +124,10 @@
 			isa = PBXGroup;
 			children = (
 				5011E1291CE9CD2600891FB1 /* AppDelegate.swift */,
-				5011E12B1CE9CD2600891FB1 /* FirstViewController.swift */,
-				5011E12D1CE9CD2600891FB1 /* SecondViewController.swift */,
+				5011E1591CE9CD3D00891FB1 /* ApplicationCoordinator.swift */,
+				5011E15B1CE9CED100891FB1 /* TabCoordinator.swift */,
+				5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */,
+				5011E15F1CE9D06C00891FB1 /* SendRequestViewController.swift */,
 				5011E12F1CE9CD2600891FB1 /* Main.storyboard */,
 				5011E1321CE9CD2600891FB1 /* Assets.xcassets */,
 				5011E1341CE9CD2600891FB1 /* LaunchScreen.storyboard */,
@@ -128,6 +154,29 @@
 			path = ButlerUITests;
 			sourceTree = "<group>";
 		};
+		E3D683F9457F27CEADC2E3A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5A106D5FFEDF758B00ADBDAA /* Pods-Butler.debug.xcconfig */,
+				57A638AAD9F7B3C8D1745572 /* Pods-Butler.release.xcconfig */,
+				01C2307ACED2781FCBEA6E41 /* Pods-ButlerTests.debug.xcconfig */,
+				74A00021EE8D4C5BA369F159 /* Pods-ButlerTests.release.xcconfig */,
+				CC144010C6D72C5F372732CA /* Pods-ButlerUITests.debug.xcconfig */,
+				7963B12F71B6AD41C2D150AC /* Pods-ButlerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FB6DC7F69FB3CE15CFA65014 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C6DDE6AB44454F4D21058C0 /* Pods_Butler.framework */,
+				8E5561FAA381F42CD93F0CCF /* Pods_ButlerTests.framework */,
+				88D0569FC5CB9F8B3BC226B3 /* Pods_ButlerUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +184,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5011E1501CE9CD2600891FB1 /* Build configuration list for PBXNativeTarget "Butler" */;
 			buildPhases = (
+				0590075E86DC1F1F41A7A0F3 /* 📦 Check Pods Manifest.lock */,
+				5011E1611CE9D39600891FB1 /* R.Swift Run Script */,
 				5011E1221CE9CD2500891FB1 /* Sources */,
 				5011E1231CE9CD2500891FB1 /* Frameworks */,
 				5011E1241CE9CD2500891FB1 /* Resources */,
+				38E6ED30B760A5B5DBB6D188 /* 📦 Embed Pods Frameworks */,
+				2672BE5289492F17A99B1541 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +205,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5011E1531CE9CD2600891FB1 /* Build configuration list for PBXNativeTarget "ButlerTests" */;
 			buildPhases = (
+				83441948BDFB2269AC153908 /* 📦 Check Pods Manifest.lock */,
 				5011E1381CE9CD2600891FB1 /* Sources */,
 				5011E1391CE9CD2600891FB1 /* Frameworks */,
 				5011E13A1CE9CD2600891FB1 /* Resources */,
+				7AF6E37B2091A60867658A40 /* 📦 Embed Pods Frameworks */,
+				B6BD59FD3C977626DB00543F /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +226,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5011E1561CE9CD2600891FB1 /* Build configuration list for PBXNativeTarget "ButlerUITests" */;
 			buildPhases = (
+				D76138FFB5022C0331B6C0FB /* 📦 Check Pods Manifest.lock */,
 				5011E1431CE9CD2600891FB1 /* Sources */,
 				5011E1441CE9CD2600891FB1 /* Frameworks */,
 				5011E1451CE9CD2600891FB1 /* Resources */,
+				9C183E99A753393EF83655ED /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,14 +312,154 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0590075E86DC1F1F41A7A0F3 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2672BE5289492F17A99B1541 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Butler/Pods-Butler-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38E6ED30B760A5B5DBB6D188 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Butler/Pods-Butler-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5011E1611CE9D39600891FB1 /* R.Swift Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "R.Swift Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
+		};
+		7AF6E37B2091A60867658A40 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ButlerTests/Pods-ButlerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83441948BDFB2269AC153908 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9C183E99A753393EF83655ED /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ButlerUITests/Pods-ButlerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6BD59FD3C977626DB00543F /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ButlerTests/Pods-ButlerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D76138FFB5022C0331B6C0FB /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5011E1221CE9CD2500891FB1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5011E12E1CE9CD2600891FB1 /* SecondViewController.swift in Sources */,
+				5011E15E1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift in Sources */,
+				5011E1631CE9D47800891FB1 /* R.generated.swift in Sources */,
 				5011E12A1CE9CD2600891FB1 /* AppDelegate.swift in Sources */,
-				5011E12C1CE9CD2600891FB1 /* FirstViewController.swift in Sources */,
+				5011E1601CE9D06C00891FB1 /* SendRequestViewController.swift in Sources */,
+				5011E15C1CE9CED100891FB1 /* TabCoordinator.swift in Sources */,
+				5011E15A1CE9CD3D00891FB1 /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +599,7 @@
 		};
 		5011E1511CE9CD2600891FB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A106D5FFEDF758B00ADBDAA /* Pods-Butler.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Butler/Info.plist;
@@ -412,6 +611,7 @@
 		};
 		5011E1521CE9CD2600891FB1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57A638AAD9F7B3C8D1745572 /* Pods-Butler.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Butler/Info.plist;
@@ -423,6 +623,7 @@
 		};
 		5011E1541CE9CD2600891FB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01C2307ACED2781FCBEA6E41 /* Pods-ButlerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ButlerTests/Info.plist;
@@ -435,6 +636,7 @@
 		};
 		5011E1551CE9CD2600891FB1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74A00021EE8D4C5BA369F159 /* Pods-ButlerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ButlerTests/Info.plist;
@@ -447,6 +649,7 @@
 		};
 		5011E1571CE9CD2600891FB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC144010C6D72C5F372732CA /* Pods-ButlerUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ButlerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -458,6 +661,7 @@
 		};
 		5011E1581CE9CD2600891FB1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7963B12F71B6AD41C2D150AC /* Pods-ButlerUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ButlerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -486,6 +690,7 @@
 				5011E1521CE9CD2600891FB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5011E1531CE9CD2600891FB1 /* Build configuration list for PBXNativeTarget "ButlerTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +699,7 @@
 				5011E1551CE9CD2600891FB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5011E1561CE9CD2600891FB1 /* Build configuration list for PBXNativeTarget "ButlerUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +708,7 @@
 				5011E1581CE9CD2600891FB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
