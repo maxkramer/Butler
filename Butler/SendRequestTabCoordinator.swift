@@ -6,20 +6,17 @@
 //  Copyright © 2016 Max Kramer. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class SendRequestTabCoordinator: TabCoordinator {
     lazy var rootViewController: UIViewController = {
         let rvc = SendRequestViewController()
         rvc.tabBarItem = self.tabBarItem
+        rvc.navigationItem.title = R.string.localizable.sendrequestTitle()
         return rvc
     }()
     
-    lazy var tabBarItem: UITabBarItem = {
-        let tabBarItem = UITabBarItem(title: nil, image: R.image.sendRequestTbi(), selectedImage: R.image.sendRequestTbiSelected())
-        return tabBarItem
-    }()
+    var tabBarItem = UITabBarItem(image: R.image.sendRequestTbi, selectedImage: R.image.sendRequestTbiSelected, topInset: 5)
     
     func start() {}
 }

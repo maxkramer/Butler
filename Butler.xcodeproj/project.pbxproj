@@ -17,7 +17,14 @@
 		5011E15C1CE9CED100891FB1 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E15B1CE9CED100891FB1 /* TabCoordinator.swift */; };
 		5011E15E1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */; };
 		5011E1601CE9D06C00891FB1 /* SendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E15F1CE9D06C00891FB1 /* SendRequestViewController.swift */; };
-		5011E1691CE9D61F00891FB1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E1681CE9D61F00891FB1 /* R.generated.swift */; };
+		50B200BD1CE9D9C20075728E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E1681CE9D61F00891FB1 /* R.generated.swift */; };
+		50B200C01CE9DA360075728E /* HistoryTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200BF1CE9DA360075728E /* HistoryTabCoordinator.swift */; };
+		50B200C21CE9DA450075728E /* FavouriteTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200C11CE9DA450075728E /* FavouriteTabCoordinator.swift */; };
+		50B200C41CE9DC2A0075728E /* UITabBarItem+Butler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200C31CE9DC2A0075728E /* UITabBarItem+Butler.swift */; };
+		50B200C61CE9DEFF0075728E /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200C51CE9DEFF0075728E /* FavouriteViewController.swift */; };
+		50B200C81CE9DF060075728E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200C71CE9DF060075728E /* HistoryViewController.swift */; };
+		50B200CA1CE9DF450075728E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50B200C91CE9DF450075728E /* Localizable.strings */; };
+		50B200CE1CE9E3FE0075728E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200CD1CE9E3FE0075728E /* Request.swift */; };
 		56DC1E82B9949B67EC2C6B93 /* Pods_Butler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6DDE6AB44454F4D21058C0 /* Pods_Butler.framework */; };
 		72A5F27C198D3C5318DD352B /* Pods_ButlerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D0569FC5CB9F8B3BC226B3 /* Pods_ButlerUITests.framework */; };
 		7F20D47C67578EF6B51E9C85 /* Pods_ButlerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5561FAA381F42CD93F0CCF /* Pods_ButlerTests.framework */; };
@@ -60,6 +67,13 @@
 		5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRequestTabCoordinator.swift; sourceTree = "<group>"; };
 		5011E15F1CE9D06C00891FB1 /* SendRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRequestViewController.swift; sourceTree = "<group>"; };
 		5011E1681CE9D61F00891FB1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		50B200BF1CE9DA360075728E /* HistoryTabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTabCoordinator.swift; sourceTree = "<group>"; };
+		50B200C11CE9DA450075728E /* FavouriteTabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteTabCoordinator.swift; sourceTree = "<group>"; };
+		50B200C31CE9DC2A0075728E /* UITabBarItem+Butler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+Butler.swift"; sourceTree = "<group>"; };
+		50B200C51CE9DEFF0075728E /* FavouriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
+		50B200C71CE9DF060075728E /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		50B200C91CE9DF450075728E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		50B200CD1CE9E3FE0075728E /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		57A638AAD9F7B3C8D1745572 /* Pods-Butler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Butler/Pods-Butler.release.xcconfig"; sourceTree = "<group>"; };
 		5A106D5FFEDF758B00ADBDAA /* Pods-Butler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Butler/Pods-Butler.debug.xcconfig"; sourceTree = "<group>"; };
 		74A00021EE8D4C5BA369F159 /* Pods-ButlerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ButlerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ButlerTests/Pods-ButlerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,16 +136,13 @@
 		5011E1281CE9CD2600891FB1 /* Butler */ = {
 			isa = PBXGroup;
 			children = (
-				5011E16A1CE9D69A00891FB1 /* Generated Resource File */,
-				5011E1291CE9CD2600891FB1 /* AppDelegate.swift */,
-				5011E1591CE9CD3D00891FB1 /* ApplicationCoordinator.swift */,
-				5011E1321CE9CD2600891FB1 /* Assets.xcassets */,
-				5011E1371CE9CD2600891FB1 /* Info.plist */,
-				5011E1341CE9CD2600891FB1 /* LaunchScreen.storyboard */,
-				5011E12F1CE9CD2600891FB1 /* Main.storyboard */,
-				5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */,
+				50B200BA1CE9D9400075728E /* Resources */,
+				50B200BE1CE9D9D20075728E /* Coordinators */,
+				50B200CC1CE9E3C80075728E /* Models */,
 				5011E15F1CE9D06C00891FB1 /* SendRequestViewController.swift */,
-				5011E15B1CE9CED100891FB1 /* TabCoordinator.swift */,
+				50B200C51CE9DEFF0075728E /* FavouriteViewController.swift */,
+				50B200C71CE9DF060075728E /* HistoryViewController.swift */,
+				50B200C31CE9DC2A0075728E /* UITabBarItem+Butler.swift */,
 			);
 			path = Butler;
 			sourceTree = "<group>";
@@ -139,6 +150,7 @@
 		5011E13F1CE9CD2600891FB1 /* ButlerTests */ = {
 			isa = PBXGroup;
 			children = (
+				5011E1291CE9CD2600891FB1 /* AppDelegate.swift */,
 				5011E1401CE9CD2600891FB1 /* ButlerTests.swift */,
 				5011E1421CE9CD2600891FB1 /* Info.plist */,
 			);
@@ -160,6 +172,39 @@
 				5011E1681CE9D61F00891FB1 /* R.generated.swift */,
 			);
 			path = "Generated Resource File";
+			sourceTree = "<group>";
+		};
+		50B200BA1CE9D9400075728E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5011E16A1CE9D69A00891FB1 /* Generated Resource File */,
+				5011E1321CE9CD2600891FB1 /* Assets.xcassets */,
+				5011E1371CE9CD2600891FB1 /* Info.plist */,
+				50B200C91CE9DF450075728E /* Localizable.strings */,
+				5011E1341CE9CD2600891FB1 /* LaunchScreen.storyboard */,
+				5011E12F1CE9CD2600891FB1 /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		50B200BE1CE9D9D20075728E /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				5011E1591CE9CD3D00891FB1 /* ApplicationCoordinator.swift */,
+				5011E15B1CE9CED100891FB1 /* TabCoordinator.swift */,
+				5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */,
+				50B200BF1CE9DA360075728E /* HistoryTabCoordinator.swift */,
+				50B200C11CE9DA450075728E /* FavouriteTabCoordinator.swift */,
+			);
+			name = Coordinators;
+			sourceTree = "<group>";
+		};
+		50B200CC1CE9E3C80075728E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50B200CD1CE9E3FE0075728E /* Request.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		E3D683F9457F27CEADC2E3A1 /* Pods */ = {
@@ -193,12 +238,13 @@
 			buildConfigurationList = 5011E1501CE9CD2600891FB1 /* Build configuration list for PBXNativeTarget "Butler" */;
 			buildPhases = (
 				0590075E86DC1F1F41A7A0F3 /* 📦 Check Pods Manifest.lock */,
-				5011E1611CE9D39600891FB1 /* R.Swift Run Script */,
+				5011E1611CE9D39600891FB1 /* 👘R.Swift Run Script */,
 				5011E1221CE9CD2500891FB1 /* Sources */,
 				5011E1231CE9CD2500891FB1 /* Frameworks */,
 				5011E1241CE9CD2500891FB1 /* Resources */,
 				38E6ED30B760A5B5DBB6D188 /* 📦 Embed Pods Frameworks */,
 				2672BE5289492F17A99B1541 /* 📦 Copy Pods Resources */,
+				50B200CB1CE9E2D20075728E /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -300,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5011E1361CE9CD2600891FB1 /* LaunchScreen.storyboard in Resources */,
+				50B200CA1CE9DF450075728E /* Localizable.strings in Resources */,
 				5011E1331CE9CD2600891FB1 /* Assets.xcassets in Resources */,
 				5011E1311CE9CD2600891FB1 /* Main.storyboard in Resources */,
 			);
@@ -367,19 +414,33 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Butler/Pods-Butler-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5011E1611CE9D39600891FB1 /* R.Swift Run Script */ = {
+		5011E1611CE9D39600891FB1 /* 👘R.Swift Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "R.Swift Run Script";
+			name = "👘R.Swift Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT/Butler/Generated Resource File/\"";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT/Butler/Resources/Generated Resource File/\"";
+		};
+		50B200CB1CE9E2D20075728E /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		7AF6E37B2091A60867658A40 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -463,12 +524,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B200C21CE9DA450075728E /* FavouriteTabCoordinator.swift in Sources */,
+				50B200CE1CE9E3FE0075728E /* Request.swift in Sources */,
 				5011E15E1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift in Sources */,
+				50B200C01CE9DA360075728E /* HistoryTabCoordinator.swift in Sources */,
 				5011E12A1CE9CD2600891FB1 /* AppDelegate.swift in Sources */,
 				5011E1601CE9D06C00891FB1 /* SendRequestViewController.swift in Sources */,
+				50B200C81CE9DF060075728E /* HistoryViewController.swift in Sources */,
+				50B200C41CE9DC2A0075728E /* UITabBarItem+Butler.swift in Sources */,
 				5011E15C1CE9CED100891FB1 /* TabCoordinator.swift in Sources */,
 				5011E15A1CE9CD3D00891FB1 /* ApplicationCoordinator.swift in Sources */,
-				5011E1691CE9D61F00891FB1 /* R.generated.swift in Sources */,
+				50B200C61CE9DEFF0075728E /* FavouriteViewController.swift in Sources */,
+				50B200BD1CE9D9C20075728E /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,7 +681,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = Butler/Info.plist;
+				INFOPLIST_FILE = Butler/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maxkramer.apirequester;
@@ -628,7 +695,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				INFOPLIST_FILE = Butler/Info.plist;
+				INFOPLIST_FILE = Butler/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maxkramer.apirequester;

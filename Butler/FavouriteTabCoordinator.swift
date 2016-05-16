@@ -6,8 +6,17 @@
 //  Copyright © 2016 Max Kramer. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
-class FavouriteTabCoordinator: NSObject {
-
+class FavouriteTabCoordinator: TabCoordinator {
+    lazy var rootViewController: UIViewController = {
+        let rvc = FavouriteViewController()
+        rvc.tabBarItem = self.tabBarItem
+        rvc.navigationItem.title = R.string.localizable.favouriteTitle()
+        return rvc
+    }()
+    
+    var tabBarItem = UITabBarItem(image: R.image.favouriteTbi, selectedImage: R.image.favouriteTbiSelected, topInset: 7)
+    
+    func start() {}
 }

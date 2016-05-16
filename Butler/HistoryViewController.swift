@@ -6,8 +6,10 @@
 //  Copyright © 2016 Max Kramer. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class HistoryViewController: UIViewController {
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }

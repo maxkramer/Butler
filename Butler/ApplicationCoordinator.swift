@@ -17,17 +17,13 @@ class ApplicationCoordinator {
     }
     
     lazy var tabBarCoordinators: [TabCoordinator] = {
-        return [SendRequestTabCoordinator(), SendRequestTabCoordinator(), SendRequestTabCoordinator()]
+        return [SendRequestTabCoordinator(), HistoryTabCoordinator(), FavouriteTabCoordinator()]
     }()
     
     let tabBarController = UITabBarController()
-    var navigationController: UINavigationController!
     
     func start() {
-        
-        tabBarController.setViewControllers(tabBarCoordinators.map { $0.rootViewController }, animated: false)
-        
-        navigationController = UINavigationController(rootViewController: tabBarController)
-        applicationWindow.rootViewController = navigationController
+        tabBarController.setViewControllers(tabBarCoordinators.map { UINavigationController(rootViewController:$0.rootViewController) }, animated: false)
+        applicationWindow.rootViewController = tabBarController
     }
 }
