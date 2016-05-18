@@ -34,6 +34,7 @@ enum AuthorizationMethod: String {
 
 class Authorization: Object {
     dynamic var rawAuthorizationMethod = AuthorizationMethod.Basic.rawValue
+    dynamic var username: String? = nil
     dynamic var password: String? = nil
     
     var authorizationMethod: AuthorizationMethod {

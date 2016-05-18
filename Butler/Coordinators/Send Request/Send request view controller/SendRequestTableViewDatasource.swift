@@ -194,7 +194,11 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
                 cell.valueTextField.text = authorization.password ?? ""
                 
                 cell.textChangedHandler = { [unowned self] tf, text in
-                    self.authorization.password = text
+                    if indexPath.row == 0 {
+                        self.authorization.username = text
+                    } else {
+                        self.authorization.password = text
+                    }
                 }
                 
                 cell.selectionStyle = .None

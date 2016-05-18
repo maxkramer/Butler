@@ -14,6 +14,8 @@ class SendRequestViewController: UITableViewController, UITextFieldDelegate {
     var workingRequest = Request()
     var tableViewDatasource: SendRequestTableViewDatasource!
     var urlTextField: SemiBorderedTextField!
+    var requestMethods = RequestMethod.allMethods()
+    var bodyFormats = BodyFormat.allFormats()
     
     // MARK: View Did Load
     
@@ -28,7 +30,20 @@ class SendRequestViewController: UITableViewController, UITextFieldDelegate {
         tableView.tableFooterView = tableFooter.footerView
         
         NSLayoutConstraint.activateConstraints(tableHeader.constraints + tableFooter.constraints)
+        
+        let sendRequestButton = UIBarButtonItem(title: "Send", style: .Plain, target: self, action: #selector(sendRequest))
+        navigationItem.rightBarButtonItem = sendRequestButton
         super.viewDidLoad()
+    }
+    
+    func sendRequest() {
+        let request = tableViewDatasource.generateRequest()
+        request.rawBodyFormat = workingRequest.rawBodyFormat
+        request.url = workingRequest.url
+        request.rawRequestMethod = workingRequest.rawRequestMethod
+        // perform validation
+        
+        print(request)
     }
     
     // MARK: Setup the table view
@@ -68,6 +83,7 @@ class SendRequestViewController: UITableViewController, UITextFieldDelegate {
         containerView.addSubview(urlTextField)
         
         let topSlider = MultipleButtonSlider.butlerSlider(RequestMethod.allMethods().map { return $0.rawValue }, callback: requestMethodSliderCallback)
+        topSlider.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(topSlider)
         
         let constraints: [NSLayoutConstraint] = [
@@ -90,6 +106,7 @@ class SendRequestViewController: UITableViewController, UITextFieldDelegate {
         let containerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 30))
         
         let bottomSlider = MultipleButtonSlider.butlerSlider(BodyFormat.allFormats().map { return $0.rawValue }, callback: bodyFormatSliderCallback)
+        bottomSlider.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(bottomSlider)
         
         let constraints: [NSLayoutConstraint] = [
@@ -104,38 +121,32 @@ class SendRequestViewController: UITableViewController, UITextFieldDelegate {
     // MARK: Slider Handlers
     
     func requestMethodSliderCallback(index: Int) {
-        var requestMethod: RequestMethod?
-        switch index {
-        case 0:
-            requestMethod = .GET
-            break
-        case 1:
-            requestMethod = .POST
-            break
-        case 2:
-            requestMethod = .PUT
-            break
-        case 3:
-            requestMethod = .DELETE
-            break
-        default:
-            break
+        guard index < requestMethods.count else {
+            return
         }
         
-        if let requestMethod = requestMethod {
-            self.workingRequest.rawRequestMethod = requestMethod.rawValue
-        }
+        let requestMethod = requestMethods[index]
+        self.workingRequest.rawRequestMethod = requestMethod.rawValue
     }
     
     func bodyFormatSliderCallback(index: Int) {
-        if index == 0 {
-            self.workingRequest.rawBodyFormat = BodyFormat.Plain.rawValue
-        } else {
-            self.workingRequest.rawBodyFormat = BodyFormat.JSON.rawValue
+        guard index < bodyFormats.count else {
+            return
         }
+        
+        let bodyFormat = BodyFormat.allFormats()[index]
+        self.workingRequest.rawBodyFormat = bodyFormat.rawValue
     }
     
     // MARK: UITextFieldDelegate
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        let originalString = textField.text ?? "" as NSString
+        let newString = originalString.stringByReplacingCharactersInRange(range, withString: string)
+        
+        workingRequest.url = newString
+        return true
+    }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
