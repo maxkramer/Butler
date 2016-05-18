@@ -9,16 +9,23 @@
 import Foundation
 import RealmSwift
 
-enum RequestMethod: Int {
+enum RequestMethod: String {
     case GET
     case PUT
     case POST
     case DELETE
+    
+    static func allMethods() -> [RequestMethod] {
+        return [.GET, .PUT, .POST, .DELETE]
+    }
 }
 
 enum BodyFormat: String {
     case Plain
     case JSON
+    static func allFormats() -> [BodyFormat] {
+        return [.Plain, .JSON]
+    }
 }
 
 enum AuthorizationMethod: String {
@@ -49,7 +56,7 @@ class Request: Object {
     
     dynamic var authorization: Authorization?
     
-    dynamic var rawRequestMethod: Int = RequestMethod.GET.rawValue
+    dynamic var rawRequestMethod: String = RequestMethod.GET.rawValue
     dynamic var rawBodyFormat: String = BodyFormat.Plain.rawValue
     
     var requestMethod: RequestMethod {

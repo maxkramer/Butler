@@ -11,22 +11,12 @@ import RealmSwift
 
 class SendRequestViewController: UITableViewController, UITextFieldDelegate {
     
-    
     var workingRequest = Request()
-    
     var tableViewDatasource: SendRequestTableViewDatasource!
+    var urlTextField: SemiBorderedTextField!
     
-    override func viewDidLoad() {
-        tableViewDatasource = SendRequestTableViewDatasource(self.tableView)
-        
-        tableView.dataSource = tableViewDatasource
-        tableView.delegate = tableViewDatasource
-        
-        tableView.keyboardDismissMode = .OnDrag
-        
-        var containerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 110))
-        
-        let urlTextField = SemiBorderedTextField(frame: CGRect.zero)
+    func configureTextField() {
+        urlTextField = SemiBorderedTextField(frame: CGRect.zero)
         urlTextField.inset = 10
         urlTextField.borderColor = R.color.butlerColors.gray()
         urlTextField.borderStyle = .None
@@ -37,34 +27,21 @@ class SendRequestViewController: UITableViewController, UITextFieldDelegate {
         urlTextField.attributedPlaceholder = NSAttributedString(string: "URL", attributes: [NSForegroundColorAttributeName: UIColor(white: 1.0, alpha: 0.8)])
         urlTextField.textColor = R.color.butlerColors.lightText()
         urlTextField.font = R.font.gothamHTFLight(size: 15)
-        
-        containerView.addSubview(urlTextField)
-        
+        urlTextField.delegate = self
         urlTextField.translatesAutoresizingMaskIntoConstraints = false
         urlTextField.textAlignment = NSTextAlignment.Center
-        
-        var slider = MultipleButtonSlider(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 0), items: ["GET", "POST", "PUT", "DELETE"], callback: { [unowned self] index in
-            var requestMethod: RequestMethod?
-            switch index {
-            case 0:
-                requestMethod = .GET
-                break
-            case 1:
-                requestMethod = .POST
-                break
-            case 2:
-                requestMethod = .PUT
-                break
-            case 3:
-                requestMethod = .DELETE
-                break
-            default:
-                break
-            }
-            if let requestMethod = requestMethod {
-                self.workingRequest.rawRequestMethod = requestMethod.rawValue
-            }
-            })
+    }
+    
+    func configureTableView() {
+        tableViewDatasource = SendRequestTableViewDatasource(self.tableView)
+        tableView.dataSource = tableViewDatasource
+        tableView.delegate = tableViewDatasource
+        tableView.keyboardDismissMode = .OnDrag
+        tableView.backgroundView = UIImageView(image: R.image.sendRequestBackground())
+    }
+    
+    func generateSlider(items: [String], callback: MultipleButtonSlider.ButtonTapped) -> MultipleButtonSlider {
+        let slider = MultipleButtonSlider(frame: CGRect.zero, items: items, callback: callback)
         slider.sliderColor = R.color.butlerColors.lightText()
         slider.sliderUnderlayColor = R.color.butlerColors.darkerText()
         slider.defaultButtonAttributes = [
@@ -76,57 +53,94 @@ class SendRequestViewController: UITableViewController, UITextFieldDelegate {
             NSForegroundColorAttributeName: R.color.butlerColors.lightText()
         ]
         slider.translatesAutoresizingMaskIntoConstraints = false
+        return slider
+    }
+    
+    func requestMethodSliderCallback(index: Int) {
+        var requestMethod: RequestMethod?
+        switch index {
+        case 0:
+            requestMethod = .GET
+            break
+        case 1:
+            requestMethod = .POST
+            break
+        case 2:
+            requestMethod = .PUT
+            break
+        case 3:
+            requestMethod = .DELETE
+            break
+        default:
+            break
+        }
         
-        containerView.addSubview(slider)
+        if let requestMethod = requestMethod {
+            self.workingRequest.rawRequestMethod = requestMethod.rawValue
+        }
+    }
+    
+    func generateTableHeaderView() -> (headerView: UIView, constraints: [NSLayoutConstraint]) {
+        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 110))
         
-        tableView.tableHeaderView = containerView
+        containerView.addSubview(urlTextField)
         
-        NSLayoutConstraint.activateConstraints([
+        let topSlider = generateSlider(RequestMethod.allMethods().map { return $0.rawValue }, callback: requestMethodSliderCallback)
+        containerView.addSubview(topSlider)
+        
+        let constraints: [NSLayoutConstraint] = [
             urlTextField.topAnchor.constraintEqualToAnchor(containerView.topAnchor, constant: 20),
             urlTextField.leadingAnchor.constraintEqualToAnchor(containerView.leadingAnchor, constant: 20),
             urlTextField.trailingAnchor.constraintEqualToAnchor(containerView.trailingAnchor, constant: -20),
             urlTextField.heightAnchor.constraintEqualToConstant(40),
-            slider.topAnchor.constraintEqualToAnchor(urlTextField.bottomAnchor, constant: 20),
-            slider.leadingAnchor.constraintEqualToAnchor(containerView.leadingAnchor, constant: 20),
-            slider.trailingAnchor.constraintEqualToAnchor(containerView.trailingAnchor, constant: -20),
-            slider.bottomAnchor.constraintEqualToAnchor(containerView.bottomAnchor, constant: -10)
-            ])
-        
-        containerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 30))
-        slider = MultipleButtonSlider(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50), items: ["PLAIN", "JSON"], callback: { [unowned self] index in
-            if index == 0 {
-                self.workingRequest.rawBodyFormat = BodyFormat.Plain.rawValue
-            } else {
-                self.workingRequest.rawBodyFormat = BodyFormat.JSON.rawValue
-            }
-            })
-        
-        slider.sliderColor = R.color.butlerColors.lightText()
-        slider.sliderUnderlayColor = R.color.butlerColors.darkerText()
-        slider.defaultButtonAttributes = [
-            NSFontAttributeName: R.font.gothamHTFBook(size: 15)!,
-            NSForegroundColorAttributeName: R.color.butlerColors.lightText()
+            topSlider.topAnchor.constraintEqualToAnchor(urlTextField.bottomAnchor, constant: 20),
+            topSlider.leadingAnchor.constraintEqualToAnchor(containerView.leadingAnchor, constant: 20),
+            topSlider.trailingAnchor.constraintEqualToAnchor(containerView.trailingAnchor, constant: -20),
+            topSlider.bottomAnchor.constraintEqualToAnchor(containerView.bottomAnchor, constant: -10)
         ]
-        slider.selectedButtonAttributes = [
-            NSFontAttributeName: R.font.gothamHTFMedium(size: 15)!,
-            NSForegroundColorAttributeName: R.color.butlerColors.lightText()
+        
+        return (containerView, constraints)
+    }
+    
+    func bodyFormatSliderCallback(index: Int) {
+        if index == 0 {
+            self.workingRequest.rawBodyFormat = BodyFormat.Plain.rawValue
+        } else {
+            self.workingRequest.rawBodyFormat = BodyFormat.JSON.rawValue
+        }
+    }
+    
+    func generateTableFooterView() -> (footerView: UIView, constraints: [NSLayoutConstraint]) {
+        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 30))
+        
+        let bottomSlider = generateSlider(BodyFormat.allFormats().map { return $0.rawValue }, callback: bodyFormatSliderCallback)
+        containerView.addSubview(bottomSlider)
+        
+        let constraints: [NSLayoutConstraint] = [
+            bottomSlider.topAnchor.constraintEqualToAnchor(containerView.topAnchor, constant: 0),
+            bottomSlider.leadingAnchor.constraintEqualToAnchor(containerView.leadingAnchor, constant: 20),
+            bottomSlider.bottomAnchor.constraintEqualToAnchor(containerView.bottomAnchor, constant: 0)
         ]
-        slider.translatesAutoresizingMaskIntoConstraints = false
-        containerView.addSubview(slider)
-        tableView.tableFooterView = containerView
         
-        NSLayoutConstraint.activateConstraints([
-            slider.topAnchor.constraintEqualToAnchor(containerView.topAnchor, constant: 0),
-            slider.leadingAnchor.constraintEqualToAnchor(containerView.leadingAnchor, constant: 20),
-            slider.bottomAnchor.constraintEqualToAnchor(containerView.bottomAnchor, constant: 0)
-            ])
+        return (containerView, constraints)
+    }
+    
+    override func viewDidLoad() {
+        configureTableView()
+        configureTextField()
         
-        tableView.backgroundView = UIImageView(image: R.image.sendRequestBackground())
+        let tableHeader = generateTableHeaderView()
+        tableView.tableHeaderView = tableHeader.headerView
         
+        let tableFooter = generateTableFooterView()
+        tableView.tableFooterView = tableFooter.footerView
+        
+        NSLayoutConstraint.activateConstraints(tableHeader.constraints + tableFooter.constraints)
         super.viewDidLoad()
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         workingRequest.url = textField.text ?? ""
         return true
     }
