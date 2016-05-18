@@ -10,6 +10,13 @@ import UIKit
 
 class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableViewDelegate, ButtonTableHeaderViewDelegate {
     
+    enum Section: Int {
+        case Authorization = 0
+        case Headers = 1
+        case Parameters = 2
+        case BodyFormat = 3
+    }
+    
     var showingAuthorizationCells = false
     let tableView: UITableView
     
@@ -59,17 +66,19 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
         return sectionTitles.count
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(tableView: UITableView, viewForHeaderInSection sectionInt: Int) -> UIView? {
         guard let headerView = tableView.dequeueReusableHeaderFooterViewWithIdentifier("ButtonTableHeaderView") as? ButtonTableHeaderView else {
             return nil
         }
         
         let titleFont = R.font.gothamHTFBook(size: 15)
         let titleColor = R.color.butlerColors.lightText()
-        let text = sectionTitles[section]
+        let text = sectionTitles[sectionInt]
         
-        headerView.tag = section
-        if section < 3 {
+        let section = Section(rawValue: sectionInt)
+        
+        headerView.tag = sectionInt
+        if section != .BodyFormat {
             headerView.button.tintColor = UIColor.lightTextColor()
             headerView.delegate = self
             headerView.button.hidden = false
@@ -77,7 +86,7 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
             headerView.button.hidden = true
         }
         
-        if section == 0 {
+        if section == .Authorization {
             let minorAttributes = [
                 NSFontAttributeName: titleFont!,
                 NSForegroundColorAttributeName: titleColor
@@ -106,11 +115,11 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
     }
     
     func buttonTableHeaderViewDelegate(wasTapped headerFooterView: ButtonTableHeaderView) {
-        let section = headerFooterView.tag
-        if section == 0 {
+        let section = Section(rawValue: headerFooterView.tag)
+        if section == .Authorization {
             let indexPaths = [
-                NSIndexPath(forRow: 0, inSection: 0),
-                NSIndexPath(forRow: 1, inSection: 0)
+                NSIndexPath(forRow: 0, inSection: Section.Authorization.rawValue),
+                NSIndexPath(forRow: 1, inSection: Section.Authorization.rawValue)
             ]
             
             showingAuthorizationCells = !showingAuthorizationCells
@@ -118,22 +127,22 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
             let isCurrentlyShowingAuthorizationCells = !showingAuthorizationCells
             if isCurrentlyShowingAuthorizationCells {
                 tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Left)
-                sectionTitles[section] = "Authorization: none"
+                sectionTitles[Section.Authorization.rawValue] = "Authorization: none"
             } else {
                 tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Right)
-                sectionTitles[section] = "Authorization: basic"
+                sectionTitles[Section.Authorization.rawValue] = "Authorization: basic"
             }
-            tableView.reloadSections(NSIndexSet(index: section), withRowAnimation: .Automatic)
-        } else if section == 1 {
+            tableView.reloadSections(NSIndexSet(index: Section.Authorization.rawValue), withRowAnimation: .Automatic)
+        } else if section == .Headers {
             headers.append(Header())
             
-            let indexPath = NSIndexPath(forRow: headers.count - 1, inSection: 1)
+            let indexPath = NSIndexPath(forRow: headers.count - 1, inSection: Section.Headers.rawValue)
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
             
-        } else if section == 2 {
+        } else if section == .Parameters {
             parameters.append(Parameter())
             
-            let indexPath = NSIndexPath(forRow: parameters.count - 1, inSection: 2)
+            let indexPath = NSIndexPath(forRow: parameters.count - 1, inSection: Section.Parameters.rawValue)
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
         }
     }
@@ -153,7 +162,6 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
         }
         
         let deleteAction = UITableViewRowAction(style: .Default, title: "Delete", handler: executeDeletion)
-        
         return [deleteAction]
     }
     
@@ -204,17 +212,7 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
                 cell.valueTextField.text = item.value
                 cell.selectionStyle = .None
                 cell.textChangedHandler = { [unowned self] textField, newText in
-                    if textField == cell.keyTextField {
-                        item.key = newText
-                    } else if textField == cell.valueTextField {
-                        item.value = newText
-                    }
-                    
-                    if indexPath.section == 1 {
-                        self.headers[indexPath.row] = item
-                    } else {
-                        self.parameters[indexPath.row] = item as! Parameter
-                    }
+                    self.doubleCellTextChanged(cell, textField: textField, indexPath: indexPath, text: newText)
                 }
                 return cell
             }
@@ -222,5 +220,20 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         return cell
+    }
+    
+    func doubleCellTextChanged(cell: DoubleTextFieldCell, textField: UITextField, indexPath: NSIndexPath, text: String) {
+        let item: Header = indexPath.section == 1 ? headers[indexPath.row] : parameters[indexPath.row]
+        if textField == cell.keyTextField {
+            item.key = text
+        } else if textField == cell.valueTextField {
+            item.value = text
+        }
+        
+        if indexPath.section == 1 {
+            self.headers[indexPath.row] = item
+        } else {
+            self.parameters[indexPath.row] = item as! Parameter
+        }
     }
 }
