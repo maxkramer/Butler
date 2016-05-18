@@ -13,35 +13,99 @@ class MultipleButtonSlider: UIView {
     typealias ButtonTapped = (index: Int) -> Void
     
     let items: [String]
-    let callback: ButtonTapped?
+    var callback: ButtonTapped?
     
     let interItemSpacing: CGFloat = 20
     
-    var sliderColor: UIColor = UIColor.blueColor()
-    var selectedIndex = 0
+    var sliderColor: UIColor = UIColor.blueColor() {
+        didSet {
+            sliderView.backgroundColor = sliderColor
+        }
+    }
+    
+    var sliderUnderlayColor: UIColor = UIColor.grayColor() {
+        didSet {
+            sliderUnderlayView.backgroundColor = sliderUnderlayColor
+        }
+    }
+    
+    var defaultButtonAttributes: [String : AnyObject]? {
+        didSet {
+            updateTitleAttributes()
+        }
+    }
+    
+    var selectedButtonAttributes: [String: AnyObject]? {
+        didSet {
+            updateTitleAttributes()
+        }
+    }
+    
+    private var sliderOffset: CGFloat = 10
+    private var sliderHeight: CGFloat = 1
+    
+    var selectedIndex = 0 {
+        didSet {
+            moveSlider(selectedIndex)
+        }
+    }
     
     private var itemButtons = [UIButton]()
     private var sliderView: UIView!
+    private var sliderUnderlayView: UIView!
     
     private var sliderLeadingConstraint: NSLayoutConstraint!
-    private var sliderTrailingConstraint: NSLayoutConstraint!
+    private var sliderWidthConstraint: NSLayoutConstraint!
     
     init(frame: CGRect, items: [String], callback: ButtonTapped?) {
         self.items = items
         self.callback = callback
         super.init(frame: frame)
         
-        self.createButtons()
-        self.createSlider()
+        createButtons()
+        createStackView()
+        createSliderUnderlay()
+        createSlider()
         
+        createStackLayoutConstraints()
         createButtonLayoutConstraints()
-        createSliderLayoutConstraints(itemButtons[selectedIndex])
+        createSliderUnderlayConstraints()
+        createSliderLayoutConstraints()
         
         performSelector(#selector(MultipleButtonSlider.moveSlider(_:)), withObject: 0, afterDelay: 0.1)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    var stackView: UIStackView!
+    
+    func createStackView() {
+        stackView = UIStackView(arrangedSubviews: itemButtons)
+        stackView.alignment = .Fill
+        stackView.distribution = .EqualSpacing
+        stackView.axis = .Horizontal
+        stackView.spacing = interItemSpacing
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(stackView)
+    }
+    
+    func createSliderUnderlay() {
+        sliderUnderlayView = UIView()
+        sliderUnderlayView.backgroundColor = sliderUnderlayColor
+        sliderUnderlayView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(sliderUnderlayView)
+        sendSubviewToBack(sliderUnderlayView)
+    }
+    
+    func createSliderUnderlayConstraints() {
+        NSLayoutConstraint.activateConstraints([
+            sliderUnderlayView.leadingAnchor.constraintEqualToAnchor(leadingAnchor),
+            sliderUnderlayView.trailingAnchor.constraintEqualToAnchor(trailingAnchor),
+            sliderUnderlayView.topAnchor.constraintEqualToAnchor(sliderView.topAnchor),
+            sliderUnderlayView.bottomAnchor.constraintEqualToAnchor(sliderView.bottomAnchor)
+            ])
     }
     
     func createSlider() {
@@ -55,13 +119,20 @@ class MultipleButtonSlider: UIView {
         let n = items.count
         guard n > 0 else { return }
         
-        items.forEach {
+        for (idx, title) in items.enumerate() {
             let button = UIButton(type: .Custom)
-            button.setTitle($0, forState: .Normal)
+            button.setTitle(title, forState: .Normal)
             button.translatesAutoresizingMaskIntoConstraints = false
             button.addTarget(self, action: #selector(MultipleButtonSlider.tappedButton(_:)), forControlEvents: .TouchUpInside)
+            
+            if idx == 0 {
+                button.contentHorizontalAlignment = .Left
+            } else if idx == items.count - 1 {
+                button.contentHorizontalAlignment = .Right
+            } else {
+                button.contentHorizontalAlignment = .Center
+            }
             itemButtons.append(button)
-            addSubview(button)
         }
     }
     
@@ -74,6 +145,8 @@ class MultipleButtonSlider: UIView {
         
         moveSlider(index)
         
+        updateTitleAttributes()
+        
         if let callback = callback {
             callback(index: index)
         }
@@ -81,8 +154,19 @@ class MultipleButtonSlider: UIView {
     
     func moveSlider(toIndex: Int) {
         updateConstraints()
-        UIView.animateWithDuration(0.15) {
+        UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: .CurveEaseInOut, animations: {
             self.layoutIfNeeded()
+            }, completion: nil)
+    }
+    
+    func updateTitleAttributes() {
+        for (idx, button) in itemButtons.enumerate() {
+            let title = button.titleForState(.Normal) ?? ""
+            if idx == selectedIndex {
+                button.setAttributedTitle(NSAttributedString(string: title, attributes: selectedButtonAttributes), forState: .Normal)
+            } else {
+                button.setAttributedTitle(NSAttributedString(string: title, attributes: defaultButtonAttributes), forState: .Normal)
+            }
         }
     }
     
@@ -90,18 +174,27 @@ class MultipleButtonSlider: UIView {
         super.updateConstraints()
         
         let button = itemButtons[selectedIndex]
+        sliderWidthConstraint.constant = button.frame.width
         sliderLeadingConstraint.constant = button.frame.minX
-        sliderTrailingConstraint.constant = button.frame.width
     }
     
-    func createSliderLayoutConstraints(button: UIButton) {
+    func createStackLayoutConstraints() {
+        NSLayoutConstraint.activateConstraints([
+            stackView.topAnchor.constraintEqualToAnchor(topAnchor),
+            stackView.leadingAnchor.constraintEqualToAnchor(leadingAnchor),
+            stackView.trailingAnchor.constraintEqualToAnchor(trailingAnchor),
+            stackView.bottomAnchor.constraintEqualToAnchor(bottomAnchor, constant: -(sliderHeight + sliderOffset))
+            ])
+    }
+    
+    func createSliderLayoutConstraints() {
         sliderLeadingConstraint = sliderView.leadingAnchor.constraintEqualToAnchor(leadingAnchor)
-        sliderTrailingConstraint = sliderView.widthAnchor.constraintEqualToConstant(0)
+        sliderWidthConstraint = sliderView.widthAnchor.constraintEqualToConstant(0)
         
         NSLayoutConstraint.activateConstraints([
             sliderLeadingConstraint,
-            sliderTrailingConstraint,
-            sliderView.topAnchor.constraintEqualToAnchor(button.bottomAnchor),
+            sliderWidthConstraint,
+            sliderView.topAnchor.constraintEqualToAnchor(stackView.bottomAnchor, constant: sliderOffset),
             sliderView.bottomAnchor.constraintEqualToAnchor(bottomAnchor)
             ])
     }
@@ -109,24 +202,16 @@ class MultipleButtonSlider: UIView {
     func createButtonLayoutConstraints() {
         for (idx, button) in itemButtons.enumerate() {
             var constraints = [NSLayoutConstraint]()
-            if idx == 0 {
+            
+            constraints += [
+                button.heightAnchor.constraintEqualToAnchor(stackView.heightAnchor)
+            ]
+            
+            if idx > 0 {
                 constraints += [
-                    button.leadingAnchor.constraintEqualToAnchor(leadingAnchor)
-                ]
-            } else if idx == itemButtons.count - 1 {
-                constraints += [
-                    button.leadingAnchor.constraintGreaterThanOrEqualToAnchor(itemButtons[idx - 1].trailingAnchor, constant: interItemSpacing),
-                    button.trailingAnchor.constraintEqualToAnchor(trailingAnchor)
-                ]
-            } else {
-                constraints += [
-                    button.leadingAnchor.constraintGreaterThanOrEqualToAnchor(itemButtons[idx - 1].trailingAnchor, constant: interItemSpacing)
+                    button.heightAnchor.constraintEqualToAnchor(stackView.heightAnchor),
                 ]
             }
-            constraints += [
-                button.topAnchor.constraintEqualToAnchor(topAnchor),
-                button.bottomAnchor.constraintEqualToAnchor(bottomAnchor, constant: -2)
-            ]
             
             NSLayoutConstraint.activateConstraints(constraints)
         }

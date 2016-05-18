@@ -10,8 +10,18 @@ import UIKit
 
 class SemiBorderedTextField: UITextField {
     
-    var borderColor: UIColor = UIColor.blackColor()
+    var borderColor: UIColor = UIColor.blackColor() {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
     @IBInspectable var inset: CGFloat = 0
+    @IBInspectable var borderWidth: CGFloat = 2 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
     
     override func textRectForBounds(bounds: CGRect) -> CGRect {
         return bounds.insetBy(dx: inset, dy: inset)
@@ -46,10 +56,10 @@ class SemiBorderedTextField: UITextField {
         rightPath.moveToPoint(CGPoint(x: rect.maxX, y: rect.height))
         rightPath.addLineToPoint(CGPoint(x: rect.maxX - pathWidth / 2, y: rect.height))
         
-        leftPath.lineWidth = 1
+        leftPath.lineWidth = borderWidth
         leftPath.lineCapStyle = .Round
         
-        rightPath.lineWidth = 1
+        rightPath.lineWidth = borderWidth
         rightPath.lineCapStyle = .Round
         
         borderColor.setStroke()

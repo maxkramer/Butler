@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ButtonTableHeaderView" customModule="Butler" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="286" height="54"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMm-Wc-Sqf">
+                    <rect key="frame" x="0.0" y="0.0" width="286" height="54"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ps-uI-OwJ">
+                            <rect key="frame" x="20" y="0.0" width="42" height="54"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IH-e9-uuE">
+                            <rect key="frame" x="72" y="0.0" width="22" height="54"/>
+                            <state key="normal" image="add_button"/>
+                            <state key="selected" image="delete_icon"/>
+                            <connections>
+                                <action selector="tappedButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="8zW-lV-TDT"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="8Ps-uI-OwJ" secondAttribute="bottom" id="4OG-gX-DUu"/>
+                        <constraint firstItem="3IH-e9-uuE" firstAttribute="top" secondItem="gMm-Wc-Sqf" secondAttribute="top" id="6tB-Lc-7yZ"/>
+                        <constraint firstItem="8Ps-uI-OwJ" firstAttribute="top" secondItem="gMm-Wc-Sqf" secondAttribute="top" id="AWE-7x-bNs"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3IH-e9-uuE" secondAttribute="trailing" id="M2D-Zk-QbO"/>
+                        <constraint firstItem="8Ps-uI-OwJ" firstAttribute="leading" secondItem="gMm-Wc-Sqf" secondAttribute="leading" constant="20" id="Oaw-h3-Dpd"/>
+                        <constraint firstAttribute="bottom" secondItem="3IH-e9-uuE" secondAttribute="bottom" id="gWT-xJ-D1i"/>
+                        <constraint firstItem="3IH-e9-uuE" firstAttribute="leading" secondItem="8Ps-uI-OwJ" secondAttribute="trailing" priority="999" constant="10" id="qTf-Kb-cDE"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="gMm-Wc-Sqf" secondAttribute="bottom" id="5Uy-pS-Ixf"/>
+                <constraint firstItem="gMm-Wc-Sqf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Fdt-EU-6q2"/>
+                <constraint firstAttribute="trailing" secondItem="gMm-Wc-Sqf" secondAttribute="trailing" id="gtY-sx-IqV"/>
+                <constraint firstItem="gMm-Wc-Sqf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qhM-2I-6OZ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="button" destination="3IH-e9-uuE" id="bMU-wK-Gsd"/>
+                <outlet property="titleLabel" destination="8Ps-uI-OwJ" id="ZRJ-fd-V0K"/>
+            </connections>
+            <point key="canvasLocation" x="324" y="262"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="add_button" width="22" height="22"/>
+        <image name="delete_icon" width="22" height="22"/>
+    </resources>
+</document>

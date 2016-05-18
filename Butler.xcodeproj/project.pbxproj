@@ -32,6 +32,18 @@
 		50B200D81CEA16520075728E /* SendRequestTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200D71CEA16520075728E /* SendRequestTableViewDatasource.swift */; };
 		50B200DA1CEA17620075728E /* SemiBorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200D91CEA17620075728E /* SemiBorderedTextField.swift */; };
 		50B200DC1CEA23EC0075728E /* Butler Colors.clr in Resources */ = {isa = PBXBuildFile; fileRef = 50B200DB1CEA23EC0075728E /* Butler Colors.clr */; };
+		50CECFCE1CEC88DB008748F8 /* SingleTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CECFCD1CEC88DB008748F8 /* SingleTextFieldCell.swift */; };
+		50CECFD01CEC8918008748F8 /* SingleTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50CECFCF1CEC8918008748F8 /* SingleTextFieldCell.xib */; };
+		50CECFD21CECA317008748F8 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CECFD11CECA317008748F8 /* SliderCell.swift */; };
+		50CECFD41CECA359008748F8 /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50CECFD31CECA359008748F8 /* SliderCell.xib */; };
+		50CECFDA1CECC088008748F8 /* GothamHTF-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 50CECFD61CECC088008748F8 /* GothamHTF-Bold.otf */; };
+		50CECFDB1CECC088008748F8 /* GothamHTF-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 50CECFD71CECC088008748F8 /* GothamHTF-Book.otf */; };
+		50CECFDC1CECC088008748F8 /* GothamHTF-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 50CECFD81CECC088008748F8 /* GothamHTF-Light.otf */; };
+		50CECFDD1CECC088008748F8 /* GothamHTF-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 50CECFD91CECC088008748F8 /* GothamHTF-Medium.otf */; };
+		50CECFDF1CECC8D4008748F8 /* ButtonTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CECFDE1CECC8D4008748F8 /* ButtonTableHeaderView.swift */; };
+		50CECFE11CECC8DF008748F8 /* ButtonTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50CECFE01CECC8DF008748F8 /* ButtonTableHeaderView.xib */; };
+		50EF88221CEBA43100B7F10A /* DoubleTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF88201CEBA43100B7F10A /* DoubleTextFieldCell.swift */; };
+		50EF88231CEBA43100B7F10A /* DoubleTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50EF88211CEBA43100B7F10A /* DoubleTextFieldCell.xib */; };
 		56DC1E82B9949B67EC2C6B93 /* Pods_Butler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6DDE6AB44454F4D21058C0 /* Pods_Butler.framework */; };
 		72A5F27C198D3C5318DD352B /* Pods_ButlerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D0569FC5CB9F8B3BC226B3 /* Pods_ButlerUITests.framework */; };
 		7F20D47C67578EF6B51E9C85 /* Pods_ButlerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5561FAA381F42CD93F0CCF /* Pods_ButlerTests.framework */; };
@@ -88,6 +100,18 @@
 		50B200D71CEA16520075728E /* SendRequestTableViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRequestTableViewDatasource.swift; sourceTree = "<group>"; };
 		50B200D91CEA17620075728E /* SemiBorderedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemiBorderedTextField.swift; sourceTree = "<group>"; };
 		50B200DB1CEA23EC0075728E /* Butler Colors.clr */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Butler Colors.clr"; path = "../../../../Library/Colors/Butler Colors.clr"; sourceTree = "<group>"; };
+		50CECFCD1CEC88DB008748F8 /* SingleTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTextFieldCell.swift; sourceTree = "<group>"; };
+		50CECFCF1CEC8918008748F8 /* SingleTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleTextFieldCell.xib; sourceTree = "<group>"; };
+		50CECFD11CECA317008748F8 /* SliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
+		50CECFD31CECA359008748F8 /* SliderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
+		50CECFD61CECC088008748F8 /* GothamHTF-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamHTF-Bold.otf"; sourceTree = "<group>"; };
+		50CECFD71CECC088008748F8 /* GothamHTF-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamHTF-Book.otf"; sourceTree = "<group>"; };
+		50CECFD81CECC088008748F8 /* GothamHTF-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamHTF-Light.otf"; sourceTree = "<group>"; };
+		50CECFD91CECC088008748F8 /* GothamHTF-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamHTF-Medium.otf"; sourceTree = "<group>"; };
+		50CECFDE1CECC8D4008748F8 /* ButtonTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTableHeaderView.swift; sourceTree = "<group>"; };
+		50CECFE01CECC8DF008748F8 /* ButtonTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonTableHeaderView.xib; sourceTree = "<group>"; };
+		50EF88201CEBA43100B7F10A /* DoubleTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleTextFieldCell.swift; sourceTree = "<group>"; };
+		50EF88211CEBA43100B7F10A /* DoubleTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoubleTextFieldCell.xib; sourceTree = "<group>"; };
 		57A638AAD9F7B3C8D1745572 /* Pods-Butler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Butler/Pods-Butler.release.xcconfig"; sourceTree = "<group>"; };
 		5A106D5FFEDF758B00ADBDAA /* Pods-Butler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Butler/Pods-Butler.debug.xcconfig"; sourceTree = "<group>"; };
 		74A00021EE8D4C5BA369F159 /* Pods-ButlerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ButlerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ButlerTests/Pods-ButlerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +180,14 @@
 				5011E15F1CE9D06C00891FB1 /* SendRequestViewController.swift */,
 				50B200D51CEA15F10075728E /* SendRequestViewController.xib */,
 				50B200D71CEA16520075728E /* SendRequestTableViewDatasource.swift */,
+				50CECFDE1CECC8D4008748F8 /* ButtonTableHeaderView.swift */,
+				50CECFE01CECC8DF008748F8 /* ButtonTableHeaderView.xib */,
+				50CECFD11CECA317008748F8 /* SliderCell.swift */,
+				50CECFD31CECA359008748F8 /* SliderCell.xib */,
+				50CECFCD1CEC88DB008748F8 /* SingleTextFieldCell.swift */,
+				50CECFCF1CEC8918008748F8 /* SingleTextFieldCell.xib */,
+				50EF88201CEBA43100B7F10A /* DoubleTextFieldCell.swift */,
+				50EF88211CEBA43100B7F10A /* DoubleTextFieldCell.xib */,
 				5081FCB31CEA609500BB7196 /* MultipleButtonSlider.swift */,
 				50B200D91CEA17620075728E /* SemiBorderedTextField.swift */,
 				50B200CF1CE9EDED0075728E /* KeychainHelper.swift */,
@@ -197,6 +229,7 @@
 		50B200BA1CE9D9400075728E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				50CECFD51CECC088008748F8 /* Fonts */,
 				5011E16A1CE9D69A00891FB1 /* Generated Resource File */,
 				5011E1321CE9CD2600891FB1 /* Assets.xcassets */,
 				5011E1371CE9CD2600891FB1 /* Info.plist */,
@@ -226,6 +259,17 @@
 				50B200CD1CE9E3FE0075728E /* Request.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		50CECFD51CECC088008748F8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				50CECFD61CECC088008748F8 /* GothamHTF-Bold.otf */,
+				50CECFD71CECC088008748F8 /* GothamHTF-Book.otf */,
+				50CECFD81CECC088008748F8 /* GothamHTF-Light.otf */,
+				50CECFD91CECC088008748F8 /* GothamHTF-Medium.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		E3D683F9457F27CEADC2E3A1 /* Pods */ = {
@@ -367,9 +411,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5011E1361CE9CD2600891FB1 /* LaunchScreen.storyboard in Resources */,
+				50CECFD01CEC8918008748F8 /* SingleTextFieldCell.xib in Resources */,
+				50CECFE11CECC8DF008748F8 /* ButtonTableHeaderView.xib in Resources */,
+				50CECFD41CECA359008748F8 /* SliderCell.xib in Resources */,
 				50B200D61CEA15F10075728E /* SendRequestViewController.xib in Resources */,
+				50EF88231CEBA43100B7F10A /* DoubleTextFieldCell.xib in Resources */,
 				50B200DC1CEA23EC0075728E /* Butler Colors.clr in Resources */,
 				50B200CA1CE9DF450075728E /* Localizable.strings in Resources */,
+				50CECFDD1CECC088008748F8 /* GothamHTF-Medium.otf in Resources */,
+				50CECFDB1CECC088008748F8 /* GothamHTF-Book.otf in Resources */,
+				50CECFDC1CECC088008748F8 /* GothamHTF-Light.otf in Resources */,
+				50CECFDA1CECC088008748F8 /* GothamHTF-Bold.otf in Resources */,
 				5011E1331CE9CD2600891FB1 /* Assets.xcassets in Resources */,
 				5011E1311CE9CD2600891FB1 /* Main.storyboard in Resources */,
 			);
@@ -547,10 +599,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50EF88221CEBA43100B7F10A /* DoubleTextFieldCell.swift in Sources */,
+				50CECFCE1CEC88DB008748F8 /* SingleTextFieldCell.swift in Sources */,
 				5081FCB41CEA609500BB7196 /* MultipleButtonSlider.swift in Sources */,
 				50B200C21CE9DA450075728E /* FavouriteTabCoordinator.swift in Sources */,
 				50B200CE1CE9E3FE0075728E /* Request.swift in Sources */,
+				50CECFDF1CECC8D4008748F8 /* ButtonTableHeaderView.swift in Sources */,
 				5011E15E1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift in Sources */,
+				50CECFD21CECA317008748F8 /* SliderCell.swift in Sources */,
 				50B200C01CE9DA360075728E /* HistoryTabCoordinator.swift in Sources */,
 				50B200D81CEA16520075728E /* SendRequestTableViewDatasource.swift in Sources */,
 				5011E12A1CE9CD2600891FB1 /* AppDelegate.swift in Sources */,

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="91" id="I7V-Od-nEz" customClass="SingleTextFieldCell" customModule="Butler" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="386" height="91"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I7V-Od-nEz" id="GbG-eY-aNz">
+                <rect key="frame" x="0.0" y="0.0" width="386" height="90"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Value" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="8aa-0S-EUS">
+                        <rect key="frame" x="128" y="37" width="250" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                        <connections>
+                            <outlet property="delegate" destination="I7V-Od-nEz" id="nVf-Wa-z0b"/>
+                        </connections>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLJ-8O-Yje">
+                        <rect key="frame" x="8" y="35" width="100" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="ROg-Wp-mEM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="8aa-0S-EUS" secondAttribute="trailing" id="ROu-ln-aP8"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="GLJ-8O-Yje" secondAttribute="leading" id="bbp-cH-Mm0"/>
+                    <constraint firstItem="8aa-0S-EUS" firstAttribute="centerY" secondItem="GbG-eY-aNz" secondAttribute="centerY" id="czX-E2-fdC"/>
+                    <constraint firstItem="8aa-0S-EUS" firstAttribute="leading" secondItem="GLJ-8O-Yje" secondAttribute="trailing" constant="20" id="ohO-Hb-aZM"/>
+                    <constraint firstItem="GLJ-8O-Yje" firstAttribute="centerY" secondItem="GbG-eY-aNz" secondAttribute="centerY" id="yEb-6e-2uz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="keyLabel" destination="GLJ-8O-Yje" id="4hq-Uf-Rxa"/>
+                <outlet property="valueTextField" destination="8aa-0S-EUS" id="ocg-BG-Zt5"/>
+            </connections>
+            <point key="canvasLocation" x="310" y="254"/>
+        </tableViewCell>
+    </objects>
+</document>
