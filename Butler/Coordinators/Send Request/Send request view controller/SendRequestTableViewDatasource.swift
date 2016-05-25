@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableViewDelegate, ButtonTableHeaderViewDelegate {
     
@@ -87,22 +88,10 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
         }
         
         if section == .Authorization {
-            let minorAttributes = [
-                NSFontAttributeName: titleFont!,
-                NSForegroundColorAttributeName: titleColor
-            ]
+            let minorString = "Authorization: "
+            let majorString = showingAuthorizationCells ? "basic" : "none"
             
-            let majorAttributes = [
-                NSFontAttributeName: R.font.gothamHTFMedium(size: 15)!,
-                NSForegroundColorAttributeName: titleColor
-            ]
-            
-            let minorAttributedString = NSMutableAttributedString(string: "Authorization: ", attributes: minorAttributes)
-            let majorAttributedString = NSAttributedString(string: showingAuthorizationCells ? "basic" : "none", attributes: majorAttributes)
-            
-            minorAttributedString.appendAttributedString(majorAttributedString)
-            headerView.titleLabel.attributedText = minorAttributedString
-            
+            headerView.titleLabel.attributedText = NSAttributedString(majorString: majorString, minorString: minorString)
             headerView.button.selected = showingAuthorizationCells
         } else {
             headerView.titleLabel.text = text

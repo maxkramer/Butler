@@ -40,6 +40,19 @@ class Authorization: Object {
     var authorizationMethod: AuthorizationMethod {
         return AuthorizationMethod(rawValue: rawAuthorizationMethod)!
     }
+    
+    var authorizationString: String? {
+        guard let username = username, password = password where username.characters.count > 0 && authorizationMethod == .Basic else {
+            return nil
+        }
+        
+        let authorization = "\(username):\(password)"
+        
+        if let encodedAuth = authorization.dataUsingEncoding(NSASCIIStringEncoding)?.base64EncodedStringWithOptions([]) {
+            return "Basic \(encodedAuth)"
+        }
+        return nil
+    }
 }
 
 class Header: Object {

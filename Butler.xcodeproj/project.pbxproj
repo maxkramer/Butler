@@ -17,7 +17,14 @@
 		5011E15C1CE9CED100891FB1 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E15B1CE9CED100891FB1 /* TabCoordinator.swift */; };
 		5011E15E1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */; };
 		5011E1601CE9D06C00891FB1 /* SendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E15F1CE9D06C00891FB1 /* SendRequestViewController.swift */; };
+		501804881CF3A4150041E861 /* NSURLRequest+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501804871CF3A4150041E861 /* NSURLRequest+Request.swift */; };
 		5081FCB41CEA609500BB7196 /* MultipleButtonSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5081FCB31CEA609500BB7196 /* MultipleButtonSlider.swift */; };
+		50ACF5FC1CF6157B00C393A6 /* GlobalURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACF5FB1CF6157B00C393A6 /* GlobalURLSession.swift */; };
+		50ACF5FE1CF61F1D00C393A6 /* NSURL+Tidy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACF5FD1CF61F1D00C393A6 /* NSURL+Tidy.swift */; };
+		50ACF6001CF61FA500C393A6 /* List+Parameterfy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACF5FF1CF61FA500C393A6 /* List+Parameterfy.swift */; };
+		50ACF6021CF6256700C393A6 /* RotatingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACF6011CF6256700C393A6 /* RotatingCircle.swift */; };
+		50ACF6041CF6264C00C393A6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACF6031CF6264C00C393A6 /* LoadingView.swift */; };
+		50ACF6081CF6395F00C393A6 /* ProgressAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACF6071CF6395F00C393A6 /* ProgressAlertView.swift */; };
 		50B200BD1CE9D9C20075728E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E1681CE9D61F00891FB1 /* R.generated.swift */; };
 		50B200C01CE9DA360075728E /* HistoryTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200BF1CE9DA360075728E /* HistoryTabCoordinator.swift */; };
 		50B200C21CE9DA450075728E /* FavouriteTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200C11CE9DA450075728E /* FavouriteTabCoordinator.swift */; };
@@ -32,6 +39,9 @@
 		50B200D81CEA16520075728E /* SendRequestTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200D71CEA16520075728E /* SendRequestTableViewDatasource.swift */; };
 		50B200DA1CEA17620075728E /* SemiBorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200D91CEA17620075728E /* SemiBorderedTextField.swift */; };
 		50B200DC1CEA23EC0075728E /* Butler Colors.clr in Resources */ = {isa = PBXBuildFile; fileRef = 50B200DB1CEA23EC0075728E /* Butler Colors.clr */; };
+		50BD41CA1CEDE6B10080A1D3 /* NSAttributedString+MajorMinor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BD41C91CEDE6B10080A1D3 /* NSAttributedString+MajorMinor.swift */; };
+		50C2AB651CF21F5700B9C9C3 /* urls.json in Resources */ = {isa = PBXBuildFile; fileRef = 50C2AB641CF21F5700B9C9C3 /* urls.json */; };
+		50C2AB661CF221B400B9C9C3 /* URLValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C2AB621CF21E9000B9C9C3 /* URLValidatorTests.swift */; };
 		50CECFCE1CEC88DB008748F8 /* SingleTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CECFCD1CEC88DB008748F8 /* SingleTextFieldCell.swift */; };
 		50CECFD01CEC8918008748F8 /* SingleTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50CECFCF1CEC8918008748F8 /* SingleTextFieldCell.xib */; };
 		50CECFD21CECA317008748F8 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CECFD11CECA317008748F8 /* SliderCell.swift */; };
@@ -87,7 +97,14 @@
 		5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRequestTabCoordinator.swift; sourceTree = "<group>"; };
 		5011E15F1CE9D06C00891FB1 /* SendRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRequestViewController.swift; sourceTree = "<group>"; };
 		5011E1681CE9D61F00891FB1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		501804871CF3A4150041E861 /* NSURLRequest+Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSURLRequest+Request.swift"; path = "../Coordinators/Send Request/Send request view controller/NSURLRequest+Request.swift"; sourceTree = "<group>"; };
 		5081FCB31CEA609500BB7196 /* MultipleButtonSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleButtonSlider.swift; sourceTree = "<group>"; };
+		50ACF5FB1CF6157B00C393A6 /* GlobalURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalURLSession.swift; path = "../../Coordinators/Send Request/Send request view controller/GlobalURLSession.swift"; sourceTree = "<group>"; };
+		50ACF5FD1CF61F1D00C393A6 /* NSURL+Tidy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSURL+Tidy.swift"; path = "../Coordinators/Send Request/Send request view controller/NSURL+Tidy.swift"; sourceTree = "<group>"; };
+		50ACF5FF1CF61FA500C393A6 /* List+Parameterfy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "List+Parameterfy.swift"; path = "../Coordinators/Send Request/Send request view controller/List+Parameterfy.swift"; sourceTree = "<group>"; };
+		50ACF6011CF6256700C393A6 /* RotatingCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RotatingCircle.swift; path = ../Resources/RotatingCircle.swift; sourceTree = "<group>"; };
+		50ACF6031CF6264C00C393A6 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = ../Resources/LoadingView.swift; sourceTree = "<group>"; };
+		50ACF6071CF6395F00C393A6 /* ProgressAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressAlertView.swift; path = "../Coordinators/Send Request/Send request view controller/ProgressAlertView.swift"; sourceTree = "<group>"; };
 		50B200BF1CE9DA360075728E /* HistoryTabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTabCoordinator.swift; sourceTree = "<group>"; };
 		50B200C11CE9DA450075728E /* FavouriteTabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteTabCoordinator.swift; sourceTree = "<group>"; };
 		50B200C31CE9DC2A0075728E /* UITabBarItem+Butler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+Butler.swift"; sourceTree = "<group>"; };
@@ -101,6 +118,9 @@
 		50B200D71CEA16520075728E /* SendRequestTableViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRequestTableViewDatasource.swift; sourceTree = "<group>"; };
 		50B200D91CEA17620075728E /* SemiBorderedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemiBorderedTextField.swift; sourceTree = "<group>"; };
 		50B200DB1CEA23EC0075728E /* Butler Colors.clr */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Butler Colors.clr"; path = "../../../../Library/Colors/Butler Colors.clr"; sourceTree = "<group>"; };
+		50BD41C91CEDE6B10080A1D3 /* NSAttributedString+MajorMinor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+MajorMinor.swift"; sourceTree = "<group>"; };
+		50C2AB621CF21E9000B9C9C3 /* URLValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLValidatorTests.swift; sourceTree = "<group>"; };
+		50C2AB641CF21F5700B9C9C3 /* urls.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = urls.json; sourceTree = "<group>"; };
 		50CECFCD1CEC88DB008748F8 /* SingleTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTextFieldCell.swift; sourceTree = "<group>"; };
 		50CECFCF1CEC8918008748F8 /* SingleTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleTextFieldCell.xib; sourceTree = "<group>"; };
 		50CECFD11CECA317008748F8 /* SliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
@@ -190,6 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				5011E1401CE9CD2600891FB1 /* ButlerTests.swift */,
+				50C2AB621CF21E9000B9C9C3 /* URLValidatorTests.swift */,
+				50C2AB641CF21F5700B9C9C3 /* urls.json */,
 				5011E1421CE9CD2600891FB1 /* Info.plist */,
 				50B200D11CE9F09F0075728E /* KeychainHelperTests.swift */,
 			);
@@ -211,6 +233,16 @@
 				5011E1681CE9D61F00891FB1 /* R.generated.swift */,
 			);
 			path = "Generated Resource File";
+			sourceTree = "<group>";
+		};
+		50ACF6091CF6430300C393A6 /* Alert view */ = {
+			isa = PBXGroup;
+			children = (
+				50ACF6071CF6395F00C393A6 /* ProgressAlertView.swift */,
+				50ACF6011CF6256700C393A6 /* RotatingCircle.swift */,
+				50ACF6031CF6264C00C393A6 /* LoadingView.swift */,
+			);
+			name = "Alert view";
 			sourceTree = "<group>";
 		};
 		50B200BA1CE9D9400075728E /* Resources */ = {
@@ -308,6 +340,10 @@
 		50CECFE91CECED07008748F8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				501804871CF3A4150041E861 /* NSURLRequest+Request.swift */,
+				50ACF5FD1CF61F1D00C393A6 /* NSURL+Tidy.swift */,
+				50ACF5FF1CF61FA500C393A6 /* List+Parameterfy.swift */,
+				50BD41C91CEDE6B10080A1D3 /* NSAttributedString+MajorMinor.swift */,
 				50CECFE21CECEC72008748F8 /* MultipleButtonSlider+Butler.swift */,
 				50B200C31CE9DC2A0075728E /* UITabBarItem+Butler.swift */,
 			);
@@ -317,6 +353,7 @@
 		50CECFEA1CECED0C008748F8 /* Custom UI Components */ = {
 			isa = PBXGroup;
 			children = (
+				50ACF6091CF6430300C393A6 /* Alert view */,
 				50CECFE81CECECFC008748F8 /* Bordered text field */,
 				50CECFEB1CECED1A008748F8 /* Button Table Header View */,
 				50CECFE41CECECE5008748F8 /* Cells */,
@@ -337,6 +374,7 @@
 		50CECFEC1CECED29008748F8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				50ACF5FB1CF6157B00C393A6 /* GlobalURLSession.swift */,
 				50B200CF1CE9EDED0075728E /* KeychainHelper.swift */,
 			);
 			path = Helpers;
@@ -554,6 +592,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50C2AB651CF21F5700B9C9C3 /* urls.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,9 +761,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50ACF6001CF61FA500C393A6 /* List+Parameterfy.swift in Sources */,
+				50ACF6021CF6256700C393A6 /* RotatingCircle.swift in Sources */,
 				50EF88221CEBA43100B7F10A /* DoubleTextFieldCell.swift in Sources */,
+				50ACF5FC1CF6157B00C393A6 /* GlobalURLSession.swift in Sources */,
 				50CECFCE1CEC88DB008748F8 /* SingleTextFieldCell.swift in Sources */,
+				50ACF6041CF6264C00C393A6 /* LoadingView.swift in Sources */,
 				5081FCB41CEA609500BB7196 /* MultipleButtonSlider.swift in Sources */,
+				50ACF5FE1CF61F1D00C393A6 /* NSURL+Tidy.swift in Sources */,
 				50B200C21CE9DA450075728E /* FavouriteTabCoordinator.swift in Sources */,
 				50B200CE1CE9E3FE0075728E /* Request.swift in Sources */,
 				50CECFE31CECEC72008748F8 /* MultipleButtonSlider+Butler.swift in Sources */,
@@ -733,6 +777,8 @@
 				50CECFD21CECA317008748F8 /* SliderCell.swift in Sources */,
 				50B200C01CE9DA360075728E /* HistoryTabCoordinator.swift in Sources */,
 				50B200D81CEA16520075728E /* SendRequestTableViewDatasource.swift in Sources */,
+				501804881CF3A4150041E861 /* NSURLRequest+Request.swift in Sources */,
+				50BD41CA1CEDE6B10080A1D3 /* NSAttributedString+MajorMinor.swift in Sources */,
 				5011E12A1CE9CD2600891FB1 /* AppDelegate.swift in Sources */,
 				5011E1601CE9D06C00891FB1 /* SendRequestViewController.swift in Sources */,
 				50B200C81CE9DF060075728E /* HistoryViewController.swift in Sources */,
@@ -740,6 +786,7 @@
 				50B200D01CE9EDED0075728E /* KeychainHelper.swift in Sources */,
 				5011E15C1CE9CED100891FB1 /* TabCoordinator.swift in Sources */,
 				50B200DA1CEA17620075728E /* SemiBorderedTextField.swift in Sources */,
+				50ACF6081CF6395F00C393A6 /* ProgressAlertView.swift in Sources */,
 				5011E15A1CE9CD3D00891FB1 /* ApplicationCoordinator.swift in Sources */,
 				50B200C61CE9DEFF0075728E /* FavouriteViewController.swift in Sources */,
 				50B200BD1CE9D9C20075728E /* R.generated.swift in Sources */,
@@ -751,6 +798,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5011E1411CE9CD2600891FB1 /* ButlerTests.swift in Sources */,
+				50C2AB661CF221B400B9C9C3 /* URLValidatorTests.swift in Sources */,
 				50B200D21CE9F09F0075728E /* KeychainHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

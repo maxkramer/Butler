@@ -17,6 +17,8 @@ class SendRequestViewController: UITableViewController, UITextFieldDelegate {
     var requestMethods = RequestMethod.allMethods()
     var bodyFormats = BodyFormat.allFormats()
     
+    var runningDataTask: NSURLSessionDataTask?
+    
     // MARK: View Did Load
     
     override func viewDidLoad() {
@@ -44,6 +46,54 @@ class SendRequestViewController: UITableViewController, UITextFieldDelegate {
         // perform validation
         
         print(request)
+        
+        let url = NSURL(string: request.url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
+        print("got url => \(url)")
+        
+        let validURL = url != nil
+        
+        guard validURL else {
+            urlTextField.borderColor = UIColor.redColor()
+            return
+        }
+        
+        urlTextField.borderColor = R.color.butlerColors.gray()
+        
+        // create request
+        
+        let urlRequest = NSURLRequest.requestFrom(request)
+        print("url => \(urlRequest?.URL)")
+        if let data = urlRequest?.HTTPBody {
+            print("data => \(String(data: data, encoding: NSASCIIStringEncoding))")
+        }
+        print("method => \(urlRequest?.HTTPMethod)")
+        print("headers => \(urlRequest?.allHTTPHeaderFields)")
+        
+        if let runningDataTask = runningDataTask where runningDataTask.state != .Running {
+            runningDataTask.cancel()
+        }
+        
+        ProgressAlertView.show()
+        
+        runningDataTask = GlobalURLSession.sharedSession.urlSession.dataTaskWithRequest(urlRequest!) { (data, response, error) in
+            dispatch_async(dispatch_get_main_queue()) {
+                ProgressAlertView.hide()
+                if let error = error {
+                    //                    SCLAlertView().showError(error.domain, subTitle: error.localizedDescription)
+                } else if let data = data {
+                    if let responseString = String(data: data, encoding: NSASCIIStringEncoding) {
+                        print("data(ASCII) => \(responseString))")
+                    }
+                    else if let responseString = String(data: data, encoding: NSUTF8StringEncoding) {
+                        print("data(UTF8) => \(responseString)")
+                    }
+                    else {
+                        
+                    }
+                }
+            }
+        }
+        runningDataTask!.resume()
     }
     
     // MARK: Setup the table view
