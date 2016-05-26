@@ -7,3 +7,4 @@ disabled_rules:
   - variable_name
   - trailing_whitespace
   - force_cast
+  - trailing_newline
