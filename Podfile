@@ -6,6 +6,7 @@ target 'Butler' do
     pod 'R.swift'
     pod 'RealmSwift'
     
+    pod 'Log'
     target 'ButlerTests' do
         inherit! :search_paths
     end

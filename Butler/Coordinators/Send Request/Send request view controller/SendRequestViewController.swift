@@ -9,15 +9,21 @@
 import UIKit
 import RealmSwift
 
-class SendRequestViewController: UITableViewController, UITextFieldDelegate {
+protocol SendRequestViewControllerDelegate {
+    func sendRequestViewController(sendRequestViewController: SendRequestViewController, didSendRequestSuccessfully response: Response)
+}
+
+final class SendRequestViewController: UITableViewController, UITextFieldDelegate {
+    var delegate: SendRequestViewControllerDelegate?
     
-    var workingRequest = Request()
-    var tableViewDatasource: SendRequestTableViewDatasource!
-    var urlTextField: SemiBorderedTextField!
+    private var workingRequest = Request()
+    private var tableViewDatasource: SendRequestTableViewDatasource!
+    private var urlTextField: SemiBorderedTextField!
+    
     var requestMethods = RequestMethod.allMethods()
     var bodyFormats = BodyFormat.allFormats()
     
-    var runningDataTask: NSURLSessionDataTask?
+    private var runningDataTask: NSURLSessionDataTask?
     
     // MARK: View Did Load
     
@@ -45,10 +51,10 @@ class SendRequestViewController: UITableViewController, UITextFieldDelegate {
         request.rawRequestMethod = workingRequest.rawRequestMethod
         // perform validation
         
-        print(request)
+        Cerberus.info(request)
         
         let url = NSURL(string: request.url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
-        print("got url => \(url)")
+        Cerberus.info(url)
         
         let validURL = url != nil
         
@@ -58,16 +64,15 @@ class SendRequestViewController: UITableViewController, UITextFieldDelegate {
         }
         
         urlTextField.borderColor = R.color.butlerColors.gray()
-        
         // create request
         
         let urlRequest = NSURLRequest.requestFrom(request)
-        print("url => \(urlRequest?.URL)")
         if let data = urlRequest?.HTTPBody {
-            print("data => \(String(data: data, encoding: NSASCIIStringEncoding))")
+            Cerberus.info("Sending body => \(String(data: data, encoding: NSASCIIStringEncoding))")
         }
-        print("method => \(urlRequest?.HTTPMethod)")
-        print("headers => \(urlRequest?.allHTTPHeaderFields)")
+        
+        Cerberus.info("Method => \(urlRequest?.HTTPMethod)")
+        Cerberus.info("Headers => \(urlRequest?.allHTTPHeaderFields)")
         
         if let runningDataTask = runningDataTask where runningDataTask.state != .Running {
             runningDataTask.cancel()
@@ -75,22 +80,14 @@ class SendRequestViewController: UITableViewController, UITextFieldDelegate {
         
         ProgressAlertView.show()
         
-        runningDataTask = GlobalURLSession.sharedSession.urlSession.dataTaskWithRequest(urlRequest!) { (data, response, error) in
+        runningDataTask = GlobalURLSession.sharedSession.urlSession.dataTaskWithRequest(urlRequest!) { (data, actualResponse, error) in
             dispatch_async(dispatch_get_main_queue()) {
                 ProgressAlertView.hide()
-                if let error = error {
-                    //                    SCLAlertView().showError(error.domain, subTitle: error.localizedDescription)
-                } else if let data = data {
-                    if let responseString = String(data: data, encoding: NSASCIIStringEncoding) {
-                        print("data(ASCII) => \(responseString))")
-                    }
-                    else if let responseString = String(data: data, encoding: NSUTF8StringEncoding) {
-                        print("data(UTF8) => \(responseString)")
-                    }
-                    else {
-                        
-                    }
+                guard let delegate = self.delegate else {
+                    return
                 }
+                let response = Response(request: request, httpResponse: actualResponse as? NSHTTPURLResponse, data: data, error: error)
+                delegate.sendRequestViewController(self, didSendRequestSuccessfully: response)
             }
         }
         runningDataTask!.resume()

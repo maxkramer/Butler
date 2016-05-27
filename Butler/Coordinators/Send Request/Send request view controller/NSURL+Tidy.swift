@@ -10,12 +10,10 @@ import Foundation
 
 extension NSURL {
     func urlByAddingSchemeIfNeeded(newScheme: String = "http") -> NSURL? {
-        print("scheme => \(scheme)")
         if scheme.characters.count == 0 {
             if newScheme.characters.count > 0 {
                 return NSURL(string: "\(newScheme)://" + absoluteString)
-            }
-            else {
+            } else {
                 return NSURL(string: "http://" + absoluteString)
             }
         }

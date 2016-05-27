@@ -55,6 +55,13 @@
 		50CECFE31CECEC72008748F8 /* MultipleButtonSlider+Butler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CECFE21CECEC72008748F8 /* MultipleButtonSlider+Butler.swift */; };
 		50EF88221CEBA43100B7F10A /* DoubleTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF88201CEBA43100B7F10A /* DoubleTextFieldCell.swift */; };
 		50EF88231CEBA43100B7F10A /* DoubleTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50EF88211CEBA43100B7F10A /* DoubleTextFieldCell.xib */; };
+		50F246251CF74E6E00011885 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F246241CF74E6E00011885 /* Response.swift */; };
+		50F246271CF74E8600011885 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F246261CF74E8600011885 /* RequestMethod.swift */; };
+		50F246291CF74EA200011885 /* BodyFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F246281CF74EA200011885 /* BodyFormat.swift */; };
+		50F2462B1CF74EB600011885 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2462A1CF74EB600011885 /* Authorization.swift */; };
+		50F2462D1CF74ED000011885 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2462C1CF74ED000011885 /* Header.swift */; };
+		50F2462F1CF74ED900011885 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2462E1CF74ED900011885 /* Parameter.swift */; };
+		50F246311CF89C0100011885 /* Cerberus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F246301CF89C0100011885 /* Cerberus.swift */; };
 		56DC1E82B9949B67EC2C6B93 /* Pods_Butler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6DDE6AB44454F4D21058C0 /* Pods_Butler.framework */; };
 		72A5F27C198D3C5318DD352B /* Pods_ButlerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D0569FC5CB9F8B3BC226B3 /* Pods_ButlerUITests.framework */; };
 		7F20D47C67578EF6B51E9C85 /* Pods_ButlerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5561FAA381F42CD93F0CCF /* Pods_ButlerTests.framework */; };
@@ -134,6 +141,13 @@
 		50CECFE21CECEC72008748F8 /* MultipleButtonSlider+Butler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MultipleButtonSlider+Butler.swift"; sourceTree = "<group>"; };
 		50EF88201CEBA43100B7F10A /* DoubleTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleTextFieldCell.swift; sourceTree = "<group>"; };
 		50EF88211CEBA43100B7F10A /* DoubleTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoubleTextFieldCell.xib; sourceTree = "<group>"; };
+		50F246241CF74E6E00011885 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		50F246261CF74E8600011885 /* RequestMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		50F246281CF74EA200011885 /* BodyFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyFormat.swift; sourceTree = "<group>"; };
+		50F2462A1CF74EB600011885 /* Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
+		50F2462C1CF74ED000011885 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		50F2462E1CF74ED900011885 /* Parameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
+		50F246301CF89C0100011885 /* Cerberus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cerberus.swift; path = ../../Cerberus.swift; sourceTree = "<group>"; };
 		57A638AAD9F7B3C8D1745572 /* Pods-Butler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Butler/Pods-Butler.release.xcconfig"; sourceTree = "<group>"; };
 		5A106D5FFEDF758B00ADBDAA /* Pods-Butler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Butler/Pods-Butler.debug.xcconfig"; sourceTree = "<group>"; };
 		74A00021EE8D4C5BA369F159 /* Pods-ButlerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ButlerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ButlerTests/Pods-ButlerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -277,6 +291,12 @@
 			isa = PBXGroup;
 			children = (
 				50B200CD1CE9E3FE0075728E /* Request.swift */,
+				50F2462C1CF74ED000011885 /* Header.swift */,
+				50F2462E1CF74ED900011885 /* Parameter.swift */,
+				50F2462A1CF74EB600011885 /* Authorization.swift */,
+				50F246281CF74EA200011885 /* BodyFormat.swift */,
+				50F246261CF74E8600011885 /* RequestMethod.swift */,
+				50F246241CF74E6E00011885 /* Response.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -374,6 +394,7 @@
 		50CECFEC1CECED29008748F8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				50F246301CF89C0100011885 /* Cerberus.swift */,
 				50ACF5FB1CF6157B00C393A6 /* GlobalURLSession.swift */,
 				50B200CF1CE9EDED0075728E /* KeychainHelper.swift */,
 			);
@@ -763,9 +784,13 @@
 			files = (
 				50ACF6001CF61FA500C393A6 /* List+Parameterfy.swift in Sources */,
 				50ACF6021CF6256700C393A6 /* RotatingCircle.swift in Sources */,
+				50F246291CF74EA200011885 /* BodyFormat.swift in Sources */,
 				50EF88221CEBA43100B7F10A /* DoubleTextFieldCell.swift in Sources */,
 				50ACF5FC1CF6157B00C393A6 /* GlobalURLSession.swift in Sources */,
+				50F246251CF74E6E00011885 /* Response.swift in Sources */,
+				50F246271CF74E8600011885 /* RequestMethod.swift in Sources */,
 				50CECFCE1CEC88DB008748F8 /* SingleTextFieldCell.swift in Sources */,
+				50F2462D1CF74ED000011885 /* Header.swift in Sources */,
 				50ACF6041CF6264C00C393A6 /* LoadingView.swift in Sources */,
 				5081FCB41CEA609500BB7196 /* MultipleButtonSlider.swift in Sources */,
 				50ACF5FE1CF61F1D00C393A6 /* NSURL+Tidy.swift in Sources */,
@@ -773,6 +798,8 @@
 				50B200CE1CE9E3FE0075728E /* Request.swift in Sources */,
 				50CECFE31CECEC72008748F8 /* MultipleButtonSlider+Butler.swift in Sources */,
 				50CECFDF1CECC8D4008748F8 /* ButtonTableHeaderView.swift in Sources */,
+				50F246311CF89C0100011885 /* Cerberus.swift in Sources */,
+				50F2462B1CF74EB600011885 /* Authorization.swift in Sources */,
 				5011E15E1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift in Sources */,
 				50CECFD21CECA317008748F8 /* SliderCell.swift in Sources */,
 				50B200C01CE9DA360075728E /* HistoryTabCoordinator.swift in Sources */,
@@ -782,6 +809,7 @@
 				5011E12A1CE9CD2600891FB1 /* AppDelegate.swift in Sources */,
 				5011E1601CE9D06C00891FB1 /* SendRequestViewController.swift in Sources */,
 				50B200C81CE9DF060075728E /* HistoryViewController.swift in Sources */,
+				50F2462F1CF74ED900011885 /* Parameter.swift in Sources */,
 				50B200C41CE9DC2A0075728E /* UITabBarItem+Butler.swift in Sources */,
 				50B200D01CE9EDED0075728E /* KeychainHelper.swift in Sources */,
 				5011E15C1CE9CED100891FB1 /* TabCoordinator.swift in Sources */,

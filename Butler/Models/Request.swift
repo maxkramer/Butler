@@ -9,59 +9,6 @@
 import Foundation
 import RealmSwift
 
-enum RequestMethod: String {
-    case GET
-    case PUT
-    case POST
-    case DELETE
-    
-    static func allMethods() -> [RequestMethod] {
-        return [.GET, .PUT, .POST, .DELETE]
-    }
-}
-
-enum BodyFormat: String {
-    case Plain
-    case JSON
-    static func allFormats() -> [BodyFormat] {
-        return [.Plain, .JSON]
-    }
-}
-
-enum AuthorizationMethod: String {
-    case Basic
-}
-
-class Authorization: Object {
-    dynamic var rawAuthorizationMethod = AuthorizationMethod.Basic.rawValue
-    dynamic var username: String? = nil
-    dynamic var password: String? = nil
-    
-    var authorizationMethod: AuthorizationMethod {
-        return AuthorizationMethod(rawValue: rawAuthorizationMethod)!
-    }
-    
-    var authorizationString: String? {
-        guard let username = username, password = password where username.characters.count > 0 && authorizationMethod == .Basic else {
-            return nil
-        }
-        
-        let authorization = "\(username):\(password)"
-        
-        if let encodedAuth = authorization.dataUsingEncoding(NSASCIIStringEncoding)?.base64EncodedStringWithOptions([]) {
-            return "Basic \(encodedAuth)"
-        }
-        return nil
-    }
-}
-
-class Header: Object {
-    dynamic var key: String? = nil
-    dynamic var value: String? = nil
-}
-
-class Parameter: Header {}
-
 class Request: Object {
     dynamic var url: String = ""
     

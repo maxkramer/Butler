@@ -16,21 +16,29 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
         case Headers = 1
         case Parameters = 2
         case BodyFormat = 3
+        
+        static var sectionTitles: [String] {
+            return [
+                "Authorization: none",
+                "Headers",
+                "Parameters",
+                "Body format"
+            ]
+        }
+        
+        func title() -> String {
+            return Section.sectionTitles[self.rawValue]
+        }
     }
     
     var showingAuthorizationCells = false
     let tableView: UITableView
     
-    var sectionTitles = [
-        "Authorization: none",
-        "Headers",
-        "Parameters",
-        "Body format"
-    ]
-    
     var headers = [Header]()
     var parameters = [Parameter]()
     var authorization = Authorization()
+    
+    var sectionTitles = Section.sectionTitles
     
     func generateRequest() -> Request {
         return Request.create(headers, parameters: parameters, authorization: showingAuthorizationCells ? authorization : nil)
