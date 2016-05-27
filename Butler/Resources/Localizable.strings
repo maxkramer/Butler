@@ -9,3 +9,16 @@
 "favourite.title" = "Favourites";
 "sendrequest.title" = "BUTLER";
 "history.title" = "History";
+"sendrequest.headers" = "Headers";
+"sendrequest.parameters" = "Parameters";
+"sendrequest.bodyformat" = "Body format";
+"sendrequest.authorization.none" = "Authorization: none";
+"sendrequest.authorization.basic" = "Authorization: basic";
+"sendrequest.authorization" = "Authorization";
+"authorization.basic" = "basic";
+"authorization.none" = "none";
+"action.delete" = "Delete";
+"action.send" = "Send";
+"textfield.username" = "username";
+"textfield.password" = "password";
+"textfield.url" = "URL";

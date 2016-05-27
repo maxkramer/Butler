@@ -19,10 +19,10 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
         
         static var sectionTitles: [String] {
             return [
-                "Authorization: none",
-                "Headers",
-                "Parameters",
-                "Body format"
+                R.string.localizable.sendrequestAuthorizationNone(),
+                R.string.localizable.sendrequestHeaders(),
+                R.string.localizable.sendrequestParameters(),
+                R.string.localizable.sendrequestBodyformat()
             ]
         }
         
@@ -96,8 +96,8 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
         }
         
         if section == .Authorization {
-            let minorString = "Authorization: "
-            let majorString = showingAuthorizationCells ? "basic" : "none"
+            let minorString = "\(R.string.localizable.sendrequestAuthorization()): "
+            let majorString = showingAuthorizationCells ? R.string.localizable.authorizationBasic() : R.string.localizable.authorizationNone()
             
             headerView.titleLabel.attributedText = NSAttributedString(majorString: majorString, minorString: minorString)
             headerView.button.selected = showingAuthorizationCells
@@ -124,10 +124,10 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
             let isCurrentlyShowingAuthorizationCells = !showingAuthorizationCells
             if isCurrentlyShowingAuthorizationCells {
                 tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Left)
-                sectionTitles[Section.Authorization.rawValue] = "Authorization: none"
+                sectionTitles[Section.Authorization.rawValue] = R.string.localizable.authorizationNone()
             } else {
                 tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Right)
-                sectionTitles[Section.Authorization.rawValue] = "Authorization: basic"
+                sectionTitles[Section.Authorization.rawValue] = R.string.localizable.authorizationBasic()
             }
             tableView.reloadSections(NSIndexSet(index: Section.Authorization.rawValue), withRowAnimation: .Automatic)
         } else if section == .Headers {
@@ -158,7 +158,7 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
             return nil
         }
         
-        let deleteAction = UITableViewRowAction(style: .Default, title: "Delete", handler: executeDeletion)
+        let deleteAction = UITableViewRowAction(style: .Default, title: R.string.localizable.actionDelete(), handler: executeDeletion)
         return [deleteAction]
     }
     
@@ -179,8 +179,8 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
         
         if indexPath.section == 0 {
             if let cell = tableView.dequeueReusableCellWithIdentifier("SingleTextFieldCell", forIndexPath: indexPath) as? SingleTextFieldCell {
-                let keys = ["username", "password"]
-                let placeholders = ["username", "password"]
+                let keys = [R.string.localizable.textfieldUsername(), R.string.localizable.textfieldPassword()]
+                let placeholders = [R.string.localizable.textfieldUsername(), R.string.localizable.textfieldPassword()]
                 cell.keyLabel.text = keys[indexPath.row]
                 cell.keyLabel.font = keyFont
                 cell.keyLabel.textColor = keyColor

@@ -39,7 +39,7 @@ final class SendRequestViewController: UITableViewController, UITextFieldDelegat
         
         NSLayoutConstraint.activateConstraints(tableHeader.constraints + tableFooter.constraints)
         
-        let sendRequestButton = UIBarButtonItem(title: "Send", style: .Plain, target: self, action: #selector(sendRequest))
+        let sendRequestButton = UIBarButtonItem(title: R.string.localizable.actionSend(), style: .Plain, target: self, action: #selector(sendRequest))
         navigationItem.rightBarButtonItem = sendRequestButton
         super.viewDidLoad()
     }
@@ -49,7 +49,6 @@ final class SendRequestViewController: UITableViewController, UITextFieldDelegat
         request.rawBodyFormat = workingRequest.rawBodyFormat
         request.url = workingRequest.url
         request.rawRequestMethod = workingRequest.rawRequestMethod
-        // perform validation
         
         Cerberus.info(request)
         
@@ -64,7 +63,6 @@ final class SendRequestViewController: UITableViewController, UITextFieldDelegat
         }
         
         urlTextField.borderColor = R.color.butlerColors.gray()
-        // create request
         
         let urlRequest = NSURLRequest.requestFrom(request)
         if let data = urlRequest?.HTTPBody {
@@ -114,7 +112,7 @@ final class SendRequestViewController: UITableViewController, UITextFieldDelegat
         urlTextField.autocapitalizationType = .None
         urlTextField.keyboardType = .URL
         urlTextField.returnKeyType = .Done
-        urlTextField.attributedPlaceholder = NSAttributedString(string: "URL", attributes: [NSForegroundColorAttributeName: UIColor(white: 1.0, alpha: 0.8)])
+        urlTextField.attributedPlaceholder = NSAttributedString(string: R.string.localizable.textfieldUrl(), attributes: [NSForegroundColorAttributeName: UIColor(white: 1.0, alpha: 0.8)])
         urlTextField.textColor = R.color.butlerColors.lightText()
         urlTextField.font = R.font.gothamHTFLight(size: 15)
         urlTextField.delegate = self
