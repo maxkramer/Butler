@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol SendRequestTabCoordinatorDelegate {
+    func sendRequestTabCoordinator(sendRequestTabCoordinator: SendRequestTabCoordinator, didReceiveResponse response: Response)
+}
+
 class SendRequestTabCoordinator: TabCoordinator, SendRequestViewControllerDelegate {
+    var delegate: SendRequestTabCoordinatorDelegate?
+    
     lazy var rootViewController: UIViewController = {
         let rvcNib = R.nib.sendRequestViewController
         
@@ -21,11 +27,10 @@ class SendRequestTabCoordinator: TabCoordinator, SendRequestViewControllerDelega
     
     var tabBarItem = UITabBarItem(image: R.image.sendRequestTbi, selectedImage: R.image.sendRequestTbiSelected, topInset: 5)
     
-    func start() {}
-    
     // MARK: SendRequestViewControllerDelegate
     
     func sendRequestViewController(sendRequestViewController: SendRequestViewController, didSendRequestSuccessfully response: Response) {
         Cerberus.info("Request sent successfully. Received response: \(response)")
+        delegate?.sendRequestTabCoordinator(self, didReceiveResponse: response)
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavouriteTabCoordinator: TabCoordinator {
+class FavouriteTabCoordinator: TabCoordinator {    
     lazy var rootViewController: UIViewController = {
         let rvc = FavouriteViewController()
         rvc.tabBarItem = self.tabBarItem

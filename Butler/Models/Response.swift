@@ -21,4 +21,11 @@ struct Response {
         self.data = data
         self.error = error
     }
+    
+    func cookies() -> [NSHTTPCookie]? {
+        guard let headers = httpResponse?.allHeaderFields as? [String: String] else {
+            return nil
+        }
+        return NSHTTPCookie.cookiesWithResponseHeaderFields(headers, forURL: NSURL(string: "")!)
+    }
 }

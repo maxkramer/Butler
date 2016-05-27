@@ -39,6 +39,8 @@
 		50B200D81CEA16520075728E /* SendRequestTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200D71CEA16520075728E /* SendRequestTableViewDatasource.swift */; };
 		50B200DA1CEA17620075728E /* SemiBorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200D91CEA17620075728E /* SemiBorderedTextField.swift */; };
 		50B200DC1CEA23EC0075728E /* Butler Colors.clr in Resources */ = {isa = PBXBuildFile; fileRef = 50B200DB1CEA23EC0075728E /* Butler Colors.clr */; };
+		50B863871CF8D524008FC8B3 /* ResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B863861CF8D524008FC8B3 /* ResponseViewController.swift */; };
+		50B863891CF8D726008FC8B3 /* ResponseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50B863881CF8D726008FC8B3 /* ResponseViewController.xib */; };
 		50BD41CA1CEDE6B10080A1D3 /* NSAttributedString+MajorMinor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BD41C91CEDE6B10080A1D3 /* NSAttributedString+MajorMinor.swift */; };
 		50C2AB651CF21F5700B9C9C3 /* urls.json in Resources */ = {isa = PBXBuildFile; fileRef = 50C2AB641CF21F5700B9C9C3 /* urls.json */; };
 		50C2AB661CF221B400B9C9C3 /* URLValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C2AB621CF21E9000B9C9C3 /* URLValidatorTests.swift */; };
@@ -125,6 +127,8 @@
 		50B200D71CEA16520075728E /* SendRequestTableViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRequestTableViewDatasource.swift; sourceTree = "<group>"; };
 		50B200D91CEA17620075728E /* SemiBorderedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemiBorderedTextField.swift; sourceTree = "<group>"; };
 		50B200DB1CEA23EC0075728E /* Butler Colors.clr */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Butler Colors.clr"; path = "../../../../Library/Colors/Butler Colors.clr"; sourceTree = "<group>"; };
+		50B863861CF8D524008FC8B3 /* ResponseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseViewController.swift; sourceTree = "<group>"; };
+		50B863881CF8D726008FC8B3 /* ResponseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResponseViewController.xib; sourceTree = "<group>"; };
 		50BD41C91CEDE6B10080A1D3 /* NSAttributedString+MajorMinor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+MajorMinor.swift"; sourceTree = "<group>"; };
 		50C2AB621CF21E9000B9C9C3 /* URLValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLValidatorTests.swift; sourceTree = "<group>"; };
 		50C2AB641CF21F5700B9C9C3 /* urls.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = urls.json; sourceTree = "<group>"; };
@@ -432,6 +436,8 @@
 			children = (
 				50CECFED1CECED3A008748F8 /* Send request view controller */,
 				5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */,
+				50B863861CF8D524008FC8B3 /* ResponseViewController.swift */,
+				50B863881CF8D726008FC8B3 /* ResponseViewController.xib */,
 			);
 			path = "Send Request";
 			sourceTree = "<group>";
@@ -597,6 +603,7 @@
 				50CECFE11CECC8DF008748F8 /* ButtonTableHeaderView.xib in Resources */,
 				50CECFD41CECA359008748F8 /* SliderCell.xib in Resources */,
 				50B200D61CEA15F10075728E /* SendRequestViewController.xib in Resources */,
+				50B863891CF8D726008FC8B3 /* ResponseViewController.xib in Resources */,
 				50EF88231CEBA43100B7F10A /* DoubleTextFieldCell.xib in Resources */,
 				50B200DC1CEA23EC0075728E /* Butler Colors.clr in Resources */,
 				50B200CA1CE9DF450075728E /* Localizable.strings in Resources */,
@@ -795,6 +802,7 @@
 				5081FCB41CEA609500BB7196 /* MultipleButtonSlider.swift in Sources */,
 				50ACF5FE1CF61F1D00C393A6 /* NSURL+Tidy.swift in Sources */,
 				50B200C21CE9DA450075728E /* FavouriteTabCoordinator.swift in Sources */,
+				50B863871CF8D524008FC8B3 /* ResponseViewController.swift in Sources */,
 				50B200CE1CE9E3FE0075728E /* Request.swift in Sources */,
 				50CECFE31CECEC72008748F8 /* MultipleButtonSlider+Butler.swift in Sources */,
 				50CECFDF1CECC8D4008748F8 /* ButtonTableHeaderView.swift in Sources */,

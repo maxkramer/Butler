@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HistoryTabCoordinator: TabCoordinator {
+class HistoryTabCoordinator: TabCoordinator {    
     lazy var rootViewController: UIViewController = {
         let rvc = HistoryViewController()
         rvc.tabBarItem = self.tabBarItem

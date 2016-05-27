@@ -8,22 +8,31 @@
 
 import UIKit
 
-class ApplicationCoordinator {
-    
-    var applicationWindow: UIWindow
+class ApplicationCoordinator: SendRequestTabCoordinatorDelegate {
+    var window: UIWindow
     
     init(window: UIWindow) {
-        self.applicationWindow = window
+        self.window = window
     }
     
     lazy var tabBarCoordinators: [TabCoordinator] = {
-        return [SendRequestTabCoordinator(), HistoryTabCoordinator(), FavouriteTabCoordinator()]
+        let sendRequestCoordinator = SendRequestTabCoordinator()
+        sendRequestCoordinator.delegate = self
+        
+        return [sendRequestCoordinator, HistoryTabCoordinator(), FavouriteTabCoordinator()]
     }()
     
     let tabBarController = UITabBarController()
     
     func start() {
         tabBarController.setViewControllers(tabBarCoordinators.map { UINavigationController(rootViewController:$0.rootViewController) }, animated: false)
-        applicationWindow.rootViewController = tabBarController
+        window.rootViewController = tabBarController
+    }
+    
+    func sendRequestTabCoordinator(sendRequestTabCoordinator: SendRequestTabCoordinator, didReceiveResponse response: Response) {
+        let responseViewController = ResponseViewController(response)
+        if let navigationController = tabBarController.viewControllers?.first as? UINavigationController {
+            navigationController.pushViewController(responseViewController, animated: true)
+        }
     }
 }

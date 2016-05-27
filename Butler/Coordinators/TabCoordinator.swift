@@ -10,13 +10,6 @@ import Foundation
 import UIKit
 
 protocol TabCoordinator {
-    func start()
-    func end()
-    
     var rootViewController: UIViewController { get set }
     var tabBarItem: UITabBarItem { get set }
-}
-
-extension TabCoordinator {
-    func end() {}
 }
