@@ -106,14 +106,14 @@
 		5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRequestTabCoordinator.swift; sourceTree = "<group>"; };
 		5011E15F1CE9D06C00891FB1 /* SendRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRequestViewController.swift; sourceTree = "<group>"; };
 		5011E1681CE9D61F00891FB1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
-		501804871CF3A4150041E861 /* NSURLRequest+Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSURLRequest+Request.swift"; path = "../Coordinators/Send Request/Send request view controller/NSURLRequest+Request.swift"; sourceTree = "<group>"; };
+		501804871CF3A4150041E861 /* NSURLRequest+Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURLRequest+Request.swift"; sourceTree = "<group>"; };
 		5081FCB31CEA609500BB7196 /* MultipleButtonSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleButtonSlider.swift; sourceTree = "<group>"; };
-		50ACF5FB1CF6157B00C393A6 /* GlobalURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalURLSession.swift; path = "../../Coordinators/Send Request/Send request view controller/GlobalURLSession.swift"; sourceTree = "<group>"; };
-		50ACF5FD1CF61F1D00C393A6 /* NSURL+Tidy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSURL+Tidy.swift"; path = "../Coordinators/Send Request/Send request view controller/NSURL+Tidy.swift"; sourceTree = "<group>"; };
-		50ACF5FF1CF61FA500C393A6 /* List+Parameterfy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "List+Parameterfy.swift"; path = "../Coordinators/Send Request/Send request view controller/List+Parameterfy.swift"; sourceTree = "<group>"; };
-		50ACF6011CF6256700C393A6 /* RotatingCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RotatingCircle.swift; path = ../Resources/RotatingCircle.swift; sourceTree = "<group>"; };
-		50ACF6031CF6264C00C393A6 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = ../Resources/LoadingView.swift; sourceTree = "<group>"; };
-		50ACF6071CF6395F00C393A6 /* ProgressAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressAlertView.swift; path = "../Coordinators/Send Request/Send request view controller/ProgressAlertView.swift"; sourceTree = "<group>"; };
+		50ACF5FB1CF6157B00C393A6 /* GlobalURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalURLSession.swift; sourceTree = "<group>"; };
+		50ACF5FD1CF61F1D00C393A6 /* NSURL+Tidy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Tidy.swift"; sourceTree = "<group>"; };
+		50ACF5FF1CF61FA500C393A6 /* List+Parameterfy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "List+Parameterfy.swift"; sourceTree = "<group>"; };
+		50ACF6011CF6256700C393A6 /* RotatingCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingCircle.swift; sourceTree = "<group>"; };
+		50ACF6031CF6264C00C393A6 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		50ACF6071CF6395F00C393A6 /* ProgressAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressAlertView.swift; sourceTree = "<group>"; };
 		50B200BF1CE9DA360075728E /* HistoryTabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTabCoordinator.swift; sourceTree = "<group>"; };
 		50B200C11CE9DA450075728E /* FavouriteTabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteTabCoordinator.swift; sourceTree = "<group>"; };
 		50B200C31CE9DC2A0075728E /* UITabBarItem+Butler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+Butler.swift"; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 		50F2462A1CF74EB600011885 /* Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		50F2462C1CF74ED000011885 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		50F2462E1CF74ED900011885 /* Parameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
-		50F246301CF89C0100011885 /* Cerberus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cerberus.swift; path = ../../Cerberus.swift; sourceTree = "<group>"; };
+		50F246301CF89C0100011885 /* Cerberus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cerberus.swift; sourceTree = "<group>"; };
 		57A638AAD9F7B3C8D1745572 /* Pods-Butler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Butler/Pods-Butler.release.xcconfig"; sourceTree = "<group>"; };
 		5A106D5FFEDF758B00ADBDAA /* Pods-Butler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Butler/Pods-Butler.debug.xcconfig"; sourceTree = "<group>"; };
 		74A00021EE8D4C5BA369F159 /* Pods-ButlerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ButlerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ButlerTests/Pods-ButlerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -228,10 +228,10 @@
 			isa = PBXGroup;
 			children = (
 				5011E1401CE9CD2600891FB1 /* ButlerTests.swift */,
-				50C2AB621CF21E9000B9C9C3 /* URLValidatorTests.swift */,
-				50C2AB641CF21F5700B9C9C3 /* urls.json */,
 				5011E1421CE9CD2600891FB1 /* Info.plist */,
 				50B200D11CE9F09F0075728E /* KeychainHelperTests.swift */,
+				50C2AB621CF21E9000B9C9C3 /* URLValidatorTests.swift */,
+				50C2AB641CF21F5700B9C9C3 /* urls.json */,
 			);
 			path = ButlerTests;
 			sourceTree = "<group>";
@@ -256,11 +256,11 @@
 		50ACF6091CF6430300C393A6 /* Alert view */ = {
 			isa = PBXGroup;
 			children = (
+				50ACF6031CF6264C00C393A6 /* LoadingView.swift */,
 				50ACF6071CF6395F00C393A6 /* ProgressAlertView.swift */,
 				50ACF6011CF6256700C393A6 /* RotatingCircle.swift */,
-				50ACF6031CF6264C00C393A6 /* LoadingView.swift */,
 			);
-			name = "Alert view";
+			path = "Alert view";
 			sourceTree = "<group>";
 		};
 		50B200BA1CE9D9400075728E /* Resources */ = {
@@ -294,11 +294,11 @@
 		50B200CC1CE9E3C80075728E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				50B200CD1CE9E3FE0075728E /* Request.swift */,
-				50F2462C1CF74ED000011885 /* Header.swift */,
-				50F2462E1CF74ED900011885 /* Parameter.swift */,
 				50F2462A1CF74EB600011885 /* Authorization.swift */,
 				50F246281CF74EA200011885 /* BodyFormat.swift */,
+				50F2462C1CF74ED000011885 /* Header.swift */,
+				50F2462E1CF74ED900011885 /* Parameter.swift */,
+				50B200CD1CE9E3FE0075728E /* Request.swift */,
 				50F246261CF74E8600011885 /* RequestMethod.swift */,
 				50F246241CF74E6E00011885 /* Response.swift */,
 			);
@@ -364,11 +364,11 @@
 		50CECFE91CECED07008748F8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				501804871CF3A4150041E861 /* NSURLRequest+Request.swift */,
-				50ACF5FD1CF61F1D00C393A6 /* NSURL+Tidy.swift */,
 				50ACF5FF1CF61FA500C393A6 /* List+Parameterfy.swift */,
-				50BD41C91CEDE6B10080A1D3 /* NSAttributedString+MajorMinor.swift */,
 				50CECFE21CECEC72008748F8 /* MultipleButtonSlider+Butler.swift */,
+				50BD41C91CEDE6B10080A1D3 /* NSAttributedString+MajorMinor.swift */,
+				50ACF5FD1CF61F1D00C393A6 /* NSURL+Tidy.swift */,
+				501804871CF3A4150041E861 /* NSURLRequest+Request.swift */,
 				50B200C31CE9DC2A0075728E /* UITabBarItem+Butler.swift */,
 			);
 			path = Extensions;
@@ -435,9 +435,9 @@
 			isa = PBXGroup;
 			children = (
 				50CECFED1CECED3A008748F8 /* Send request view controller */,
-				5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */,
 				50B863861CF8D524008FC8B3 /* ResponseViewController.swift */,
 				50B863881CF8D726008FC8B3 /* ResponseViewController.xib */,
+				5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */,
 			);
 			path = "Send Request";
 			sourceTree = "<group>";
