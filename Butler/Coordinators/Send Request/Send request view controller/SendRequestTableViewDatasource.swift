@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import RealmSwift
 
 class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableViewDelegate, ButtonTableHeaderViewDelegate {
-    
     enum Section: Int {
         case Authorization = 0
         case Headers = 1

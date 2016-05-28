@@ -7,6 +7,7 @@ target 'Butler' do
     pod 'RealmSwift'
     
     pod 'Log'
+    pod "GTMNSStringHTMLAdditions"
     target 'ButlerTests' do
         inherit! :search_paths
     end

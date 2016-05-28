@@ -1,4 +1,5 @@
 PODS:
+  - GTMNSStringHTMLAdditions (0.2.1)
   - Log (0.5)
   - R.swift (2.2.2):
     - R.swift.Library (~> 2.1.0)
@@ -10,17 +11,19 @@ PODS:
     - Realm (= 0.102.0)
 
 DEPENDENCIES:
+  - GTMNSStringHTMLAdditions
   - Log
   - R.swift
   - RealmSwift
 
 SPEC CHECKSUMS:
+  GTMNSStringHTMLAdditions: 4bfc402b1b17165360728083156cae0a74ecb308
   Log: 5972312cb85cffbc56407b612936b610eb4af8a5
   R.swift: ed40b24d65ad70c6cf48a2f249a26a3e5a4a7bc0
   R.swift.Library: e5e077ed04f6867a95676af491650091b23518e9
   Realm: 5d219f9037e3ec2019c599b8227bfc95433cb10e
   RealmSwift: e6f436f9fea1c57b9ad6d1c46d57562c845f3c4c
 
-PODFILE CHECKSUM: 3d38d96124250aa487acfc1db11930c00752eed1
+PODFILE CHECKSUM: 85400ab62d07471e82bf7c0525abca3c3cc276b8
 
 COCOAPODS: 1.0.0

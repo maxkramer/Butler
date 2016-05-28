@@ -22,3 +22,5 @@
 "textfield.username" = "username";
 "textfield.password" = "password";
 "textfield.url" = "URL";
+"response.title" = "RESPONSE";
+"response.statuscode" = "Status";

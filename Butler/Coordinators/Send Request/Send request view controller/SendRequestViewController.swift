@@ -78,18 +78,22 @@ final class SendRequestViewController: UITableViewController, UITextFieldDelegat
         
         ProgressAlertView.show()
         
+        var startTime = 0.0
         runningDataTask = GlobalURLSession.sharedSession.urlSession.dataTaskWithRequest(urlRequest!) { [unowned self] (data, actualResponse, error) in
+            let endTime = CFAbsoluteTimeGetCurrent()
+            
             dispatch_async(dispatch_get_main_queue()) {
                 ProgressAlertView.hide()
                 guard let delegate = self.delegate else {
                     return
                 }
                 
-                let response = Response(request: request, httpResponse: actualResponse as? NSHTTPURLResponse, data: data, error: error)
+                let response = Response(request: request, httpResponse: actualResponse as? NSHTTPURLResponse, data: data, timeTaken:  endTime - startTime, error: error)
                 delegate.sendRequestViewController(self, didSendRequestSuccessfully: response)
             }
         }
         runningDataTask!.resume()
+        startTime = CFAbsoluteTimeGetCurrent()
     }
     
     // MARK: Setup the table view
