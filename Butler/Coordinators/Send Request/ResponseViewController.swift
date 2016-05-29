@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-final class ResponseViewController: UIViewController {
+final class ResponseViewController: UIViewController, WKNavigationDelegate {
     var tableView: UITableView!
     var webView: WKWebView!
     var slider: MultipleButtonSlider!
@@ -38,6 +38,7 @@ final class ResponseViewController: UIViewController {
         sliderTitle = UILabel()
         
         webView = WKWebView()
+        webView.navigationDelegate = self
         
         view.backgroundColor = UIColor.whiteColor()
         
@@ -97,6 +98,37 @@ final class ResponseViewController: UIViewController {
             ])
         
         showRaw()
+    }
+    
+    var activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+    
+    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
+        if slider.selectedIndex == 1 {
+            activityIndicatorView.stopAnimating()
+            activityIndicatorView.removeFromSuperview()
+            Cerberus.trace("finished loading \(slider.items[slider.selectedIndex])")
+        }
+    }
+    
+    func webView(webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        if slider.selectedIndex == 1 {
+            
+            activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+            activityIndicatorView.backgroundColor = R.color.butlerColors.lightText()
+            activityIndicatorView.layer.cornerRadius = 8
+            activityIndicatorView.layer.masksToBounds = true
+            
+            webView.addSubview(activityIndicatorView)
+            
+            NSLayoutConstraint.activateConstraints([
+                activityIndicatorView.centerXAnchor.constraintEqualToAnchor(webView.centerXAnchor),
+                activityIndicatorView.centerYAnchor.constraintEqualToAnchor(webView.centerYAnchor),
+                activityIndicatorView.widthAnchor.constraintEqualToConstant(100),
+                activityIndicatorView.heightAnchor.constraintEqualToAnchor(activityIndicatorView.widthAnchor)
+                ])
+            
+            activityIndicatorView.startAnimating()
+        }
     }
     
     func decodeData(data: NSData) -> String? {
