@@ -24,15 +24,24 @@ final class ResponseTableViewDatasource: NSObject, UITableViewDataSource, UITabl
     
     let response: Response
     let cookies: [NSHTTPCookie]?
+    let sectionTitles = Section.sectionTitles()
     
     init(response: Response, tableView: UITableView) {
         self.response = response
         self.cookies = response.cookies()
-        //        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "some_identifier")
+        
+        tableView.estimatedSectionHeaderHeight = 30
+        tableView.estimatedRowHeight = 30
+        
+        tableView.registerNib(R.nib.buttonTableHeaderView(), forHeaderFooterViewReuseIdentifier: "ButtonTableHeaderView")
+        tableView.registerNib(R.nib.singleTextFieldCell(), forCellReuseIdentifier: "SingleTextFieldCell")
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return Section.count()
+        if let count = cookies?.count where count > 0 {
+            return Section.count()
+        }
+        return Section.count() - 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,39 +49,84 @@ final class ResponseTableViewDatasource: NSObject, UITableViewDataSource, UITabl
         case Section.Headers.rawValue:
             return response.httpResponse?.allHeaderFields.count ?? 0
         case Section.Cookies.rawValue:
-            return cookies?.count ?? 0
+            if let cookies = cookies {
+                return cookies.count
+            }
+            return 0
         default:
             return 0
         }
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return Section.sectionTitles()[section]
+    func tableView(tableView: UITableView, viewForHeaderInSection sectionInt: Int) -> UIView? {
+        guard let headerView = tableView.dequeueReusableHeaderFooterViewWithIdentifier("ButtonTableHeaderView") as? ButtonTableHeaderView else {
+            return nil
+        }
+        
+        let titleFont = R.font.gothamHTFBook(size: 14)
+        let titleColor = R.color.butlerColors.lightText()
+        
+        headerView.button.hidden = true
+        
+        headerView.titleLabel.text = sectionTitles[sectionInt]
+        headerView.titleLabel.textColor = titleColor
+        headerView.titleLabel.font = titleFont
+        
+        headerView.contentView.backgroundColor = UIColor.clearColor()
+        return headerView
+    }
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.min
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 30
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("some_identifier")
-        if cell == nil {
-            cell = UITableViewCell(style: .Value2, reuseIdentifier: "some_identifier")
-        }
-        
-        let section = Section(rawValue: indexPath.section)!
-        if section == Section.Headers {
-            if let index = response.httpResponse?.allHeaderFields.startIndex.advancedBy(indexPath.row) {
-                let key = response.httpResponse?.allHeaderFields.keys[index]
-                let value = response.httpResponse?.allHeaderFields[key!]
-                
-                cell?.textLabel?.text = key as? String
-                cell?.detailTextLabel?.text = value as? String
-            }
-        } else if section == Section.Cookies {
-            if let cookie = cookies?[indexPath.row] {
-                cell?.textLabel?.text = cookie.name
-                cell?.detailTextLabel?.text = cookie.value.stringByRemovingPercentEncoding
+        if let cell = tableView.dequeueReusableCellWithIdentifier("SingleTextFieldCell", forIndexPath: indexPath) as? SingleTextFieldCell {
+            
+            let section = Section(rawValue: indexPath.section)!
+            if section == Section.Headers {
+                if let index = response.httpResponse?.allHeaderFields.startIndex.advancedBy(indexPath.row) {
+                    let key = response.httpResponse?.allHeaderFields.keys[index]
+                    let value = response.httpResponse?.allHeaderFields[key!]
+                    
+                    cell.keyLabel.text = key as? String
+                    cell.valueTextField.text = value as? String
+                }
+            } else if section == Section.Cookies {
+                if let cookie = cookies?[indexPath.row] {
+                    cell.keyLabel.text = cookie.name
+                    cell.valueTextField.text = cookie.value.stringByRemovingPercentEncoding
+                }
             }
             
+            cell.keyLabel.numberOfLines = 2
+            
+            let keyFont = R.font.gothamHTFLight(size: 12)
+            let keyColor = R.color.butlerColors.darkText()
+            
+            let valueFont = R.font.gothamHTFBook(size: 12)
+            let valueColor = R.color.butlerColors.darkText()
+            
+            cell.keyLabel.font = keyFont
+            cell.keyLabel.textColor = keyColor
+            
+            cell.valueTextField.font = valueFont
+            cell.valueTextField.textColor = valueColor
+            cell.valueTextField.userInteractionEnabled = false
+            
+            cell.selectionStyle = .None
+            return cell
         }
-        return cell!
+        
+        return UITableViewCell()
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

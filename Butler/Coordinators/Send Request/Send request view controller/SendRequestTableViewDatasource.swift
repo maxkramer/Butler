@@ -53,7 +53,6 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
         tableView.registerNib(R.nib.singleTextFieldCell(), forCellReuseIdentifier: "SingleTextFieldCell")
         tableView.registerNib(R.nib.doubleTextFieldCell(), forCellReuseIdentifier: "DoubleTextFieldCell")
         tableView.registerNib(R.nib.buttonTableHeaderView(), forHeaderFooterViewReuseIdentifier: "ButtonTableHeaderView")
-        tableView.registerClass(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "DefaultHeaderFooterView")
         
         tableView.estimatedSectionHeaderHeight = 30
     }
