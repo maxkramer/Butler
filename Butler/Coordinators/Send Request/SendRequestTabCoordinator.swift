@@ -31,6 +31,17 @@ class SendRequestTabCoordinator: TabCoordinator, SendRequestViewControllerDelega
     
     func sendRequestViewController(sendRequestViewController: SendRequestViewController, didSendRequestSuccessfully response: Response) {
         Cerberus.info("Request sent successfully. Received response: \(response)")
-        delegate?.sendRequestTabCoordinator(self, didReceiveResponse: response)
+        if let error = response.error as? NSError {
+            Cerberus.error(error)
+            
+            let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: { [unowned self] _ in
+                self.rootViewController.dismissViewControllerAnimated(true, completion: nil)
+                }))
+            
+            rootViewController.presentViewController(alertController, animated: true, completion: nil)
+        } else {
+            delegate?.sendRequestTabCoordinator(self, didReceiveResponse: response)
+        }
     }
 }
