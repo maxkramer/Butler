@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import WebKit
 
 final class ResponseViewController: UIViewController {
     var tableView: UITableView!
-    var webView: UIWebView!
+    var webView: WKWebView!
     var slider: MultipleButtonSlider!
     var sliderTitle: UILabel!
     
@@ -36,7 +37,7 @@ final class ResponseViewController: UIViewController {
         tableView = UITableView(frame: CGRect.zero, style: .Grouped)
         sliderTitle = UILabel()
         
-        webView = UIWebView()
+        webView = WKWebView()
         
         view.backgroundColor = UIColor.whiteColor()
         
@@ -107,7 +108,9 @@ final class ResponseViewController: UIViewController {
     
     func showPreview() {
         if let url = response.httpResponse?.URL {
-            webView.loadRequest(NSURLRequest(URL: url))
+            if let data = response.data {
+                webView.loadData(data, MIMEType: "text/html", characterEncodingName: "UTF-8", baseURL: url)
+            }
         } else {
             webView.loadHTMLString("<h1>Unable to decode the data</h1>", baseURL: nil)
         }
@@ -126,7 +129,14 @@ final class ResponseViewController: UIViewController {
         if let data = response.data, decodedCode = decodeData(data) {
             let highlighter = SyntaxHighlighter(code: decodedCode)
             if let html = highlighter.generatePrettifiedHTML() {
-                webView.loadHTMLString(html, baseURL: nil)
+                
+                
+                //                NSString *path = [[NSBundle mainBundle] bundlePath];
+                //                NSURL *baseURL = [NSURL fileURLWithPath:path];
+                
+                let bundlePath = NSBundle.mainBundle().bundlePath
+                
+                webView.loadHTMLString(html, baseURL: NSURL(fileURLWithPath: bundlePath))
             }
         }
     }

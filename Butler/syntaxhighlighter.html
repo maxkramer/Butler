@@ -1,9 +1,41 @@
+<!DOCTYPE html>
 <html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/github.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script></head>
-    <body>
-        <script>hljs.initHighlightingOnLoad();</script>
-        <pre>
-            <code>{code}</code>
-        </pre>
-    </body>
+  <head>
+      <link href="github.css" rel="stylesheet">
+      <script src="butler.min.js"></script>
+  </head>
+  <body>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <pre><code id="code">{code}</code></pre>
+    <script>
+      function looks_like_html(source) {
+          var trimmed = source.replace(/^[ \t\n\r]+/, '');
+          var comment_mark = '<' + '!-' + '-';
+          return (trimmed && (trimmed.substring(0, 1) === '<' && trimmed.substring(0, 4) !== comment_mark));
+      }
+
+      function htmlDecode(input) {
+        var e = document.createElement('div');
+        e.innerHTML = input;
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+      }
+
+      function htmlEncode(html) {
+        return document.createElement( 'a' ).appendChild(
+          document.createTextNode( html ) ).parentNode.innerHTML;
+      };
+
+      var code = htmlDecode(document.getElementById("code").innerHTML);
+
+      var prettified = "";
+      if (looks_like_html(code)) {
+        prettified = html_beautify(code);
+      }
+      else {
+        prettified = js_beautify(code);
+      }
+
+      document.getElementById("code").innerHTML = htmlEncode(prettified);
+    </script>
+  </body>
 </html>

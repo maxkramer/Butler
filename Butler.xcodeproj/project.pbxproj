@@ -22,6 +22,9 @@
 		5046F5791CF9FB2A00A84FB4 /* SyntaxHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046F5781CF9FB2A00A84FB4 /* SyntaxHighlighter.swift */; };
 		5046F57B1CF9FF3100A84FB4 /* StringExtensionHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046F57A1CF9FF3100A84FB4 /* StringExtensionHTML.swift */; };
 		5046F57E1CFA075400A84FB4 /* raw.html in Resources */ = {isa = PBXBuildFile; fileRef = 5046F57D1CFA075400A84FB4 /* raw.html */; };
+		5046F5821CFA66FC00A84FB4 /* github.css in Resources */ = {isa = PBXBuildFile; fileRef = 5046F5811CFA66FC00A84FB4 /* github.css */; };
+		5046F5841CFA670A00A84FB4 /* butler.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 5046F5831CFA670A00A84FB4 /* butler.min.js */; };
+		5046F5861CFA6A1800A84FB4 /* worker.js in Resources */ = {isa = PBXBuildFile; fileRef = 5046F5851CFA6A1800A84FB4 /* worker.js */; };
 		5081FCB41CEA609500BB7196 /* MultipleButtonSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5081FCB31CEA609500BB7196 /* MultipleButtonSlider.swift */; };
 		50ACA7011CF90760000131D4 /* ResponseTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACA7001CF90760000131D4 /* ResponseTableViewDatasource.swift */; };
 		50ACF5FC1CF6157B00C393A6 /* GlobalURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACF5FB1CF6157B00C393A6 /* GlobalURLSession.swift */; };
@@ -117,6 +120,9 @@
 		5046F57A1CF9FF3100A84FB4 /* StringExtensionHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionHTML.swift; sourceTree = "<group>"; };
 		5046F57C1CFA01A100A84FB4 /* Butler-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Butler-Bridging-Header.h"; sourceTree = "<group>"; };
 		5046F57D1CFA075400A84FB4 /* raw.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = raw.html; sourceTree = "<group>"; };
+		5046F5811CFA66FC00A84FB4 /* github.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = github.css; path = bower_components/highlightjs/styles/github.css; sourceTree = SOURCE_ROOT; };
+		5046F5831CFA670A00A84FB4 /* butler.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = butler.min.js; path = lib/butler.min.js; sourceTree = SOURCE_ROOT; };
+		5046F5851CFA6A1800A84FB4 /* worker.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = worker.js; sourceTree = "<group>"; };
 		5081FCB31CEA609500BB7196 /* MultipleButtonSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleButtonSlider.swift; sourceTree = "<group>"; };
 		50ACA7001CF90760000131D4 /* ResponseTableViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseTableViewDatasource.swift; sourceTree = "<group>"; };
 		50ACF5FB1CF6157B00C393A6 /* GlobalURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalURLSession.swift; sourceTree = "<group>"; };
@@ -233,6 +239,9 @@
 				5011E1291CE9CD2600891FB1 /* AppDelegate.swift */,
 				5046F5781CF9FB2A00A84FB4 /* SyntaxHighlighter.swift */,
 				5046F57D1CFA075400A84FB4 /* raw.html */,
+				5046F5811CFA66FC00A84FB4 /* github.css */,
+				5046F5831CFA670A00A84FB4 /* butler.min.js */,
+				5046F5851CFA6A1800A84FB4 /* worker.js */,
 				5046F5761CF9FB1A00A84FB4 /* syntaxhighlighter.html */,
 			);
 			path = Butler;
@@ -621,13 +630,16 @@
 				50CECFD41CECA359008748F8 /* SliderCell.xib in Resources */,
 				50B200D61CEA15F10075728E /* SendRequestViewController.xib in Resources */,
 				5046F57E1CFA075400A84FB4 /* raw.html in Resources */,
+				5046F5821CFA66FC00A84FB4 /* github.css in Resources */,
 				50EF88231CEBA43100B7F10A /* DoubleTextFieldCell.xib in Resources */,
+				5046F5841CFA670A00A84FB4 /* butler.min.js in Resources */,
 				50B200DC1CEA23EC0075728E /* Butler Colors.clr in Resources */,
 				50B200CA1CE9DF450075728E /* Localizable.strings in Resources */,
 				50CECFDD1CECC088008748F8 /* GothamHTF-Medium.otf in Resources */,
 				50CECFDB1CECC088008748F8 /* GothamHTF-Book.otf in Resources */,
 				50CECFDC1CECC088008748F8 /* GothamHTF-Light.otf in Resources */,
 				50CECFDA1CECC088008748F8 /* GothamHTF-Bold.otf in Resources */,
+				5046F5861CFA6A1800A84FB4 /* worker.js in Resources */,
 				5011E1331CE9CD2600891FB1 /* Assets.xcassets in Resources */,
 				5011E1311CE9CD2600891FB1 /* Main.storyboard in Resources */,
 				5046F5771CF9FB1A00A84FB4 /* syntaxhighlighter.html in Resources */,
