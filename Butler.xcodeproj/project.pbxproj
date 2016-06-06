@@ -17,7 +17,7 @@
 		5011E15C1CE9CED100891FB1 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E15B1CE9CED100891FB1 /* TabCoordinator.swift */; };
 		5011E15E1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */; };
 		5011E1601CE9D06C00891FB1 /* SendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E15F1CE9D06C00891FB1 /* SendRequestViewController.swift */; };
-		5014DDFE1D05AF7A00A8FC0C /* ExpandedWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5014DDFD1D05AF7A00A8FC0C /* ExpandedWebViewController.swift */; };
+		5014DDFE1D05AF7A00A8FC0C /* ResponseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5014DDFD1D05AF7A00A8FC0C /* ResponseWebViewController.swift */; };
 		5014DE001D05B4DD00A8FC0C /* ResponseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5014DDFF1D05B4DD00A8FC0C /* ResponseCoordinator.swift */; };
 		501804881CF3A4150041E861 /* NSURLRequest+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501804871CF3A4150041E861 /* NSURLRequest+Request.swift */; };
 		5046F5771CF9FB1A00A84FB4 /* syntaxhighlighter.html in Resources */ = {isa = PBXBuildFile; fileRef = 5046F5761CF9FB1A00A84FB4 /* syntaxhighlighter.html */; };
@@ -117,7 +117,7 @@
 		5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRequestTabCoordinator.swift; sourceTree = "<group>"; };
 		5011E15F1CE9D06C00891FB1 /* SendRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRequestViewController.swift; sourceTree = "<group>"; };
 		5011E1681CE9D61F00891FB1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
-		5014DDFD1D05AF7A00A8FC0C /* ExpandedWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandedWebViewController.swift; sourceTree = "<group>"; };
+		5014DDFD1D05AF7A00A8FC0C /* ResponseWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseWebViewController.swift; sourceTree = "<group>"; };
 		5014DDFF1D05B4DD00A8FC0C /* ResponseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseCoordinator.swift; sourceTree = "<group>"; };
 		501804871CF3A4150041E861 /* NSURLRequest+Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURLRequest+Request.swift"; sourceTree = "<group>"; };
 		5046F5761CF9FB1A00A84FB4 /* syntaxhighlighter.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = syntaxhighlighter.html; sourceTree = "<group>"; };
@@ -125,8 +125,8 @@
 		5046F57A1CF9FF3100A84FB4 /* StringExtensionHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionHTML.swift; sourceTree = "<group>"; };
 		5046F57C1CFA01A100A84FB4 /* Butler-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Butler-Bridging-Header.h"; sourceTree = "<group>"; };
 		5046F57D1CFA075400A84FB4 /* raw.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = raw.html; sourceTree = "<group>"; };
-		5046F5811CFA66FC00A84FB4 /* github.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = github.css; path = bower_components/highlightjs/styles/github.css; sourceTree = SOURCE_ROOT; };
-		5046F5831CFA670A00A84FB4 /* butler.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = butler.min.js; path = lib/butler.min.js; sourceTree = SOURCE_ROOT; };
+		5046F5811CFA66FC00A84FB4 /* github.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = github.css; sourceTree = "<group>"; };
+		5046F5831CFA670A00A84FB4 /* butler.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = butler.min.js; sourceTree = "<group>"; };
 		507422C31CFE2B8E00D3579D /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		5081FCB31CEA609500BB7196 /* MultipleButtonSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleButtonSlider.swift; sourceTree = "<group>"; };
 		5097B46C1CFB8DCD0047A426 /* WKWebView+Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WKWebView+Response.swift"; sourceTree = "<group>"; };
@@ -243,12 +243,6 @@
 				50B200CC1CE9E3C80075728E /* Models */,
 				50B200BA1CE9D9400075728E /* Resources */,
 				5011E1291CE9CD2600891FB1 /* AppDelegate.swift */,
-				5046F5781CF9FB2A00A84FB4 /* SyntaxHighlighter.swift */,
-				5014DDFD1D05AF7A00A8FC0C /* ExpandedWebViewController.swift */,
-				5046F57D1CFA075400A84FB4 /* raw.html */,
-				5046F5811CFA66FC00A84FB4 /* github.css */,
-				5046F5831CFA670A00A84FB4 /* butler.min.js */,
-				5046F5761CF9FB1A00A84FB4 /* syntaxhighlighter.html */,
 			);
 			path = Butler;
 			sourceTree = "<group>";
@@ -282,6 +276,68 @@
 			path = "Generated Resource File";
 			sourceTree = "<group>";
 		};
+		5014DE031D05EDD000A8FC0C /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				5014DE041D05EDE000A8FC0C /* Response View Controller */,
+				5014DDFF1D05B4DD00A8FC0C /* ResponseCoordinator.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		5014DE041D05EDE000A8FC0C /* Response View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5014DE051D05EDE700A8FC0C /* Datasource */,
+				50B863861CF8D524008FC8B3 /* ResponseViewController.swift */,
+			);
+			path = "Response View Controller";
+			sourceTree = "<group>";
+		};
+		5014DE051D05EDE700A8FC0C /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				50ACA7001CF90760000131D4 /* ResponseTableViewDatasource.swift */,
+			);
+			path = Datasource;
+			sourceTree = "<group>";
+		};
+		5014DE061D05EDF000A8FC0C /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				50B200D71CEA16520075728E /* SendRequestTableViewDatasource.swift */,
+			);
+			path = Datasource;
+			sourceTree = "<group>";
+		};
+		5014DE071D05EE0300A8FC0C /* Syntax Highlighting */ = {
+			isa = PBXGroup;
+			children = (
+				5014DE081D05EE6400A8FC0C /* Resources */,
+				5046F5781CF9FB2A00A84FB4 /* SyntaxHighlighter.swift */,
+			);
+			path = "Syntax Highlighting";
+			sourceTree = "<group>";
+		};
+		5014DE081D05EE6400A8FC0C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5046F5831CFA670A00A84FB4 /* butler.min.js */,
+				5046F5811CFA66FC00A84FB4 /* github.css */,
+				5046F57D1CFA075400A84FB4 /* raw.html */,
+				5046F5761CF9FB1A00A84FB4 /* syntaxhighlighter.html */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5014DE091D05EF9A00A8FC0C /* Response Web View */ = {
+			isa = PBXGroup;
+			children = (
+				5014DDFD1D05AF7A00A8FC0C /* ResponseWebViewController.swift */,
+			);
+			path = "Response Web View";
+			sourceTree = "<group>";
+		};
 		50ACF6091CF6430300C393A6 /* Alert view */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,11 +354,12 @@
 				50CECFD51CECC088008748F8 /* Fonts */,
 				5011E16A1CE9D69A00891FB1 /* Generated Resource File */,
 				50CECFEC1CECED29008748F8 /* Helpers */,
+				5014DE071D05EE0300A8FC0C /* Syntax Highlighting */,
 				5011E1321CE9CD2600891FB1 /* Assets.xcassets */,
 				50B200DB1CEA23EC0075728E /* Butler Colors.clr */,
+				5046F57C1CFA01A100A84FB4 /* Butler-Bridging-Header.h */,
 				5011E1371CE9CD2600891FB1 /* Info.plist */,
 				5011E1341CE9CD2600891FB1 /* LaunchScreen.storyboard */,
-				5046F57C1CFA01A100A84FB4 /* Butler-Bridging-Header.h */,
 				50B200C91CE9DF450075728E /* Localizable.strings */,
 				5011E12F1CE9CD2600891FB1 /* Main.storyboard */,
 			);
@@ -314,11 +371,9 @@
 			children = (
 				50CECFF21CECED61008748F8 /* Favourites */,
 				50CECFF11CECED5B008748F8 /* History */,
+				5014DE031D05EDD000A8FC0C /* Response */,
 				50CECFF01CECED55008748F8 /* Send Request */,
 				5011E1591CE9CD3D00891FB1 /* ApplicationCoordinator.swift */,
-				5014DDFF1D05B4DD00A8FC0C /* ResponseCoordinator.swift */,
-				5011E15B1CE9CED100891FB1 /* TabCoordinator.swift */,
-				507422C31CFE2B8E00D3579D /* Database.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -396,15 +451,16 @@
 		50CECFE91CECED07008748F8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5046F57A1CF9FF3100A84FB4 /* StringExtensionHTML.swift */,
-				5097B46C1CFB8DCD0047A426 /* WKWebView+Response.swift */,
 				50ACF5FF1CF61FA500C393A6 /* List+Parameterfy.swift */,
-				50B8638A1CF8E875008FC8B3 /* UINavigationItem+Subtitle.swift */,
 				50CECFE21CECEC72008748F8 /* MultipleButtonSlider+Butler.swift */,
 				50BD41C91CEDE6B10080A1D3 /* NSAttributedString+MajorMinor.swift */,
 				50ACF5FD1CF61F1D00C393A6 /* NSURL+Tidy.swift */,
 				501804871CF3A4150041E861 /* NSURLRequest+Request.swift */,
+				5046F57A1CF9FF3100A84FB4 /* StringExtensionHTML.swift */,
+				5011E15B1CE9CED100891FB1 /* TabCoordinator.swift */,
+				50B8638A1CF8E875008FC8B3 /* UINavigationItem+Subtitle.swift */,
 				50B200C31CE9DC2A0075728E /* UITabBarItem+Butler.swift */,
+				5097B46C1CFB8DCD0047A426 /* WKWebView+Response.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -416,6 +472,7 @@
 				50CECFE81CECECFC008748F8 /* Bordered text field */,
 				50CECFEB1CECED1A008748F8 /* Button Table Header View */,
 				50CECFE41CECECE5008748F8 /* Cells */,
+				5014DE091D05EF9A00A8FC0C /* Response Web View */,
 				50CECFE71CECECF9008748F8 /* Slider */,
 			);
 			path = "Custom UI Components";
@@ -434,6 +491,7 @@
 			isa = PBXGroup;
 			children = (
 				50F246301CF89C0100011885 /* Cerberus.swift */,
+				507422C31CFE2B8E00D3579D /* Database.swift */,
 				50ACF5FB1CF6157B00C393A6 /* GlobalURLSession.swift */,
 				50B200CF1CE9EDED0075728E /* KeychainHelper.swift */,
 			);
@@ -443,7 +501,7 @@
 		50CECFED1CECED3A008748F8 /* Send request view controller */ = {
 			isa = PBXGroup;
 			children = (
-				50B200D71CEA16520075728E /* SendRequestTableViewDatasource.swift */,
+				5014DE061D05EDF000A8FC0C /* Datasource */,
 				5011E15F1CE9D06C00891FB1 /* SendRequestViewController.swift */,
 				50B200D51CEA15F10075728E /* SendRequestViewController.xib */,
 			);
@@ -470,8 +528,6 @@
 			isa = PBXGroup;
 			children = (
 				50CECFED1CECED3A008748F8 /* Send request view controller */,
-				50B863861CF8D524008FC8B3 /* ResponseViewController.swift */,
-				50ACA7001CF90760000131D4 /* ResponseTableViewDatasource.swift */,
 				5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */,
 			);
 			path = "Send Request";
@@ -827,7 +883,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5014DDFE1D05AF7A00A8FC0C /* ExpandedWebViewController.swift in Sources */,
+				5014DDFE1D05AF7A00A8FC0C /* ResponseWebViewController.swift in Sources */,
 				50ACF6001CF61FA500C393A6 /* List+Parameterfy.swift in Sources */,
 				50ACF6021CF6256700C393A6 /* RotatingCircle.swift in Sources */,
 				50F246291CF74EA200011885 /* BodyFormat.swift in Sources */,

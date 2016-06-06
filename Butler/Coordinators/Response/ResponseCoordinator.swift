@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResponseCoordinator: NSObject, ResponseViewControllerDelegate, ExpandedWebViewControllerDelegate {
+class ResponseCoordinator: NSObject, ResponseViewControllerDelegate, ResponseWebViewControllerDelegate {
     let parentViewController: UIViewController
     let response: Response
     var hidesBottomBarWhenPushed: Bool = false
@@ -40,15 +40,17 @@ class ResponseCoordinator: NSObject, ResponseViewControllerDelegate, ExpandedWeb
     // MARK: ResponseViewControllerDelegate
     
     func responseViewController(responseViewController: ResponseViewController, needsShowExpanded type: SyntaxHighlighter.TemplateType) {
-        let expandedViewController = ExpandedWebViewController(response: responseViewController.response, templateType: type)
-        expandedViewController.navigationItem.title = responseViewController.response.request.url
-        expandedViewController.delegate = self
+        let responseWebViewController = ResponseWebViewController(response: responseViewController.response, templateType: type)
+        responseWebViewController.navigationItem.title = responseViewController.response.request.url
+        responseWebViewController.delegate = self
         
-        let navController = UINavigationController(rootViewController: expandedViewController)
+        let navController = UINavigationController(rootViewController: responseWebViewController)
         responseViewController.presentViewController(navController, animated: true, completion: nil)
     }
     
-    func expandedWebViewController(needsDismiss expandedWebViewController: ExpandedWebViewController) {
-        expandedWebViewController.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    // MARK: ResponseWebViewControllerDelegate
+    
+    func responseWebViewController(needsDismiss responseWebViewController: ResponseWebViewController) {
+        responseWebViewController.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 }

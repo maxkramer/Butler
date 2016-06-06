@@ -59,7 +59,7 @@ final class Database: NSObject {
         shared.configureDefaultRealm()
         
         Notification.notificationNames().forEach {
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(received(_:)), name: $0, object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(shared, selector: #selector(received(_:)), name: $0, object: nil)
         }
     }
     
@@ -75,6 +75,6 @@ final class Database: NSObject {
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NSNotificationCenter.defaultCenter().removeObserver(Database.shared)
     }
 }

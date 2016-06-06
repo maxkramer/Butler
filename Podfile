@@ -8,6 +8,7 @@ target 'Butler' do
     pod 'SwiftFetchedResultsController'    
     pod 'Log'
     pod "GTMNSStringHTMLAdditions"
+    
     target 'ButlerTests' do
         inherit! :search_paths
     end

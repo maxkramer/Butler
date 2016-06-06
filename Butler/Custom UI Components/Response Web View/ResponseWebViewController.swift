@@ -9,16 +9,16 @@
 import UIKit
 import WebKit
 
-protocol ExpandedWebViewControllerDelegate {
-    func expandedWebViewController(needsDismiss expandedWebViewController: ExpandedWebViewController)
+protocol ResponseWebViewControllerDelegate {
+    func responseWebViewController(needsDismiss responseWebViewController: ResponseWebViewController)
 }
 
-class ExpandedWebViewController: UIViewController, WKNavigationDelegate {
+class ResponseWebViewController: UIViewController, WKNavigationDelegate {
     let response: Response
     let templateType: SyntaxHighlighter.TemplateType
     let webView: WKWebView = WKWebView()
     
-    var delegate: ExpandedWebViewControllerDelegate?
+    var delegate: ResponseWebViewControllerDelegate?
     
     init(response: Response, templateType: SyntaxHighlighter.TemplateType) {
         self.response = response
@@ -55,7 +55,7 @@ class ExpandedWebViewController: UIViewController, WKNavigationDelegate {
             return
         }
         
-        delegate.expandedWebViewController(needsDismiss: self)
+        delegate.responseWebViewController(needsDismiss: self)
     }
     
     private func loadResponse() {
