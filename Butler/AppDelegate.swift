@@ -23,13 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.makeKeyAndVisible()
         
-        configureDefaultRealm()
+        Database.configure()
         
         return true
-    }
-    
-    func configureDefaultRealm() {
-        let config = Realm.Configuration(encryptionKey: KeychainHelper.shared.realmEncryptionKey())
-        Realm.Configuration.defaultConfiguration = config
     }
 }

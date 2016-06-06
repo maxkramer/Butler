@@ -30,10 +30,11 @@ class ApplicationCoordinator: SendRequestTabCoordinatorDelegate {
     }
     
     func sendRequestTabCoordinator(sendRequestTabCoordinator: SendRequestTabCoordinator, didReceiveResponse response: Response) {
-        let responseViewController = ResponseViewController(response)
-        if let navigationController = tabBarController.viewControllers?.first as? UINavigationController {
-            responseViewController.hidesBottomBarWhenPushed = true
-            navigationController.pushViewController(responseViewController, animated: true)
+        guard let navigationController = tabBarController.viewControllers?.first as? UINavigationController else {
+            return
         }
+        
+        let responseCoordinator = ResponseCoordinator(parentViewController: navigationController, response: response, hidesBottomBarWhenPushed: true)
+        responseCoordinator.start()
     }
 }

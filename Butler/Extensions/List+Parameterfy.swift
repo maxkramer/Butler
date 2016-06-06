@@ -9,6 +9,17 @@
 import Foundation
 import RealmSwift
 
+extension Array where Element: Header {
+    func validObjects() -> [Element] {
+        return filter {
+            if let value = $0.value, key = $0.key where key.characters.count > 0 && value.characters.count > 0 {
+                return false
+            }
+            return true
+        }
+    }
+}
+
 extension List where T: Header {
     func bodyString() -> String? {
         return reduce("") { (b, header) -> String in

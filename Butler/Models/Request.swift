@@ -20,6 +20,8 @@ class Request: Object {
     dynamic var rawRequestMethod: String = RequestMethod.GET.rawValue
     dynamic var rawBodyFormat: String = BodyFormat.Plain.rawValue
     
+    dynamic var favourited: Bool = false
+    
     var requestMethod: RequestMethod {
         return RequestMethod(rawValue: rawRequestMethod)!
     }

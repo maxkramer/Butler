@@ -9,11 +9,17 @@
 import UIKit
 import WebKit
 
+protocol ResponseViewControllerDelegate {
+    func responseViewController(responseViewController: ResponseViewController, needsShowExpanded type: SyntaxHighlighter.TemplateType)
+}
+
 final class ResponseViewController: UIViewController, WKNavigationDelegate {
     var tableView: UITableView!
     var webView: WKWebView!
     var slider: MultipleButtonSlider!
     var sliderTitleLabel: UILabel!
+    
+    var delegate: ResponseViewControllerDelegate?
     
     let response: Response
     var tableViewDatasource: ResponseTableViewDatasource!
@@ -47,20 +53,23 @@ final class ResponseViewController: UIViewController, WKNavigationDelegate {
         let webViewConstraints = configureWebView()
         
         let backgroundImageTuple = configureBackgroundImageView()
+        let expandButtonTuple = configureExpandButton()
         
         view.addSubview(backgroundImageTuple.backgroundImageView)
         view.addSubview(webView)
         view.addSubview(tableView)
         view.addSubview(sliderTitleLabel)
         view.addSubview(slider)
+        view.addSubview(expandButtonTuple.expandButton)
         
         NSLayoutConstraint.activateConstraints(tableViewConstraints)
         NSLayoutConstraint.activateConstraints(sliderTitleConstraints)
         NSLayoutConstraint.activateConstraints(sliderConstraints)
         NSLayoutConstraint.activateConstraints(webViewConstraints)
         NSLayoutConstraint.activateConstraints(backgroundImageTuple.constraints)
+        NSLayoutConstraint.activateConstraints(expandButtonTuple.constraints)
         
-        showRaw()
+        webView.display(response, type: .Raw)
     }
     
     // MARK: UI Configuration
@@ -116,12 +125,13 @@ final class ResponseViewController: UIViewController, WKNavigationDelegate {
     
     func configureSlider() -> [NSLayoutConstraint] {
         slider = MultipleButtonSlider.butlerSlider(["Raw", "Pretty", "Preview"], callback: { [unowned self] index in
+            self.stopLoadingWebViewIfNeeded()
             if index == 0 {
-                self.showRaw()
+                self.webView.display(self.response, type: SyntaxHighlighter.TemplateType.Raw)
             } else if index == 1 {
-                self.showPretty()
+                self.webView.display(self.response, type: SyntaxHighlighter.TemplateType.Pretty)
             } else if index == 2 {
-                self.showPreview()
+                self.webView.display(self.response, type: SyntaxHighlighter.TemplateType.Preview)
             }
             })
         slider.translatesAutoresizingMaskIntoConstraints = false
@@ -147,6 +157,36 @@ final class ResponseViewController: UIViewController, WKNavigationDelegate {
         ]
         
         return (backgroundImageView, constraints)
+    }
+    
+    func configureExpandButton() -> (expandButton: UIButton, constraints: [NSLayoutConstraint]) {
+        let iconImage = R.image.ic_open_in_new()!
+        let button = UIButton(type: .Custom)
+        button.setImage(iconImage, forState: .Normal)
+        button.addTarget(self, action: #selector(showExpandedWebView), forControlEvents: .TouchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        let constraints: [NSLayoutConstraint] = [
+            button.trailingAnchor.constraintEqualToAnchor(webView.trailingAnchor, constant: -10),
+            button.topAnchor.constraintEqualToAnchor(webView.topAnchor, constant: 10)
+        ]
+        return (button, constraints)
+    }
+    
+    func showExpandedWebView() {
+        guard let delegate = delegate else {
+            return
+        }
+        
+        var templateType = SyntaxHighlighter.TemplateType.Preview
+        
+        if slider.selectedIndex == 0 {
+            templateType = .Raw
+        } else if slider.selectedIndex == 1 {
+            templateType = .Pretty
+        }
+        
+        delegate.responseViewController(self, needsShowExpanded: templateType)
     }
     
     // MARK: Activity Indicator Management
@@ -197,55 +237,6 @@ final class ResponseViewController: UIViewController, WKNavigationDelegate {
             
             if let _ = activityIndicatorView.superview {
                 hideWebViewLoadingIndicator()
-            }
-        }
-    }
-    
-    // MARK: Data Decoding
-    
-    func decodeData(data: NSData) -> String? {
-        if let utf8Representation = String(data: data, encoding: NSUTF8StringEncoding) {
-            return utf8Representation
-        }
-        return String(data: data, encoding: NSASCIIStringEncoding)
-    }
-    
-    func loadHTMLString(html: String, baseURL: NSURL?) {
-        stopLoadingWebViewIfNeeded()
-        webView.loadHTMLString(html, baseURL: baseURL)
-    }
-    
-    // MARK: Slider Actions
-    
-    func showPreview() {
-        guard let url = response.httpResponse?.URL else {
-            return
-        }
-        
-        stopLoadingWebViewIfNeeded()
-        
-        if let data = response.data {
-            webView.loadData(data, MIMEType: "text/html", characterEncodingName: "UTF-8", baseURL: url)
-        } else {
-            webView.loadRequest(NSURLRequest(URL: url))
-        }
-    }
-    
-    func showRaw() {
-        if let data = response.data, decodedCode = decodeData(data) {
-            let highlighter = SyntaxHighlighter(code: decodedCode)
-            if let html = highlighter.generateRawHTML() {
-                loadHTMLString(html, baseURL: nil)
-            }
-        }
-    }
-    
-    func showPretty() {
-        if let data = response.data, decodedCode = decodeData(data) {
-            let highlighter = SyntaxHighlighter(code: decodedCode)
-            if let html = highlighter.generatePrettifiedHTML() {
-                let bundlePath = NSBundle.mainBundle().bundlePath
-                loadHTMLString(html, baseURL: NSURL(fileURLWithPath: bundlePath))
             }
         }
     }

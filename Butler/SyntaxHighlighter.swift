@@ -19,6 +19,7 @@ struct SyntaxHighlighter {
     enum TemplateType: String {
         case Raw =  "raw"
         case Pretty = "syntaxhighlighter"
+        case Preview = ""
     }
     
     private func generateTemplate(type: TemplateType, code: String) -> String? {
@@ -30,6 +31,8 @@ struct SyntaxHighlighter {
         case .Pretty:
             templateURL = R.file.syntaxhighlighterHtml()
             break
+        default:
+            return nil
         }
         
         guard let templateFileURL = templateURL,

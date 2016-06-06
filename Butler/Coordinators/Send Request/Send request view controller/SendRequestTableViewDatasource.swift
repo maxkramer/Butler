@@ -39,7 +39,7 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
     var sectionTitles = Section.sectionTitles
     
     func generateRequest() -> Request {
-        return Request.create(headers, parameters: parameters, authorization: showingAuthorizationCells ? authorization : nil)
+        return Request.create(headers.validObjects(), parameters: parameters.validObjects(), authorization: showingAuthorizationCells ? authorization : nil)
     }
     
     init(_ tableView: UITableView) {

@@ -7,5 +7,6 @@
 //
 
 import Foundation
+import RealmSwift
 
 class Parameter: Header {}

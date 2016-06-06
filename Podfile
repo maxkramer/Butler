@@ -5,7 +5,7 @@ target 'Butler' do
     
     pod 'R.swift'
     pod 'RealmSwift'
-    
+    pod 'SwiftFetchedResultsController'    
     pod 'Log'
     pod "GTMNSStringHTMLAdditions"
     target 'ButlerTests' do

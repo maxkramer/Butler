@@ -1,29 +1,37 @@
 PODS:
   - GTMNSStringHTMLAdditions (0.2.1)
   - Log (0.5)
-  - R.swift (2.2.2):
+  - R.swift (2.3.0):
     - R.swift.Library (~> 2.1.0)
   - R.swift.Library (2.1.0)
-  - Realm (0.102.0):
-    - Realm/Headers (= 0.102.0)
-  - Realm/Headers (0.102.0)
-  - RealmSwift (0.102.0):
-    - Realm (= 0.102.0)
+  - RBQFetchedResultsController (4.0.3):
+    - Realm (>= 0.99.1)
+  - Realm (1.0.0):
+    - Realm/Headers (= 1.0.0)
+  - Realm/Headers (1.0.0)
+  - RealmSwift (1.0.0):
+    - Realm (= 1.0.0)
+  - SwiftFetchedResultsController (4.0.3):
+    - RBQFetchedResultsController (>= 4.0.3)
+    - RealmSwift (>= 0.99.1)
 
 DEPENDENCIES:
   - GTMNSStringHTMLAdditions
   - Log
   - R.swift
   - RealmSwift
+  - SwiftFetchedResultsController
 
 SPEC CHECKSUMS:
   GTMNSStringHTMLAdditions: 4bfc402b1b17165360728083156cae0a74ecb308
   Log: 5972312cb85cffbc56407b612936b610eb4af8a5
-  R.swift: ed40b24d65ad70c6cf48a2f249a26a3e5a4a7bc0
+  R.swift: 38b2191a603c3d491a09baddfb4ccc7aa9be4d9d
   R.swift.Library: e5e077ed04f6867a95676af491650091b23518e9
-  Realm: 5d219f9037e3ec2019c599b8227bfc95433cb10e
-  RealmSwift: e6f436f9fea1c57b9ad6d1c46d57562c845f3c4c
+  RBQFetchedResultsController: fcc29d033acb7875af5c85976bd4f1ddb4ff75bc
+  Realm: e15cd8e7c11d3e576f628ba0b7cb855269b4991c
+  RealmSwift: 3229306d020d96f83b335f87a0dcbf2cef0e6a2b
+  SwiftFetchedResultsController: 5ba43769b1198195e087f37536c99611505da5ec
 
-PODFILE CHECKSUM: 85400ab62d07471e82bf7c0525abca3c3cc276b8
+PODFILE CHECKSUM: 280956d87afb43ddc92b851bc119a32b702e3782
 
 COCOAPODS: 1.0.0
