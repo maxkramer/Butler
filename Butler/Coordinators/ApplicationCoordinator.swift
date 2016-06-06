@@ -36,5 +36,9 @@ class ApplicationCoordinator: SendRequestTabCoordinatorDelegate {
         
         let responseCoordinator = ResponseCoordinator(parentViewController: navigationController, response: response, hidesBottomBarWhenPushed: true)
         responseCoordinator.start()
+        
+        // trigger a database update
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(Database.Notification.RequestSentSuccessfully.name, object: response.request)
     }
 }

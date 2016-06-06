@@ -13,6 +13,10 @@ extension Database {
     enum Notification: String {
         case RequestSentSuccessfully
         
+        var name: String {
+            return rawValue
+        }
+        
         static func notificationNames() -> [String] {
             return [Notification.RequestSentSuccessfully.rawValue]
         }
