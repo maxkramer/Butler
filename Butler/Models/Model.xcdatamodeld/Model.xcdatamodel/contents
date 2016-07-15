@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 7.0">
+    <entity name="Authorization" representedClassName=".Authorization" syncable="YES">
+        <attribute name="method" attributeType="String" syncable="YES"/>
+        <attribute name="password" attributeType="String" syncable="YES"/>
+        <attribute name="username" attributeType="String" syncable="YES"/>
+        <relationship name="request" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Request" inverseName="authorization" inverseEntity="Request" syncable="YES"/>
+    </entity>
+    <entity name="Header" representedClassName=".Header" syncable="YES">
+        <attribute name="key" attributeType="String" syncable="YES"/>
+        <attribute name="value" attributeType="String" syncable="YES"/>
+        <relationship name="request" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Request" inverseName="headers" inverseEntity="Request" syncable="YES"/>
+    </entity>
+    <entity name="Parameter" representedClassName=".Parameter" syncable="YES">
+        <attribute name="key" attributeType="String" syncable="YES"/>
+        <attribute name="value" attributeType="String" syncable="YES"/>
+        <relationship name="request" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Request" inverseName="parameters" inverseEntity="Request" syncable="YES"/>
+    </entity>
+    <entity name="Request" representedClassName=".Request" syncable="YES">
+        <attribute name="bodyFormat" attributeType="String" syncable="YES"/>
+        <attribute name="creationDate" attributeType="Date" syncable="YES"/>
+        <attribute name="favourited" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
+        <attribute name="requestMethod" attributeType="String" syncable="YES"/>
+        <attribute name="url" attributeType="String" syncable="YES"/>
+        <relationship name="authorization" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Authorization" inverseName="request" inverseEntity="Authorization" syncable="YES"/>
+        <relationship name="headers" toMany="YES" deletionRule="Nullify" destinationEntity="Header" inverseName="request" inverseEntity="Header" syncable="YES"/>
+        <relationship name="parameters" toMany="YES" deletionRule="Nullify" destinationEntity="Parameter" inverseName="request" inverseEntity="Parameter" syncable="YES"/>
+    </entity>
+    <entity name="Response" representedClassName=".Response" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="error" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="httpURLResponse" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="timeTaken" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="request" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Request" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Authorization" positionX="-335" positionY="194" width="128" height="103"/>
+        <element name="Header" positionX="-128" positionY="486" width="128" height="88"/>
+        <element name="Parameter" positionX="151" positionY="144" width="128" height="88"/>
+        <element name="Request" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="Response" positionX="106" positionY="342" width="128" height="118"/>
+    </elements>
+</model>

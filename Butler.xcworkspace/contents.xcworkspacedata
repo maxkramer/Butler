@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Response+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Response.swift">
+   </FileRef>
+   <FileRef
       location = "group:Butler.xcodeproj">
    </FileRef>
    <FileRef

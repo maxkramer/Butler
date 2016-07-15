@@ -7,24 +7,21 @@
 //
 
 import Foundation
-import RealmSwift
 
-extension Array where Element: Header {
-    func validObjects() -> [Element] {
-        return filter {
-            if let value = $0.value, key = $0.key where key.characters.count > 0 && value.characters.count > 0 {
+extension Set where Element: KeyValueObject {
+    func validObjects() -> Set<Element> {
+        return Set<Element>(filter {
+            if $0.key.characters.count > 0 && $0.value.characters.count > 0 {
                 return false
             }
             return true
-        }
+            })
     }
-}
-
-extension List where T: Header {
+    
     func bodyString() -> String? {
         return reduce("") { (b, header) -> String in
-            let hv = header.value?.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
-            let hk = header.key?.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+            let hv = header.value.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+            let hk = header.key.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
             
             if let value = hv, key = hk where key.characters.count > 0 && value.characters.count > 0 {
                 let appendence = "\(key)=\(value)"
@@ -45,8 +42,8 @@ extension List where T: Header {
         
         var dict = [String: AnyObject]()
         forEach {
-            if let value = $0.value, key = $0.key where key.characters.count > 0 && value.characters.count > 0 {
-                dict[key] = value
+            if $0.key.characters.count > 0 && $0.value.characters.count > 0 {
+                dict[$0.key] = $0.value
             }
         }
         

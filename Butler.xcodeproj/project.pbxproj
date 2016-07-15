@@ -17,8 +17,19 @@
 		5011E15C1CE9CED100891FB1 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E15B1CE9CED100891FB1 /* TabCoordinator.swift */; };
 		5011E15E1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */; };
 		5011E1601CE9D06C00891FB1 /* SendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E15F1CE9D06C00891FB1 /* SendRequestViewController.swift */; };
+		50130DE61D3559130011DC52 /* Response+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50130DE41D3559130011DC52 /* Response+CoreDataProperties.swift */; };
+		50130DE71D3559130011DC52 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50130DE51D3559130011DC52 /* Response.swift */; };
 		5014DDFE1D05AF7A00A8FC0C /* ResponseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5014DDFD1D05AF7A00A8FC0C /* ResponseWebViewController.swift */; };
 		5014DE001D05B4DD00A8FC0C /* ResponseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5014DDFF1D05B4DD00A8FC0C /* ResponseCoordinator.swift */; };
+		5014DE0C1D05F9CA00A8FC0C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5014DE0A1D05F9CA00A8FC0C /* Model.xcdatamodeld */; };
+		5014DE281D05FD5F00A8FC0C /* Request+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5014DE201D05FD5F00A8FC0C /* Request+CoreDataProperties.swift */; };
+		5014DE291D05FD5F00A8FC0C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5014DE211D05FD5F00A8FC0C /* Request.swift */; };
+		5014DE2A1D05FD5F00A8FC0C /* Parameter+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5014DE221D05FD5F00A8FC0C /* Parameter+CoreDataProperties.swift */; };
+		5014DE2B1D05FD5F00A8FC0C /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5014DE231D05FD5F00A8FC0C /* Parameter.swift */; };
+		5014DE2C1D05FD5F00A8FC0C /* Header+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5014DE241D05FD5F00A8FC0C /* Header+CoreDataProperties.swift */; };
+		5014DE2D1D05FD5F00A8FC0C /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5014DE251D05FD5F00A8FC0C /* Header.swift */; };
+		5014DE2E1D05FD5F00A8FC0C /* Authorization+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5014DE261D05FD5F00A8FC0C /* Authorization+CoreDataProperties.swift */; };
+		5014DE2F1D05FD5F00A8FC0C /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5014DE271D05FD5F00A8FC0C /* Authorization.swift */; };
 		501804881CF3A4150041E861 /* NSURLRequest+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501804871CF3A4150041E861 /* NSURLRequest+Request.swift */; };
 		5046F5771CF9FB1A00A84FB4 /* syntaxhighlighter.html in Resources */ = {isa = PBXBuildFile; fileRef = 5046F5761CF9FB1A00A84FB4 /* syntaxhighlighter.html */; };
 		5046F5791CF9FB2A00A84FB4 /* SyntaxHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046F5781CF9FB2A00A84FB4 /* SyntaxHighlighter.swift */; };
@@ -43,7 +54,6 @@
 		50B200C61CE9DEFF0075728E /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200C51CE9DEFF0075728E /* FavouriteViewController.swift */; };
 		50B200C81CE9DF060075728E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200C71CE9DF060075728E /* HistoryViewController.swift */; };
 		50B200CA1CE9DF450075728E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50B200C91CE9DF450075728E /* Localizable.strings */; };
-		50B200CE1CE9E3FE0075728E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200CD1CE9E3FE0075728E /* Request.swift */; };
 		50B200D01CE9EDED0075728E /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200CF1CE9EDED0075728E /* KeychainHelper.swift */; };
 		50B200D21CE9F09F0075728E /* KeychainHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B200D11CE9F09F0075728E /* KeychainHelperTests.swift */; };
 		50B200D61CEA15F10075728E /* SendRequestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50B200D51CEA15F10075728E /* SendRequestViewController.xib */; };
@@ -68,12 +78,8 @@
 		50CECFE31CECEC72008748F8 /* MultipleButtonSlider+Butler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CECFE21CECEC72008748F8 /* MultipleButtonSlider+Butler.swift */; };
 		50EF88221CEBA43100B7F10A /* DoubleTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF88201CEBA43100B7F10A /* DoubleTextFieldCell.swift */; };
 		50EF88231CEBA43100B7F10A /* DoubleTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50EF88211CEBA43100B7F10A /* DoubleTextFieldCell.xib */; };
-		50F246251CF74E6E00011885 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F246241CF74E6E00011885 /* Response.swift */; };
 		50F246271CF74E8600011885 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F246261CF74E8600011885 /* RequestMethod.swift */; };
 		50F246291CF74EA200011885 /* BodyFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F246281CF74EA200011885 /* BodyFormat.swift */; };
-		50F2462B1CF74EB600011885 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2462A1CF74EB600011885 /* Authorization.swift */; };
-		50F2462D1CF74ED000011885 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2462C1CF74ED000011885 /* Header.swift */; };
-		50F2462F1CF74ED900011885 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2462E1CF74ED900011885 /* Parameter.swift */; };
 		50F246311CF89C0100011885 /* Cerberus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F246301CF89C0100011885 /* Cerberus.swift */; };
 		56DC1E82B9949B67EC2C6B93 /* Pods_Butler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6DDE6AB44454F4D21058C0 /* Pods_Butler.framework */; };
 		72A5F27C198D3C5318DD352B /* Pods_ButlerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D0569FC5CB9F8B3BC226B3 /* Pods_ButlerUITests.framework */; };
@@ -117,8 +123,20 @@
 		5011E15D1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRequestTabCoordinator.swift; sourceTree = "<group>"; };
 		5011E15F1CE9D06C00891FB1 /* SendRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRequestViewController.swift; sourceTree = "<group>"; };
 		5011E1681CE9D61F00891FB1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		50130DE41D3559130011DC52 /* Response+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Response+CoreDataProperties.swift"; path = "../../Response+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		50130DE51D3559130011DC52 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Response.swift; path = ../../Response.swift; sourceTree = "<group>"; };
 		5014DDFD1D05AF7A00A8FC0C /* ResponseWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseWebViewController.swift; sourceTree = "<group>"; };
 		5014DDFF1D05B4DD00A8FC0C /* ResponseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseCoordinator.swift; sourceTree = "<group>"; };
+		5014DE0B1D05F9CA00A8FC0C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		5014DE201D05FD5F00A8FC0C /* Request+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+CoreDataProperties.swift"; path = "../../Request+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5014DE211D05FD5F00A8FC0C /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = ../../Request.swift; sourceTree = "<group>"; };
+		5014DE221D05FD5F00A8FC0C /* Parameter+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Parameter+CoreDataProperties.swift"; path = "../../Parameter+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5014DE231D05FD5F00A8FC0C /* Parameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Parameter.swift; path = ../../Parameter.swift; sourceTree = "<group>"; };
+		5014DE241D05FD5F00A8FC0C /* Header+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Header+CoreDataProperties.swift"; path = "../../Header+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5014DE251D05FD5F00A8FC0C /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Header.swift; path = ../../Header.swift; sourceTree = "<group>"; };
+		5014DE261D05FD5F00A8FC0C /* Authorization+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Authorization+CoreDataProperties.swift"; path = "../../Authorization+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5014DE271D05FD5F00A8FC0C /* Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Authorization.swift; path = ../../Authorization.swift; sourceTree = "<group>"; };
+		5014DE301D05FF3000A8FC0C /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		501804871CF3A4150041E861 /* NSURLRequest+Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURLRequest+Request.swift"; sourceTree = "<group>"; };
 		5046F5761CF9FB1A00A84FB4 /* syntaxhighlighter.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = syntaxhighlighter.html; sourceTree = "<group>"; };
 		5046F5781CF9FB2A00A84FB4 /* SyntaxHighlighter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntaxHighlighter.swift; sourceTree = "<group>"; };
@@ -168,7 +186,6 @@
 		50CECFE21CECEC72008748F8 /* MultipleButtonSlider+Butler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MultipleButtonSlider+Butler.swift"; sourceTree = "<group>"; };
 		50EF88201CEBA43100B7F10A /* DoubleTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleTextFieldCell.swift; sourceTree = "<group>"; };
 		50EF88211CEBA43100B7F10A /* DoubleTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoubleTextFieldCell.xib; sourceTree = "<group>"; };
-		50F246241CF74E6E00011885 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		50F246261CF74E8600011885 /* RequestMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 		50F246281CF74EA200011885 /* BodyFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyFormat.swift; sourceTree = "<group>"; };
 		50F2462A1CF74EB600011885 /* Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
@@ -338,6 +355,18 @@
 			path = "Response Web View";
 			sourceTree = "<group>";
 		};
+		5014DE0D1D05FB3600A8FC0C /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				5014DE301D05FF3000A8FC0C /* Response.swift */,
+				50F2462A1CF74EB600011885 /* Authorization.swift */,
+				50F2462C1CF74ED000011885 /* Header.swift */,
+				50F2462E1CF74ED900011885 /* Parameter.swift */,
+				50B200CD1CE9E3FE0075728E /* Request.swift */,
+			);
+			name = Old;
+			sourceTree = "<group>";
+		};
 		50ACF6091CF6430300C393A6 /* Alert view */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,13 +410,20 @@
 		50B200CC1CE9E3C80075728E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				50F2462A1CF74EB600011885 /* Authorization.swift */,
+				5014DE0D1D05FB3600A8FC0C /* Old */,
 				50F246281CF74EA200011885 /* BodyFormat.swift */,
-				50F2462C1CF74ED000011885 /* Header.swift */,
-				50F2462E1CF74ED900011885 /* Parameter.swift */,
-				50B200CD1CE9E3FE0075728E /* Request.swift */,
 				50F246261CF74E8600011885 /* RequestMethod.swift */,
-				50F246241CF74E6E00011885 /* Response.swift */,
+				5014DE201D05FD5F00A8FC0C /* Request+CoreDataProperties.swift */,
+				5014DE211D05FD5F00A8FC0C /* Request.swift */,
+				5014DE221D05FD5F00A8FC0C /* Parameter+CoreDataProperties.swift */,
+				5014DE231D05FD5F00A8FC0C /* Parameter.swift */,
+				5014DE241D05FD5F00A8FC0C /* Header+CoreDataProperties.swift */,
+				5014DE251D05FD5F00A8FC0C /* Header.swift */,
+				5014DE261D05FD5F00A8FC0C /* Authorization+CoreDataProperties.swift */,
+				5014DE271D05FD5F00A8FC0C /* Authorization.swift */,
+				50130DE41D3559130011DC52 /* Response+CoreDataProperties.swift */,
+				50130DE51D3559130011DC52 /* Response.swift */,
+				5014DE0A1D05F9CA00A8FC0C /* Model.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -653,6 +689,11 @@
 					5011E1251CE9CD2500891FB1 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = DLYV32K844;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					5011E13B1CE9CD2600891FB1 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -883,16 +924,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5014DE2D1D05FD5F00A8FC0C /* Header.swift in Sources */,
 				5014DDFE1D05AF7A00A8FC0C /* ResponseWebViewController.swift in Sources */,
+				5014DE0C1D05F9CA00A8FC0C /* Model.xcdatamodeld in Sources */,
 				50ACF6001CF61FA500C393A6 /* List+Parameterfy.swift in Sources */,
 				50ACF6021CF6256700C393A6 /* RotatingCircle.swift in Sources */,
 				50F246291CF74EA200011885 /* BodyFormat.swift in Sources */,
 				50EF88221CEBA43100B7F10A /* DoubleTextFieldCell.swift in Sources */,
 				50ACF5FC1CF6157B00C393A6 /* GlobalURLSession.swift in Sources */,
-				50F246251CF74E6E00011885 /* Response.swift in Sources */,
 				50F246271CF74E8600011885 /* RequestMethod.swift in Sources */,
 				50CECFCE1CEC88DB008748F8 /* SingleTextFieldCell.swift in Sources */,
-				50F2462D1CF74ED000011885 /* Header.swift in Sources */,
 				50ACF6041CF6264C00C393A6 /* LoadingView.swift in Sources */,
 				50B8638B1CF8E875008FC8B3 /* UINavigationItem+Subtitle.swift in Sources */,
 				5081FCB41CEA609500BB7196 /* MultipleButtonSlider.swift in Sources */,
@@ -900,32 +941,38 @@
 				50ACF5FE1CF61F1D00C393A6 /* NSURL+Tidy.swift in Sources */,
 				50B200C21CE9DA450075728E /* FavouriteTabCoordinator.swift in Sources */,
 				50B863871CF8D524008FC8B3 /* ResponseViewController.swift in Sources */,
-				50B200CE1CE9E3FE0075728E /* Request.swift in Sources */,
 				5046F5791CF9FB2A00A84FB4 /* SyntaxHighlighter.swift in Sources */,
 				50CECFE31CECEC72008748F8 /* MultipleButtonSlider+Butler.swift in Sources */,
+				5014DE2F1D05FD5F00A8FC0C /* Authorization.swift in Sources */,
+				50130DE61D3559130011DC52 /* Response+CoreDataProperties.swift in Sources */,
 				50CECFDF1CECC8D4008748F8 /* ButtonTableHeaderView.swift in Sources */,
 				5097B46D1CFB8DCD0047A426 /* WKWebView+Response.swift in Sources */,
 				50F246311CF89C0100011885 /* Cerberus.swift in Sources */,
-				50F2462B1CF74EB600011885 /* Authorization.swift in Sources */,
+				5014DE2B1D05FD5F00A8FC0C /* Parameter.swift in Sources */,
 				5011E15E1CE9CF5400891FB1 /* SendRequestTabCoordinator.swift in Sources */,
 				5014DE001D05B4DD00A8FC0C /* ResponseCoordinator.swift in Sources */,
 				50CECFD21CECA317008748F8 /* SliderCell.swift in Sources */,
 				507422C41CFE2B8E00D3579D /* Database.swift in Sources */,
 				50B200C01CE9DA360075728E /* HistoryTabCoordinator.swift in Sources */,
 				50B200D81CEA16520075728E /* SendRequestTableViewDatasource.swift in Sources */,
+				5014DE2C1D05FD5F00A8FC0C /* Header+CoreDataProperties.swift in Sources */,
 				501804881CF3A4150041E861 /* NSURLRequest+Request.swift in Sources */,
 				50BD41CA1CEDE6B10080A1D3 /* NSAttributedString+MajorMinor.swift in Sources */,
+				5014DE291D05FD5F00A8FC0C /* Request.swift in Sources */,
 				5011E12A1CE9CD2600891FB1 /* AppDelegate.swift in Sources */,
 				50ACA7011CF90760000131D4 /* ResponseTableViewDatasource.swift in Sources */,
+				50130DE71D3559130011DC52 /* Response.swift in Sources */,
 				5011E1601CE9D06C00891FB1 /* SendRequestViewController.swift in Sources */,
+				5014DE2A1D05FD5F00A8FC0C /* Parameter+CoreDataProperties.swift in Sources */,
+				5014DE281D05FD5F00A8FC0C /* Request+CoreDataProperties.swift in Sources */,
 				50B200C81CE9DF060075728E /* HistoryViewController.swift in Sources */,
-				50F2462F1CF74ED900011885 /* Parameter.swift in Sources */,
 				50B200C41CE9DC2A0075728E /* UITabBarItem+Butler.swift in Sources */,
 				50B200D01CE9EDED0075728E /* KeychainHelper.swift in Sources */,
 				5011E15C1CE9CED100891FB1 /* TabCoordinator.swift in Sources */,
 				50B200DA1CEA17620075728E /* SemiBorderedTextField.swift in Sources */,
 				50ACF6081CF6395F00C393A6 /* ProgressAlertView.swift in Sources */,
 				5011E15A1CE9CD3D00891FB1 /* ApplicationCoordinator.swift in Sources */,
+				5014DE2E1D05FD5F00A8FC0C /* Authorization+CoreDataProperties.swift in Sources */,
 				50B200C61CE9DEFF0075728E /* FavouriteViewController.swift in Sources */,
 				50B200BD1CE9D9C20075728E /* R.generated.swift in Sources */,
 			);
@@ -1191,6 +1238,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5014DE0A1D05F9CA00A8FC0C /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5014DE0B1D05F9CA00A8FC0C /* Model.xcdatamodel */,
+			);
+			currentVersion = 5014DE0B1D05F9CA00A8FC0C /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5011E11E1CE9CD2500891FB1 /* Project object */;
 }

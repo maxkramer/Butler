@@ -15,10 +15,21 @@ protocol SendRequestTabCoordinatorDelegate {
 class SendRequestTabCoordinator: TabCoordinator, SendRequestViewControllerDelegate {
     var delegate: SendRequestTabCoordinatorDelegate?
     
+    let request: Request?
+    init(_ request: Request? = nil) {
+        self.request = request
+    }
+    
     lazy var rootViewController: UIViewController = {
         let rvcNib = R.nib.sendRequestViewController
+        var rvc: SendRequestViewController!
         
-        let rvc = SendRequestViewController(nibName: rvcNib.name, bundle: rvcNib.bundle)
+        if let request = self.request {
+            rvc = SendRequestViewController(nibName: rvcNib.name, bundle: rvcNib.bundle, request:request)
+        }
+        else {
+            rvc = SendRequestViewController(nibName: rvcNib.name, bundle: rvcNib.bundle)
+        }
         rvc.tabBarItem = self.tabBarItem
         rvc.navigationItem.title = R.string.localizable.sendrequestTitle()
         rvc.delegate = self

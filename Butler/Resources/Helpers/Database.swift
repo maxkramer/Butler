@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import RealmSwift
+import AERecord
 
 extension Database {
     enum Notification: String {
@@ -23,31 +23,37 @@ extension Database {
     }
 }
 
+import CoreData
+
 final class Database: NSObject {
     static private let shared = Database()
     
-    var realm: Realm!
-    
-    func configureDefaultRealm() {
-        let config = Realm.Configuration(encryptionKey: KeychainHelper.shared.realmEncryptionKey())
-        realm = try? Realm(configuration: config)
+    func configureDatabase() {
+        guard let modelURL = NSBundle.mainBundle().URLForResource("Model", withExtension: "momd") else {
+            Cerberus.error("[DB]: Model does not exist in bundle")
+            fatalError()
+        }
         
-        Cerberus.info("Realm Database URL: \(Realm.Configuration.defaultConfiguration.fileURL!)")
+        let mom = NSManagedObjectModel(contentsOfURL: modelURL)!
+        let model: NSManagedObjectModel = NSManagedObjectModel(byMergingModels: [mom])!
+        let myStoreType = NSSQLiteStoreType
+        let myStoreURL = AERecord.storeURLForName("Database")
+        let myOptions = [NSMigratePersistentStoresAutomaticallyOption : true]
+        do {
+            try AERecord.loadCoreDataStack(managedObjectModel: model, storeType: myStoreType, configuration: nil, storeURL: myStoreURL, options: myOptions)
+        } catch {
+            Cerberus.error("[DB]: Error configuring database: \(error)")
+        }
+        
+        //        AERecord.truncateAllData()
     }
     
     private func store(request: Request) {
-        guard let realm = realm else {
-            Cerberus.error("Unable to access Realm. try? Realm failed")
-            return
-        }
-        
         do {
-            try realm.write {
-                realm.add(request)
-                Cerberus.debug("Stored \(request)")
-            }
+            try AERecord.mainContext.save()
+            Cerberus.trace("[DB]: Inserted \(request)")
         } catch {
-            Cerberus.error(error)
+            Cerberus.error("[DB]: Unable to insert \(request): \(error)")
         }
     }
     
@@ -56,7 +62,7 @@ final class Database: NSObject {
     }
     
     class func configure() {
-        shared.configureDefaultRealm()
+        shared.configureDatabase()
         
         Notification.notificationNames().forEach {
             NSNotificationCenter.defaultCenter().addObserver(shared, selector: #selector(received(_:)), name: $0, object: nil)

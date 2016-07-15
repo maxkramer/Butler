@@ -15,31 +15,33 @@ final class Cerberus {
         return log
     }()
     
-    static func debug(items: Any...) {
-        logger.debug(items)
+    static func debug(items: Any..., path: String = #file, line: Int = #line, column: Int = #column, function: String = #function) {
+        logger.debug(items, file: path, line: line, column: column, function: function)
     }
     
-    static func info(items: Any...) {
-        logger.info(items)
+    static func info(items: Any..., path: String = #file, line: Int = #line, column: Int = #column, function: String = #function) {
+        logger.info(items, file: path, line: line, column: column, function: function)
     }
     
-    static func warning(items: Any...) {
-        logger.warning(items)
+    static func warning(items: Any..., path: String = #file, line: Int = #line, column: Int = #column, function: String = #function) {
+        logger.warning(items, file: path, line: line, column: column, function: function)
     }
     
-    static func trace(items: Any...) {
-        logger.trace(items)
+    static func trace(items: Any..., path: String = #file, line: Int = #line, column: Int = #column, function: String = #function) {
+        logger.trace(items, file: path, line: line, column: column, function: function)
     }
     
-    static func error(items: Any...) {
-        logger.error(items)
+    static func error(items: Any..., path: String = #file, line: Int = #line, column: Int = #column, function: String = #function) {
+        logger.error(items, file: path, line: line, column: column, function: function)
     }
 }
 
 extension Formatters {
-    static let Butler = Formatter("[%@ %@] %@", [
+    static let Butler = Formatter("[%@ %@ %@:%@] %@", [
         .Level,
         .Date("HH:mm:ss"),
+        .File(fullPath: false, fileExtension: true),
+        .Line,
         .Message
         ])
 }

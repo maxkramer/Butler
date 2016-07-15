@@ -7,16 +7,39 @@
 //
 
 import UIKit
-import RealmSwift
 
 protocol SendRequestViewControllerDelegate {
     func sendRequestViewController(sendRequestViewController: SendRequestViewController, didSendRequestSuccessfully response: Response)
 }
 
+struct WorkingRequest {
+    var bodyFormat: String = BodyFormat.Plain.rawValue
+    var url: String = ""
+    var requestMethod: String = RequestMethod.GET.rawValue
+}
+
 final class SendRequestViewController: UITableViewController, UITextFieldDelegate {
     var delegate: SendRequestViewControllerDelegate?
     
-    private var workingRequest = Request()
+    init(nibName: String?, bundle: NSBundle?, request: Request) {
+        workingRequest.bodyFormat = request.bodyFormat
+        workingRequest.url = request.url
+        workingRequest.requestMethod = request.requestMethod
+        self.passedInRequest = request
+        super.init(nibName: nibName, bundle: bundle)
+    }
+    
+    override init(nibName: String?, bundle: NSBundle?) {
+        super.init(nibName: nibName, bundle: bundle)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private var passedInRequest: Request?
+    
+    private var workingRequest: WorkingRequest!
     private var tableViewDatasource: SendRequestTableViewDatasource!
     private var urlTextField: SemiBorderedTextField!
     
@@ -28,7 +51,7 @@ final class SendRequestViewController: UITableViewController, UITextFieldDelegat
     // MARK: View Did Load
     
     override func viewDidLoad() {
-        configureTableView()
+        configureTableView(passedInRequest)
         configureTextField()
         
         let tableHeader = generateTableHeaderView()
@@ -41,14 +64,17 @@ final class SendRequestViewController: UITableViewController, UITextFieldDelegat
         
         let sendRequestButton = UIBarButtonItem(title: R.string.localizable.actionSend(), style: .Plain, target: self, action: #selector(sendRequest))
         navigationItem.rightBarButtonItem = sendRequestButton
+        
+        workingRequest = WorkingRequest()
+        
         super.viewDidLoad()
     }
     
     func sendRequest() {
         let request = tableViewDatasource.generateRequest()
-        request.rawBodyFormat = workingRequest.rawBodyFormat
+        request.bodyFormat = workingRequest.bodyFormat
         request.url = workingRequest.url
-        request.rawRequestMethod = workingRequest.rawRequestMethod
+        request.requestMethod = workingRequest.requestMethod
         
         Cerberus.info(request)
         
@@ -79,7 +105,7 @@ final class SendRequestViewController: UITableViewController, UITextFieldDelegat
         ProgressAlertView.show()
         
         var startTime = 0.0
-        runningDataTask = GlobalURLSession.sharedSession.urlSession.dataTaskWithRequest(urlRequest!) { [unowned self] (data, actualResponse, error) in
+        runningDataTask = GlobalURLSession.urlSession.dataTaskWithRequest(urlRequest!) { [unowned self] (data, actualResponse, error) in
             let endTime = CFAbsoluteTimeGetCurrent()
             
             dispatch_async(dispatch_get_main_queue()) {
@@ -98,8 +124,14 @@ final class SendRequestViewController: UITableViewController, UITextFieldDelegat
     
     // MARK: Setup the table view
     
-    func configureTableView() {
+    func configureTableView(request: Request?) {
         tableViewDatasource = SendRequestTableViewDatasource(self.tableView)
+    
+        if let request = request {
+            tableViewDatasource.authorization = request.authorization
+            tableViewDatasource.headers.appendContentsOf(request.headers.allObjects as! [Header])
+            tableViewDatasource.parameters.appendContentsOf(request.parameters.allObjects as! [Parameter])
+        }
         tableView.dataSource = tableViewDatasource
         tableView.delegate = tableViewDatasource
         tableView.keyboardDismissMode = .OnDrag
@@ -176,7 +208,7 @@ final class SendRequestViewController: UITableViewController, UITextFieldDelegat
         }
         
         let requestMethod = requestMethods[index]
-        self.workingRequest.rawRequestMethod = requestMethod.rawValue
+        workingRequest.requestMethod = requestMethod.rawValue
     }
     
     func bodyFormatSliderCallback(index: Int) {
@@ -185,7 +217,7 @@ final class SendRequestViewController: UITableViewController, UITextFieldDelegat
         }
         
         let bodyFormat = BodyFormat.allFormats()[index]
-        self.workingRequest.rawBodyFormat = bodyFormat.rawValue
+        workingRequest.bodyFormat = bodyFormat.rawValue
     }
     
     // MARK: UITextFieldDelegate

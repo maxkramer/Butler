@@ -4,8 +4,8 @@ target 'Butler' do
     use_frameworks!
     
     pod 'R.swift'
-    pod 'RealmSwift'
-    pod 'SwiftFetchedResultsController'    
+    pod 'AERecord'
+    pod 'AECoreDataUI'
     pod 'Log'
     pod "GTMNSStringHTMLAdditions"
     

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AERecord
+import CoreData
 
 class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableViewDelegate, ButtonTableHeaderViewDelegate {
     enum Section: Int {
@@ -34,12 +36,19 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
     
     var headers = [Header]()
     var parameters = [Parameter]()
-    var authorization = Authorization()
+    var authorization: Authorization?
     
     var sectionTitles = Section.sectionTitles
     
     func generateRequest() -> Request {
-        return Request.create(headers.validObjects(), parameters: parameters.validObjects(), authorization: showingAuthorizationCells ? authorization : nil)
+        let request = Request.create()
+        request.headers = Set(headers)
+        request.parameters = Set(parameters)
+        
+        if let authorization = authorization where showingAuthorizationCells && authorization.username.characters.count > 0 && authorization.username.characters.count > 0 {
+            request.authorization = authorization
+        }
+        return request
     }
     
     init(_ tableView: UITableView) {
@@ -122,19 +131,21 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
             if isCurrentlyShowingAuthorizationCells {
                 tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Left)
                 sectionTitles[Section.Authorization.rawValue] = R.string.localizable.authorizationNone()
+                authorization?.deleteFromContext()
             } else {
                 tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Right)
                 sectionTitles[Section.Authorization.rawValue] = R.string.localizable.authorizationBasic()
+                authorization = Authorization.create()
             }
             tableView.reloadSections(NSIndexSet(index: Section.Authorization.rawValue), withRowAnimation: .Automatic)
         } else if section == .Headers {
-            headers.append(Header())
+            headers.append(Header.create())
             
             let indexPath = NSIndexPath(forRow: headers.count - 1, inSection: Section.Headers.rawValue)
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
             
         } else if section == .Parameters {
-            parameters.append(Parameter())
+            parameters.append(Parameter.create())
             
             let indexPath = NSIndexPath(forRow: parameters.count - 1, inSection: Section.Parameters.rawValue)
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
@@ -185,13 +196,13 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
                 cell.valueTextField.font = valueFont
                 cell.valueTextField.textColor = valueColor
                 cell.valueTextField.placeholder = placeholders[indexPath.row]
-                cell.valueTextField.text = authorization.password ?? ""
+                cell.valueTextField.text = authorization?.password ?? ""
                 
                 cell.textChangedHandler = { [unowned self] tf, text in
                     if indexPath.row == 0 {
-                        self.authorization.username = text
+                        self.authorization?.username = text
                     } else {
-                        self.authorization.password = text
+                        self.authorization?.password = text
                     }
                 }
                 
@@ -200,7 +211,7 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
             }
         } else if indexPath.section == 1 || indexPath.section == 2 {
             if let cell = tableView.dequeueReusableCellWithIdentifier("DoubleTextFieldCell", forIndexPath: indexPath) as? DoubleTextFieldCell {
-                let item: Header = indexPath.section == 1 ? headers[indexPath.row] : parameters[indexPath.row]
+                let item: KeyValueObject = indexPath.section == 1 ? headers[indexPath.row] : parameters[indexPath.row]
                 cell.keyTextField.text = item.key
                 cell.keyTextField.font = keyFont
                 cell.keyTextField.textColor = keyColor
@@ -221,7 +232,7 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
     }
     
     func doubleCellTextChanged(cell: DoubleTextFieldCell, textField: UITextField, indexPath: NSIndexPath, text: String) {
-        let item: Header = indexPath.section == 1 ? headers[indexPath.row] : parameters[indexPath.row]
+        var item: KeyValueObject = indexPath.section == 1 ? headers[indexPath.row] : parameters[indexPath.row]
         if textField == cell.keyTextField {
             item.key = text
         } else if textField == cell.valueTextField {
@@ -229,7 +240,7 @@ class SendRequestTableViewDatasource: NSObject, UITableViewDataSource, UITableVi
         }
         
         if indexPath.section == 1 {
-            self.headers[indexPath.row] = item
+            self.headers[indexPath.row] = item as! Header
         } else {
             self.parameters[indexPath.row] = item as! Parameter
         }
